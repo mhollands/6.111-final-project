@@ -490,12 +490,18 @@ module zbt_6111_sample(beep, audio_reset_b,
 	ycrcb2rgb colCvt(vr_pixel[29:20],vr_pixel[19:10],vr_pixel[9:0],
 							vr_pixel_color[23:16],vr_pixel_color[15:8],vr_pixel_color[7:0], clk, 1'b0);
 	
+	reg hsync_delay[2:0];
+	reg blank_delay[2:0];
+	reg vsync_delay[2:0];
    always @(posedge clk)
      begin
 		pixel <= sw_ntsc ? 0 : vr_pixel_color;
 		b <= blank;
 		hs <= hsync;
 		vs <= vsync;
+		{hsync_delay[2],hsync_delay[1],hsync_delay[0]} <= {hsync_delay[1],hsync_delay[0], hs};
+		{vsync_delay[2],vsync_delay[1],vsync_delay[0]} <= {vsync_delay[1],vsync_delay[0], vs};
+		{blank_delay[2],blank_delay[1],blank_delay[0]} <= {blank_delay[1],blank_delay[0], b};
      end
 
    // VGA Output.  In order to meet the setup and hold times of the
@@ -505,9 +511,9 @@ module zbt_6111_sample(beep, audio_reset_b,
    assign vga_out_blue = pixel[7:0];
    assign vga_out_sync_b = 1'b1;    // not used
    assign vga_out_pixel_clock = ~clk;
-   assign vga_out_blank_b = ~b;
-   assign vga_out_hsync = hs;
-   assign vga_out_vsync = vs;
+   assign vga_out_blank_b = ~blank_delay[2];
+   assign vga_out_hsync = hsync_delay[2];
+   assign vga_out_vsync = vsync_delay[2];
 
    // debugging
    assign led = ~{vram_addr[18:13],reset,switch[0]};
@@ -515,7 +521,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 	//displayed on hex display for debugging
    always @(posedge clk)
      // dispdata <= {vram_read_data,9'b0,vram_addr};
-     dispdata <= {ntsc_data,9'b0,ntsc_addr};
+     dispdata <= hcount;
 
 endmodule
 
@@ -582,7 +588,7 @@ module vram_display #(parameter XOFFSET = 0, YOFFSET = 0) (reset,clk,hcount,vcou
 	assign x = hcount - XOFFSET;
 	assign y = vcount - YOFFSET;
    //forecast hcount & vcount 2 clock cycles ahead to get data from ZBT
-   wire [10:0] hcount_f = (x >= 1048) ? (x - 1046) : (x + 2);
+   wire [10:0] hcount_f = (x >= 1048) ? x - 1048 : (x + 2);
    wire [9:0] vcount_f = (x >= 1048) ? ((y == 805) ? 0 : y + 1) : y;
    
 	reg [18:0] vram_addr;
@@ -592,7 +598,7 @@ module vram_display #(parameter XOFFSET = 0, YOFFSET = 0) (reset,clk,hcount,vcou
 			vr_pixel = vram_read_data[29:0];
 		end
 		else begin
-			vr_pixel = 0;
+			vr_pixel = {10'd0,10'd512,10'd512};
 		end
 	end
 
