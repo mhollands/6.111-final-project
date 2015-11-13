@@ -1,0 +1,6 @@
+verilog work "zbt_6111.v"
+verilog work "video_decoder.v"
+verilog work "ntsc2zbt.v"
+verilog work "display_16hex.v"
+verilog work "debounce.v"
+verilog work "zbt_6111_sample.v"
