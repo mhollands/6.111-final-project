@@ -470,8 +470,6 @@ module zbt_6111_sample(beep, audio_reset_b,
    ntsc_to_zbt n2z (clk, tv_in_line_clock1, fvh, dv, ycrcb[29:0],
 		    ntsc_addr, ntsc_data, ntsc_we);
 
-   // mux selecting read/write to memory based on which write-enable is chosen
-
 	//switch between write and read mode
    wire 	sw_ntsc = ~switch[7];
 
@@ -482,20 +480,36 @@ module zbt_6111_sample(beep, audio_reset_b,
    assign 	vram_we = sw_ntsc & ntsc_we;
    assign 	vram_write_data = write_data;
 
-   // select output pixel data
+	//handle corner selection
+	wire [79:0] corners_auto;
+	wire [79:0] corners_manual;
+	wire corners_sel;
+	wire [79:0] corners;
+	corner_reg corners_register (corners_manual, corners_auto, corners_sel, corners);
+	
+	//handle drawing corner markers
+	wire [29:0] corner_pixel;
+	corner_sprite corner_sprite_A (10'd100, 9'd100, hcount, vcount, corner_pixel);
+	
+	wire [29:0] ycrcb_pixel;
+	assign ycrcb_pixel= corner_pixel == 0 ? vr_pixel : corner_pixel;
+	
+	// select output pixel data
    reg [23:0] pixel;
-	wire [23:0] vr_pixel_color;
+	wire [23:0] rgb_pixel;
    reg 	b,hs,vs;
    
-	ycrcb2rgb colCvt(vr_pixel[29:20],vr_pixel[19:10],vr_pixel[9:0],
-							vr_pixel_color[23:16],vr_pixel_color[15:8],vr_pixel_color[7:0], clk, 1'b0);
+	//convert pixels from ycrcb to rgb just before they go to the screen
+	ycrcb2rgb colCvt(ycrcb_pixel[29:20],ycrcb_pixel[19:10],ycrcb_pixel[9:0],
+							rgb_pixel[23:16],rgb_pixel[15:8],rgb_pixel[7:0], clk, 1'b0);
 	
+	//delay hsync, vsync, blank by 3 clock cycles for colour conversion
 	reg hsync_delay[2:0];
 	reg blank_delay[2:0];
 	reg vsync_delay[2:0];
    always @(posedge clk)
      begin
-		pixel <= sw_ntsc ? 0 : vr_pixel_color;
+		pixel <= sw_ntsc ? 0 : rgb_pixel;
 		b <= blank;
 		hs <= hsync;
 		vs <= vsync;
