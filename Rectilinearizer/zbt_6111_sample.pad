@@ -1,7 +1,7 @@
 Release 10.1.03 - par K.39 (lin64)
 Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 
-Fri Nov 13 15:46:49 2015
+Fri Nov 13 16:01:24 2015
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -96,7 +96,7 @@ AB14||DIFFS|IO_L76N_4|UNUSED||4||||||||||
 AB15|||VCCINT||||||||1.5|||||
 AB16|||GND|||||||||||||
 AB17|||VCCINT||||||||1.5|||||
-AB18|Q|IOB|IO_L77P_5|OUTPUT|LVTTL*|5|12|SLOW|NONE**|||||YES|NONE|
+AB18||DIFFM|IO_L77P_5|UNUSED||5||||||||||
 AB19||DIFFS|IO_L53N_5|UNUSED||5||||||||||
 AB20|switch<4>|IOB|IO_L53P_5|INPUT|LVTTL*|5||||NONE||LOCATED||NO|NONE|
 AB21|tv_in_clock|IOB|IO_L20N_5|OUTPUT|LVDCI_33|5||NONE*|NONE**|||LOCATED||NO|DRIVER|
@@ -826,7 +826,7 @@ T2|||VCCAUX||||||||3.3|||||
 T3||DIFFS|IO_L94N_3|UNUSED||3||||||||||
 T4|||GND|||||||||||||
 T5||DIFFM|IO_L94P_2|UNUSED||2||||||||||
-T6||DIFFS|IO_L96N_3|UNUSED||3||||||||||
+T6|Q|IOB|IO_L96N_3|OUTPUT|LVTTL*|3|12|SLOW|NONE**|||||YES|NONE|
 T7|||GND|||||||||||||
 T8|analyzer2_data<3>|IOB|IO_L91N_2|OUTPUT|LVTTL*|2|12|SLOW|NONE**|||LOCATED||NO|NONE|
 T9|analyzer2_data<2>|IOB|IO_L91P_2|OUTPUT|LVTTL*|2|12|SLOW|NONE**|||LOCATED||NO|NONE|

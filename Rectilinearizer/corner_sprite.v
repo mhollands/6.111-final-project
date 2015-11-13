@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module corner_sprite #(parameter COLOUR = 32'hFFFFFFFF)(
+module corner_sprite #(parameter COLOUR=29'hFFFFFFFF)(
     input [10:0] x,
     input [9:0] y,
 	 input [10:0] hcount,
@@ -28,9 +28,9 @@ module corner_sprite #(parameter COLOUR = 32'hFFFFFFFF)(
 	
 	wire hline;
 	wire vline;
-	assign hline = hcount > x - 20 & hcount < x + 20 & y == vcount;
-	assign vline = vcount > y - 20 & vcount < y + 20 & x == hcount;
+	assign hline = (hcount > x - 20 & hcount < x + 20 & y == vcount);
+	assign vline = (vcount > y - 20 & vcount < y + 20 & x == hcount);
 
-	pixel = (hline & vline) ? COLOUR : 0;
+	assign pixel = ((hline || vline) ? COLOUR : 0);
 
 endmodule
