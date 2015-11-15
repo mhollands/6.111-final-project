@@ -1,7 +1,7 @@
 Release 10.1.03 - par K.39 (lin64)
 Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 
-Fri Nov 13 16:01:24 2015
+Sun Nov 15 17:51:10 2015
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -101,7 +101,7 @@ Pinout by Pin Number:
 |AB19      |                    |DIFFS    |IO_L53N_5             |UNUSED   |           |5             |          |         |           |         |       |          |         |           |                |
 |AB20      |switch<4>           |IOB      |IO_L53P_5             |INPUT    |LVTTL*     |5             |          |         |           |NONE     |       |LOCATED   |         |NO         |NONE            |
 |AB21      |tv_in_clock         |IOB      |IO_L20N_5             |OUTPUT   |LVDCI_33   |5             |          |NONE*    |NONE**     |         |       |LOCATED   |         |NO         |DRIVER          |
-|AB22      |                    |DIFFM    |IO_L04P_6             |UNUSED   |           |6             |          |         |           |         |       |          |         |           |                |
+|AB22      |Q                   |IOB      |IO_L04P_6             |OUTPUT   |LVTTL*     |6             |12        |SLOW     |NONE**     |         |       |          |         |YES        |NONE            |
 |AB23      |                    |DIFFS    |IO_L04N_6             |UNUSED   |           |6             |          |         |           |         |       |          |         |           |                |
 |AB24      |ram0_address<5>     |IOB      |IO_L25P_6             |OUTPUT   |LVDCI_33   |6             |          |NONE*    |NONE**     |         |       |LOCATED   |         |NO         |DRIVER          |
 |AB25      |ram0_data<35>       |IOB      |IO_L27N_6/VREF_6      |TRISTATE |LVDCI_33   |6             |          |NONE*    |NONE**     |         |       |LOCATED   |         |NO         |DRIVER          |
@@ -827,7 +827,7 @@ Pinout by Pin Number:
 |T3        |                    |DIFFS    |IO_L94N_3             |UNUSED   |           |3             |          |         |           |         |       |          |         |           |                |
 |T4        |                    |         |GND                   |         |           |              |          |         |           |         |       |          |         |           |                |
 |T5        |                    |DIFFM    |IO_L94P_2             |UNUSED   |           |2             |          |         |           |         |       |          |         |           |                |
-|T6        |Q                   |IOB      |IO_L96N_3             |OUTPUT   |LVTTL*     |3             |12        |SLOW     |NONE**     |         |       |          |         |YES        |NONE            |
+|T6        |                    |DIFFS    |IO_L96N_3             |UNUSED   |           |3             |          |         |           |         |       |          |         |           |                |
 |T7        |                    |         |GND                   |         |           |              |          |         |           |         |       |          |         |           |                |
 |T8        |analyzer2_data<3>   |IOB      |IO_L91N_2             |OUTPUT   |LVTTL*     |2             |12        |SLOW     |NONE**     |         |       |LOCATED   |         |NO         |NONE            |
 |T9        |analyzer2_data<2>   |IOB      |IO_L91P_2             |OUTPUT   |LVTTL*     |2             |12        |SLOW     |NONE**     |         |       |LOCATED   |         |NO         |NONE            |

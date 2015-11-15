@@ -481,18 +481,95 @@ module zbt_6111_sample(beep, audio_reset_b,
    assign 	vram_write_data = write_data;
 
 	//handle corner selection
-	wire [79:0] corners_auto;
-	wire [79:0] corners_manual;
+	wire [9:0] corners1x_auto;
+	wire [9:0] corners1y_auto;
+	wire [9:0] corners2x_auto;
+	wire [9:0] corners2y_auto;
+	wire [9:0] corners3x_auto;
+	wire [9:0] corners3y_auto;
+	wire [9:0] corners4x_auto;
+	wire [9:0] corners4y_auto;
+	wire [9:0] corners1x_manual;
+	wire [9:0] corners1y_manual;
+	wire [9:0] corners2x_manual;
+	wire [9:0] corners2y_manual;
+	wire [9:0] corners3x_manual;
+	wire [9:0] corners3y_manual;
+	wire [9:0] corners4x_manual;
+	wire [9:0] corners4y_manual;
+	wire [9:0] corners1x;
+	wire [9:0] corners1y;
+	wire [9:0] corners2x;
+	wire [9:0] corners2y;
+	wire [9:0] corners3x;
+	wire [9:0] corners3y;
+	wire [9:0] corners4x;
+	wire [9:0] corners4y;
 	wire corners_sel;
-	wire [79:0] corners;
-	corner_reg corners_register (corners_manual, corners_auto, corners_sel, corners);
+	assign corners_sel = switch[6];
+	corner_reg corners_register (
+						{corners1x_manual, corners1y_manual,
+							corners2x_manual, corners2y_manual,
+							 corners3x_manual, corners3y_manual,
+						   	corners4x_manual, corners4y_manual},
+						{corners1x_auto, corners1y_auto,
+							corners2x_auto, corners2y_auto,
+							 corners3x_auto, corners3y_auto,
+						   	corners4x_auto, corners4y_auto}, 
+						corners_sel, 
+						{corners1x, corners1y,
+							corners2x, corners2y,
+							 corners3x, corners3y,
+						   	corners4x, corners4y});
+	
+	wire field_edge;
+	//human interface module
+	human_interface hi (clk, 
+								fvh[2],
+								~button_left,
+								~button_right,
+								~button_up,
+								~button_down,
+								~button_enter,
+								~button0,
+								~button1,
+								~button2,
+								~button3,
+								corners1x_manual,
+								corners1y_manual,
+								corners2x_manual,
+								corners2y_manual,
+								corners3x_manual,
+								corners3y_manual,
+								corners4x_manual,
+								corners4y_manual);
 	
 	//handle drawing corner markers
-	wire [29:0] corner_pixel;
-	corner_sprite corner_sprite_A (10'd100, 9'd100, hcount, vcount, corner_pixel);
+	wire [29:0] corner_pixel_A;
+	corner_sprite #(32'h3ff00000) corner_sprite_A (corners1x, corners1y, hcount, vcount, corner_pixel_A);
 	
-	wire [29:0] ycrcb_pixel;
-	assign ycrcb_pixel= corner_pixel == 0 ? vr_pixel : corner_pixel;
+	wire [29:0] corner_pixel_B;
+	corner_sprite #(32'h3ff003ff) corner_sprite_B (corners2x, corners2y, hcount, vcount, corner_pixel_B);
+	
+	wire [29:0] corner_pixel_C;
+	corner_sprite #(32'h3ffffc00) corner_sprite_C (corners3x, corners3y, hcount, vcount, corner_pixel_C);
+	
+	wire [29:0] corner_pixel_D;
+	corner_sprite #(32'h3fffffff) corner_sprite_D (corners4x, corners4y, hcount, vcount, corner_pixel_D);
+	
+	//select which pixel to use
+	reg [29:0] ycrcb_pixel;
+	wire [2:0] which_corner_pixel;
+	assign which_corner_pixel = corner_pixel_A ? 1 : corner_pixel_B ? 2 : corner_pixel_C ? 3 : corner_pixel_D ? 4 : 0;
+	always @(*) begin
+		case(which_corner_pixel)
+			1: ycrcb_pixel <= corner_pixel_A;
+			2: ycrcb_pixel <= corner_pixel_B;
+			3: ycrcb_pixel <= corner_pixel_C;
+			4: ycrcb_pixel <= corner_pixel_D;
+			default: ycrcb_pixel <= vr_pixel;
+		endcase
+	end
 	
 	// select output pixel data
    reg [23:0] pixel;
@@ -535,7 +612,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 	//displayed on hex display for debugging
    always @(posedge clk)
      // dispdata <= {vram_read_data,9'b0,vram_addr};
-     dispdata <= hcount;
+     dispdata <= {2'b0, corners1y_manual,2'b0, corners1x_manual, 3'b0, ~button_left, 3'b0, ~button_right, 3'b0, fvh[2], 3'b0, field_edge};
 
 endmodule
 

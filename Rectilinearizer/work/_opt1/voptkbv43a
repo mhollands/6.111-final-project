@@ -1,0 +1,58 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/afs/athena.mit.edu/user/h/o/hollands/6.111-final-project/Rectilinearizer
+T_opt
+Z1 V0ib:FKOAeOh`k1CH6SafI1
+Z2 04 18 4 work human_interface_tf fast 0
+Z3 04 4 4 work glbl fast 0
+Z4 =1-f04da20f0fdb-5648f4b7-671d1-61b2
+Z5 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver
+Z6 OE;O;6.4a;39
+T_opt1
+Z7 V^j?^XZ`h[CRPGbRCYe94l2
+R2
+R3
+Z8 =1-f04da20f0fdb-5648f539-14ae9-61ca
+R5
+R6
+vglbl
+Z9 IB;@1jEXmEfQXL`;Kf0IBZ3
+Z10 VnN]4Gon>inod6>M^M2[SV1
+Z11 w1202685744
+Z12 8/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/glbl.v
+Z13 F/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/verilog/src/glbl.v
+L0 5
+Z14 OE;L;6.4a;39
+r1
+31
+Z15 o+acc -L mtiAvm -L mtiOvm -L mtiUPF
+Z16 !s100 T?5S;>bN`@zG_25]R_4A33
+!s85 0
+vhuman_interface
+Z17 IC3g?LhOVnf8mhZhBVjjGM3
+Z18 V6zii`j1Ym_JA7T=jPC_D80
+Z19 w1447621065
+Z20 8human_interface.v
+Z21 Fhuman_interface.v
+L0 21
+R14
+r1
+31
+R15
+Z22 !s100 QkE7El<^m<i0`D6onEak23
+!s85 0
+vhuman_interface_tf
+Z23 IQQ1O0JG^VEPA2?f9Bj>GH3
+Z24 Vzb6o@BG4;GCgRHZHC5KBS0
+Z25 w1447621808
+Z26 8human_interface_tf.v
+Z27 Fhuman_interface_tf.v
+L0 25
+R14
+r1
+31
+R15
+Z28 !s100 d>M9_@@G1hH]hFb<fQnQX1
+!s85 0
