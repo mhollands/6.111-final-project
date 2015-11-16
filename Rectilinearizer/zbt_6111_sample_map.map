@@ -11,7 +11,7 @@ Target Device  : xc2v6000
 Target Package : bf957
 Target Speed   : -4
 Mapper Version : virtex2 -- $Revision: 1.46.12.2 $
-Mapped Date    : Sun Nov 15 19:57:30 2015
+Mapped Date    : Sun Nov 15 20:11:09 2015
 
 Mapping design into LUTs...
 Running directed packing...
@@ -28,14 +28,14 @@ Logic Utilization:
   Total Number Slice Registers:         633 out of  67,584    1%
     Number used as Flip Flops:          614
     Number used as Latches:              19
-  Number of 4 input LUTs:             1,241 out of  67,584    1%
+  Number of 4 input LUTs:             1,240 out of  67,584    1%
 Logic Distribution:
-  Number of occupied Slices:            781 out of  33,792    2%
-    Number of Slices containing only related logic:     781 out of     781 100%
-    Number of Slices containing unrelated logic:          0 out of     781   0%
+  Number of occupied Slices:            779 out of  33,792    2%
+    Number of Slices containing only related logic:     779 out of     779 100%
+    Number of Slices containing unrelated logic:          0 out of     779   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       1,290 out of  67,584    1%
-    Number used as logic:             1,156
+  Total Number of 4 input LUTs:       1,289 out of  67,584    1%
+    Number used as logic:             1,155
     Number used as a route-thru:         49
     Number used as Shift registers:      85
   Number of bonded IOBs:                577 out of     684   84%
@@ -65,3 +65,6 @@ NOTES:
    and FFs are occupied.  Depending on your timing budget, increased levels of
    unrelated logic packing may adversely affect the overall timing performance
    of your design.
+
+Mapping completed.
+See MAP report file "zbt_6111_sample_map.mrp" for details.

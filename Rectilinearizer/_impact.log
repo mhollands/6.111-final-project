@@ -189,3 +189,112 @@ INFO:iMPACT - '2': Checking done pin....done.
 '2': Programmed successfully.
 PROGRESS_END - End Operation.
 Elapsed time =      6 sec.
+Updating config file/afs/athena.mit.edu/user/h/o/hollands/6.111-final-project/Rectilinearizer/zbt_6111_sample.bit...
+// *** BATCH CMD : Program -p 2 
+Maximum TCK operating frequency for this device chain: 15000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+'2': Programming device...
+PROGRESS_START - Starting Operation.
+ Match_cycle = 2.
+done.
+'2': Reading status register contents...
+CRC error                                         :         0
+Decryptor security set                            :         0
+DCM locked                                        :         1
+DCI matched                                       :         1
+legacy input error                                :         0
+status of GTS_CFG_B                               :         0
+status of GWE                                     :         0
+status of GHIGH                                   :         1
+value of MODE pin M0                              :         0
+value of MODE pin M1                              :         0
+value of MODE pin M2                              :         0
+value of CFG_RDY (INIT_B)                         :         1
+DONEIN input from DONE pin                        :         0
+IDCODE not validated while trying to write FDRI   :         0
+write FDRI issued before or after decrypt operation:         0
+Decryptor keys not used in proper sequence        :         0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 0001 0001 0000 0000 0000 0000 0000 
+INFO:iMPACT:579 - '2': Completed downloading bit file to device.
+ Match_cycle = 2.
+INFO:iMPACT - '2': Checking done pin....done.
+'2': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      6 sec.
+Updating config file/afs/athena.mit.edu/user/h/o/hollands/6.111-final-project/Rectilinearizer/zbt_6111_sample.bit...
+// *** BATCH CMD : Program -p 2 
+Maximum TCK operating frequency for this device chain: 15000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+'2': Programming device...
+PROGRESS_START - Starting Operation.
+ Match_cycle = 2.
+done.
+'2': Reading status register contents...
+CRC error                                         :         0
+Decryptor security set                            :         0
+DCM locked                                        :         1
+DCI matched                                       :         1
+legacy input error                                :         0
+status of GTS_CFG_B                               :         0
+status of GWE                                     :         0
+status of GHIGH                                   :         1
+value of MODE pin M0                              :         0
+value of MODE pin M1                              :         0
+value of MODE pin M2                              :         0
+value of CFG_RDY (INIT_B)                         :         1
+DONEIN input from DONE pin                        :         0
+IDCODE not validated while trying to write FDRI   :         0
+write FDRI issued before or after decrypt operation:         0
+Decryptor keys not used in proper sequence        :         0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 0001 0001 0000 0000 0000 0000 0000 
+INFO:iMPACT:579 - '2': Completed downloading bit file to device.
+ Match_cycle = 2.
+INFO:iMPACT - '2': Checking done pin....done.
+'2': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      6 sec.
+Updating config file/afs/athena.mit.edu/user/h/o/hollands/6.111-final-project/Rectilinearizer/zbt_6111_sample.bit...
+// *** BATCH CMD : Program -p 2 
+Maximum TCK operating frequency for this device chain: 15000000.
+Validating chain...
+Boundary-scan chain validated successfully.
+'2': Programming device...
+PROGRESS_START - Starting Operation.
+ Match_cycle = 2.
+done.
+'2': Reading status register contents...
+CRC error                                         :         0
+Decryptor security set                            :         0
+DCM locked                                        :         1
+DCI matched                                       :         1
+legacy input error                                :         0
+status of GTS_CFG_B                               :         0
+status of GWE                                     :         0
+status of GHIGH                                   :         1
+value of MODE pin M0                              :         0
+value of MODE pin M1                              :         0
+value of MODE pin M2                              :         0
+value of CFG_RDY (INIT_B)                         :         1
+DONEIN input from DONE pin                        :         0
+IDCODE not validated while trying to write FDRI   :         0
+write FDRI issued before or after decrypt operation:         0
+Decryptor keys not used in proper sequence        :         0
+INFO:iMPACT:2219 - Status register values:
+INFO:iMPACT - 0011 0001 0001 0000 0000 0000 0000 0000 
+INFO:iMPACT:579 - '2': Completed downloading bit file to device.
+ Match_cycle = 2.
+INFO:iMPACT - '2': Checking done pin....done.
+'2': Programmed successfully.
+PROGRESS_END - End Operation.
+Elapsed time =      6 sec.
+// *** BATCH CMD : saveProjectFile -file"/afs/athena.mit.edu/user/h/o/hollands/6.111-final-project/Rectilinearizer/Rectilinearizer.ipf"
+// *** BATCH CMD : setMode -bs
+// *** BATCH CMD : deleteDevice -position 3
+----------------------------------------------------------------------
+// *** BATCH CMD : deleteDevice -position 2
+----------------------------------------------------------------------
+// *** BATCH CMD : deleteDevice -position 1

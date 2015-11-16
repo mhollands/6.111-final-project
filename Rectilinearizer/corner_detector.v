@@ -33,9 +33,9 @@ module corner_detector(
 	assign corners[59:50] = 10'd832;
 	assign corners[49:40] = 10'd144;
 	assign corners[39:30] = 10'd192;
-	assign corners[29:20] = 10'd880;
+	assign corners[29:20] = 10'd624;
 	assign corners[19:10] = 10'd832;
-	assign corners[09:00] = 10'd880;
+	assign corners[09:00] = 10'd624;
 	
 	//for now just implement an empty corner detector
 	always @(posedge clk) begin

@@ -35,13 +35,13 @@ module main_fsm(
 	  parameter VIEW_FINDER = 3'b000;
 	  parameter AUTO_DETECTION_START = 3'b001;
 	  parameter AUTO_DETECTION_WAIT = 3'b010;
-		parameter MANUAL_DETECTION_START = 3'b100;
-		parameter MANUAL_DETECTION_WAIT = 3'b101;
+	  parameter MANUAL_DETECTION_START = 3'b011;
+	  parameter MANUAL_DETECTION_WAIT = 3'b100;
 
 	//if we are in the AUTO_DETECTION_START state then 
-	assign auto_detection_start = (state == AUTO_DETECTION_START);
+	assign auto_detection_start = (state == AUTO_DETECTION_START ? 1 : 0);
 	//if we are in the MANUAL_DETECTION_START state then
-	assign set_corners = (state == MANUAL_DETECTION_START);
+	assign set_corners = (state == MANUAL_DETECTION_START ? 1 : 0);
 	
 	//select if the enter button goes forwards or backwards
 	wire forwards, backwards;

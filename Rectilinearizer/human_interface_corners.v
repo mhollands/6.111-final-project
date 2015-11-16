@@ -90,17 +90,17 @@ module human_interface_corners(
 			if(one_button == 1) selected_corner <= 1;
 			if(two_button == 1) selected_corner <= 2;
 			if(three_button == 1) selected_corner <= 3;
-			
-			if(set_corners) begin
-				corners1x <= auto_corners[79:70];
-				corners1y <= auto_corners[69:60];
-				corners2x <= auto_corners[59:50];
-				corners2y <= auto_corners[49:40];
-				corners3x <= auto_corners[39:30];
-				corners3y <= auto_corners[29:20];
-				corners4x <= auto_corners[19:10];
-				corners4y <= auto_corners[09:00];
-			end
+		end
+					
+		if(set_corners) begin
+			corners1x <= auto_corners[79:70];
+			corners1y <= auto_corners[69:60];
+			corners2x <= auto_corners[59:50];
+			corners2y <= auto_corners[49:40];
+			corners3x <= auto_corners[39:30];
+			corners3y <= auto_corners[29:20];
+			corners4x <= auto_corners[19:10];
+			corners4y <= auto_corners[09:00];
 		end
 	end
 

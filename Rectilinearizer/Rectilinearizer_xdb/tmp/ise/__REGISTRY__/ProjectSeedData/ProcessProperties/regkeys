@@ -263,7 +263,7 @@ prop_13_name
 PROP_BehavioralSimTop
 s
 prop_13_val
-"Module|main_fsm_tf"
+"Module|human_interface_corners_tf"
 s
 prop_140_name
 PROP_SynthLogicalShifterExtract
