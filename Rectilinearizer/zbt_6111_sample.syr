@@ -5,14 +5,14 @@ Parameter TMPDIR set to /afs/athena.mit.edu/user/h/o/hollands/6.111-final-projec
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to /afs/athena.mit.edu/user/h/o/hollands/6.111-final-project/Rectilinearizer/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: zbt_6111_sample.prj
@@ -118,18 +118,20 @@ Module <ntsc_decode> compiled
 Module <adv7185init> compiled
 Compiling verilog file "ntsc2zbt.v" in library work
 Module <i2c> compiled
-Compiling verilog file "human_interface.v" in library work
+Compiling verilog file "main_fsm.v" in library work
 Module <ntsc_to_zbt> compiled
+Compiling verilog file "human_interface_corners.v" in library work
+Module <main_fsm> compiled
 Compiling verilog file "display_16hex.v" in library work
-Module <human_interface> compiled
+Module <human_interface_corners> compiled
 Compiling verilog file "debounce.v" in library work
 Module <display_16hex> compiled
 Compiling verilog file "corner_sprite.v" in library work
 Module <debounce> compiled
-Compiling verilog file "corner_reg.v" in library work
+Compiling verilog file "corner_detector.v" in library work
 Module <corner_sprite> compiled
 Compiling verilog file "zbt_6111_sample.v" in library work
-Module <corner_reg> compiled
+Module <corner_detector> compiled
 Module <zbt_6111_sample> compiled
 Module <xvga> compiled
 Module <vram_display> compiled
@@ -153,6 +155,15 @@ Analyzing hierarchy for module <debounce> in library <work> with parameters.
 Analyzing hierarchy for module <display_16hex> in library <work>.
 
 Analyzing hierarchy for module <xvga> in library <work>.
+
+Analyzing hierarchy for module <main_fsm> in library <work> with parameters.
+	AUTO_DETECTION_START = "001"
+	AUTO_DETECTION_WAIT = "010"
+	MANUAL_DETECTION_START = "100"
+	MANUAL_DETECTION_WAIT = "101"
+	VIEW_FINDER = "000"
+
+Analyzing hierarchy for module <corner_detector> in library <work>.
 
 Analyzing hierarchy for module <zbt_6111> in library <work>.
 
@@ -185,9 +196,7 @@ Analyzing hierarchy for module <ntsc_to_zbt> in library <work> with parameters.
 	COL_START = "0000000000"
 	ROW_START = "0000000000"
 
-Analyzing hierarchy for module <corner_reg> in library <work>.
-
-Analyzing hierarchy for module <human_interface> in library <work>.
+Analyzing hierarchy for module <human_interface_corners> in library <work>.
 
 Analyzing hierarchy for module <corner_sprite> in library <work> with parameters.
 	COLOUR = "00111111111100000000000000000000"
@@ -209,21 +218,21 @@ WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLKFX_DI
 WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLKFX_MULTIPLY> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLKIN_PERIOD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 770: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 770: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 770: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 770: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 770: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 770: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 770: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 787: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 787: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 787: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 787: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 787: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 787: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 787: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 800: attribute on instance <INIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 782: attribute on instance <INIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 
 =========================================================================
 *                            HDL Analysis                               *
@@ -299,6 +308,17 @@ Module <display_16hex> is correct for synthesis.
 Analyzing module <xvga> in library <work>.
 Module <xvga> is correct for synthesis.
  
+Analyzing module <main_fsm> in library <work>.
+	AUTO_DETECTION_START = 3'b001
+	AUTO_DETECTION_WAIT = 3'b010
+	MANUAL_DETECTION_START = 3'b100
+	MANUAL_DETECTION_WAIT = 3'b101
+	VIEW_FINDER = 3'b000
+Module <main_fsm> is correct for synthesis.
+ 
+Analyzing module <corner_detector> in library <work>.
+Module <corner_detector> is correct for synthesis.
+ 
 Analyzing module <zbt_6111> in library <work>.
 Module <zbt_6111> is correct for synthesis.
  
@@ -373,11 +393,8 @@ Analyzing module <ntsc_to_zbt> in library <work>.
 	ROW_START = 10'b0000000000
 Module <ntsc_to_zbt> is correct for synthesis.
  
-Analyzing module <corner_reg> in library <work>.
-Module <corner_reg> is correct for synthesis.
- 
-Analyzing module <human_interface> in library <work>.
-Module <human_interface> is correct for synthesis.
+Analyzing module <human_interface_corners> in library <work>.
+Module <human_interface_corners> is correct for synthesis.
  
 Analyzing module <corner_sprite.1> in library <work>.
 	COLOUR = 32'b00111111111100000000000000000000
@@ -417,7 +434,6 @@ Synthesizing Unit <debounce>.
     Related source file is "debounce.v".
     Found 1-bit register for signal <clean>.
     Found 20-bit up counter for signal <count>.
-    Found 1-bit xor2 for signal <count$xor0000> created at line 20.
     Found 1-bit register for signal <xnew>.
     Summary:
 	inferred   1 Counter(s).
@@ -474,6 +490,25 @@ Synthesizing Unit <xvga>.
 Unit <xvga> synthesized.
 
 
+Synthesizing Unit <main_fsm>.
+    Related source file is "main_fsm.v".
+    Found 3-bit register for signal <state>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <main_fsm> synthesized.
+
+
+Synthesizing Unit <corner_detector>.
+    Related source file is "corner_detector.v".
+    Found 1-bit register for signal <done>.
+    Found 5-bit up counter for signal <count>.
+    Found 1-bit register for signal <pulsed>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <corner_detector> synthesized.
+
+
 Synthesizing Unit <zbt_6111>.
     Related source file is "zbt_6111.v".
     Found 36-bit tristate buffer for signal <ram_data>.
@@ -493,10 +528,10 @@ WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and l
 WARNING:Xst:647 - Input <vram_read_data<35:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:737 - Found 19-bit latch for signal <vram_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 11-bit addsub for signal <hcount_f>.
-    Found 10-bit adder for signal <vcount_f$addsub0000> created at line 683.
-    Found 11-bit comparator greatequal for signal <vcount_f$cmp_ge0000> created at line 683.
-    Found 10-bit comparator less for signal <vram_addr$cmp_lt0000> created at line 687.
-    Found 11-bit comparator less for signal <vram_addr$cmp_lt0001> created at line 687.
+    Found 10-bit adder for signal <vcount_f$addsub0000> created at line 665.
+    Found 11-bit comparator greatequal for signal <vcount_f$cmp_ge0000> created at line 665.
+    Found 10-bit comparator less for signal <vram_addr$cmp_lt0000> created at line 669.
+    Found 11-bit comparator less for signal <vram_addr$cmp_lt0001> created at line 669.
     Found 11-bit subtractor for signal <x>.
     Found 10-bit subtractor for signal <y>.
     Summary:
@@ -550,13 +585,8 @@ WARNING:Xst:646 - Signal <we_edge> is assigned but never used. This unconnected 
 Unit <ntsc_to_zbt> synthesized.
 
 
-Synthesizing Unit <corner_reg>.
-    Related source file is "corner_reg.v".
-Unit <corner_reg> synthesized.
-
-
-Synthesizing Unit <human_interface>.
-    Related source file is "human_interface.v".
+Synthesizing Unit <human_interface_corners>.
+    Related source file is "human_interface_corners.v".
 WARNING:Xst:647 - Input <enter_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Using one-hot encoding for signal <selected_corner>.
     Found 10-bit register for signal <corners1x>.
@@ -567,20 +597,20 @@ WARNING:Xst:647 - Input <enter_button> is never used. This port will be preserve
     Found 10-bit register for signal <corners3y>.
     Found 10-bit register for signal <corners4x>.
     Found 10-bit register for signal <corners4y>.
-    Found 10-bit addsub for signal <corners1x$mux0000>.
-    Found 10-bit addsub for signal <corners1y$mux0000>.
-    Found 10-bit addsub for signal <corners2x$mux0000>.
-    Found 10-bit addsub for signal <corners2y$mux0000>.
-    Found 10-bit addsub for signal <corners3x$mux0000>.
-    Found 10-bit addsub for signal <corners3y$mux0000>.
-    Found 10-bit addsub for signal <corners4x$mux0000>.
-    Found 10-bit addsub for signal <corners4y$mux0000>.
+    Found 10-bit addsub for signal <corners1x$addsub0000>.
+    Found 10-bit addsub for signal <corners1y$addsub0000>.
+    Found 10-bit addsub for signal <corners2x$addsub0000>.
+    Found 10-bit addsub for signal <corners2y$addsub0000>.
+    Found 10-bit addsub for signal <corners3x$addsub0000>.
+    Found 10-bit addsub for signal <corners3y$addsub0000>.
+    Found 10-bit addsub for signal <corners4x$addsub0000>.
+    Found 10-bit addsub for signal <corners4y$addsub0000>.
     Found 1-bit register for signal <old_field>.
     Found 4-bit register for signal <selected_corner>.
     Summary:
 	inferred  85 D-type flip-flop(s).
 	inferred   8 Adder/Subtractor(s).
-Unit <human_interface> synthesized.
+Unit <human_interface_corners> synthesized.
 
 
 Synthesizing Unit <corner_sprite_1>.
@@ -869,7 +899,7 @@ WARNING:Xst:2565 - Inout <user1<9>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<0>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<10>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<1>> is never assigned.
-WARNING:Xst:647 - Input <switch<5:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <switch<6:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:2565 - Inout <user4<11>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<2>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<12>> is never assigned.
@@ -1018,15 +1048,7 @@ WARNING:Xst:2565 - Inout <user3<27>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<3>> is never assigned.
 WARNING:Xst:646 - Signal <ram0_clk_not_used> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <locked> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:653 - Signal <field_edge> is used but never assigned. This sourceless signal will be automatically connected to value 0.
-WARNING:Xst:653 - Signal <corners4y_auto> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000.
-WARNING:Xst:653 - Signal <corners4x_auto> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000.
-WARNING:Xst:653 - Signal <corners3y_auto> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000.
-WARNING:Xst:653 - Signal <corners3x_auto> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000.
-WARNING:Xst:653 - Signal <corners2y_auto> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000.
-WARNING:Xst:653 - Signal <corners2x_auto> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000.
-WARNING:Xst:653 - Signal <corners1y_auto> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000.
-WARNING:Xst:653 - Signal <corners1x_auto> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000.
+WARNING:Xst:1780 - Signal <field_edge> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Using one-hot encoding for signal <which_corner_pixel>.
     Found 1-bit register for signal <b>.
     Found 3-bit register for signal <blank_delay>.
@@ -1066,20 +1088,22 @@ Macro Statistics
  21-bit adder                                          : 2
  21-bit subtractor                                     : 2
  4-bit subtractor                                      : 1
-# Counters                                             : 9
+# Counters                                             : 10
  10-bit up counter                                     : 3
  11-bit up counter                                     : 1
  20-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
  6-bit up counter                                      : 1
  8-bit down counter                                    : 2
  8-bit up counter                                      : 1
-# Registers                                            : 90
- 1-bit register                                        : 41
+# Registers                                            : 93
+ 1-bit register                                        : 43
  10-bit register                                       : 19
  19-bit register                                       : 1
  2-bit register                                        : 1
  21-bit register                                       : 8
  24-bit register                                       : 1
+ 3-bit register                                        : 1
  30-bit register                                       : 3
  32-bit register                                       : 1
  36-bit register                                       : 3
@@ -1108,8 +1132,6 @@ Macro Statistics
 # Tristates                                            : 2
  1-bit tristate buffer                                 : 1
  36-bit tristate buffer                                : 1
-# Xors                                                 : 1
- 1-bit xor2                                            : 1
 
 =========================================================================
 
@@ -1209,8 +1231,19 @@ Optimizing FSM <adv7185/i2c/state/FSM> on signal <state[1:42]> with speed1 encod
  00101001 | 000000000000000000000000000000000000010000
 --------------------------------------------------------
 Loading device for application Rf_Device from file '2v6000.nph' in environment /afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE.
-WARNING:Xst:2404 -  FFs/Latches <dispdata<63:38>> (without init value) have a constant value of 0 in block <zbt_6111_sample>.
+WARNING:Xst:2404 -  FFs/Latches <dispdata<63:3>> (without init value) have a constant value of 0 in block <zbt_6111_sample>.
 WARNING:Xst:2404 -  FFs/Latches <ntsc_data<35:30>> (without init value) have a constant value of 0 in block <ntsc_to_zbt>.
+
+Synthesizing (advanced) Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_7_LPM_DFF_3>.
+The following registers are absorbed into accumulator <corners1x>: 1 register on signal <human_interface_corners>.
+The following registers are absorbed into accumulator <corners2x>: 1 register on signal <human_interface_corners>.
+The following registers are absorbed into accumulator <corners3x>: 1 register on signal <human_interface_corners>.
+The following registers are absorbed into accumulator <corners4x>: 1 register on signal <human_interface_corners>.
+The following registers are absorbed into accumulator <corners1y>: 1 register on signal <human_interface_corners>.
+The following registers are absorbed into accumulator <corners2y>: 1 register on signal <human_interface_corners>.
+The following registers are absorbed into accumulator <corners3y>: 1 register on signal <human_interface_corners>.
+The following registers are absorbed into accumulator <corners4y>: 1 register on signal <human_interface_corners>.
+Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_7_LPM_DFF_3> synthesized (advanced).
 
 Synthesizing (advanced) Unit <ycrcb2rgb>.
 	Found pipelined multiplier on signal <B1_int_mult0000>:
@@ -1229,6 +1262,8 @@ Synthesizing (advanced) Unit <ycrcb2rgb>.
 		- 1 pipeline level(s) found in a register connected to the multiplier macro output.
 		Pushing register(s) into the multiplier macro.
 Unit <ycrcb2rgb> synthesized (advanced).
+WARNING:Xst:1710 - FF/Latch <xnew> (without init value) has a constant value of 0 in block <debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clean> (without init value) has a constant value of 0 in block <debounce>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <y_0_8> of sequential type is unconnected in block <ntsc_to_zbt>.
 WARNING:Xst:2677 - Node <y_0_9> of sequential type is unconnected in block <ntsc_to_zbt>.
 WARNING:Xst:2677 - Node <y_1_8> of sequential type is unconnected in block <ntsc_to_zbt>.
@@ -1272,57 +1307,13 @@ WARNING:Xst:2677 - Node <G_int_7> of sequential type is unconnected in block <yc
 WARNING:Xst:2677 - Node <G_int_8> of sequential type is unconnected in block <ycrcb2rgb>.
 WARNING:Xst:2677 - Node <G_int_9> of sequential type is unconnected in block <ycrcb2rgb>.
 WARNING:Xst:1710 - FF/Latch <old_source> (without init value) has a constant value of 0 in block <adv7185init>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_0> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_1> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_2> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_3> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_5> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_6> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_7> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_9> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_10> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_11> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_13> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_14> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_15> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_26> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_27> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_47> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_48> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_49> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_50> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_51> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_52> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_53> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_54> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_55> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_56> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_57> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_58> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_59> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_60> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_61> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_62> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_63> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <write_data_old1_30> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <write_data_old1_31> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <write_data_old1_32> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <write_data_old1_33> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <write_data_old1_34> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <write_data_old1_35> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <FSM_FFd4> (without init value) has a constant value of 0 in block <state>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_0> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_1> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_2> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_3> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_5> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_6> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_7> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_9> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_10> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_11> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_13> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_14> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_52> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_51> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_50> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_49> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_48> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_47> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_46> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_45> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_44> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
@@ -1332,9 +1323,58 @@ WARNING:Xst:1710 - FF/Latch <data_41> (without init value) has a constant value 
 WARNING:Xst:1710 - FF/Latch <data_40> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_39> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_38> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_37> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FSM_FFd4> (without init value) has a constant value of 0 in block <state>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_35> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_34> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_33> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_32> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_31> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_30> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_63> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_62> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_61> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_60> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_59> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_58> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_57> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_56> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_55> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_54> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_19> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_18> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_17> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_16> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_15> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_14> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_13> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_12> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_11> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_10> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_9> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_8> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_7> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_6> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_5> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_4> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_3> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_36> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_35> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_34> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_33> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_32> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_31> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_30> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_29> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_28> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_27> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_26> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_15> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_25> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_24> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_23> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_22> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_21> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_20> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_30> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_31> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_32> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
@@ -1344,6 +1384,8 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_35>
 WARNING:Xst:1710 - FF/Latch <FSM_FFd2> (without init value) has a constant value of 0 in block <state>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <FSM_FFd1> (without init value) has a constant value of 0 in block <state>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <FSM_FFd3> (without init value) has a constant value of 0 in block <state>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1290 - Hierarchical block <db1> is unconnected in block <zbt_6111_sample>.
+   It will be removed from the design.
 WARNING:Xst:2677 - Node <FSM_FFd5> of sequential type is unconnected in block <state>.
 
 =========================================================================
@@ -1357,10 +1399,10 @@ Macro Statistics
  11x11-bit registered multiplier                       : 1
  11x8-bit registered multiplier                        : 1
  11x9-bit registered multiplier                        : 1
-# Adders/Subtractors                                   : 37
+# Adders/Subtractors                                   : 29
  10-bit adder                                          : 1
  10-bit adder carry out                                : 4
- 10-bit addsub                                         : 9
+ 10-bit addsub                                         : 1
  10-bit subtractor                                     : 1
  11-bit adder carry out                                : 4
  11-bit addsub                                         : 1
@@ -1373,12 +1415,14 @@ Macro Statistics
 # Counters                                             : 9
  10-bit up counter                                     : 3
  11-bit up counter                                     : 1
- 20-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
  6-bit up counter                                      : 1
  8-bit down counter                                    : 2
  8-bit up counter                                      : 1
-# Registers                                            : 810
- Flip-Flops                                            : 810
+# Accumulators                                         : 8
+ 10-bit updown loadable accumulator                    : 8
+# Registers                                            : 713
+ Flip-Flops                                            : 713
 # Latches                                              : 1
  19-bit latch                                          : 1
 # Comparators                                          : 30
@@ -1395,8 +1439,6 @@ Macro Statistics
 # Multiplexers                                         : 5
  1-bit 16-to-1 multiplexer                             : 4
  1-bit 40-to-1 multiplexer                             : 1
-# Xors                                                 : 1
- 1-bit xor2                                            : 1
 
 =========================================================================
 
@@ -1407,7 +1449,17 @@ WARNING:Xst:1710 - FF/Latch <FSM_FFd4> (without init value) has a constant value
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSM_FFd2> (without init value) has a constant value of 0 in block <FSM_1-parent>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSM_FFd1> (without init value) has a constant value of 0 in block <FSM_1-parent>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <FSM_FFd3> (without init value) has a constant value of 0 in block <FSM_1-parent>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_44> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_34> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_35> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_36> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_37> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_38> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_39> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_40> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_41> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_42> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_43> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_44> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_45> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_46> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_47> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
@@ -1427,27 +1479,37 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_60> (without i
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_61> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_62> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_63> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_0> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_1> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_2> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_3> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_4> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_5> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_6> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_7> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_8> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_9> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_10> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_11> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_12> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_13> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_14> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_15> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_16> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_17> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_18> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_19> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_20> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_21> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_22> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_23> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_24> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_25> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_26> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_27> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_38> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_39> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_40> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_41> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_42> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_43> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_28> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_29> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_30> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_31> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_32> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_33> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <adv7185/state_FSM_FFd5> of sequential type is unconnected in block <zbt_6111_sample>.
 
 Optimizing unit <zbt_6111_sample> ...
@@ -1460,53 +1522,49 @@ Optimizing unit <ntsc_decode> ...
 
 Optimizing unit <ntsc_to_zbt> ...
 
-Optimizing unit <human_interface> ...
-WARNING:Xst:1710 - FF/Latch <corners2x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <corners2x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <corners2x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <corners2x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4x_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4y_0> (without init value) has a constant value of 0 in block <human_interface>. This FF/Latch will be trimmed during the optimization process.
+Optimizing unit <human_interface_corners> ...
+WARNING:Xst:1710 - FF/Latch <corners1x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <corners1x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <corners1x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <corners1x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4x_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners1y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners2y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners3y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <corners4y_0> (without init value) has a constant value of 0 in block <human_interface_corners>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <ycrcb2rgb> ...
 
 Optimizing unit <vram_display> ...
-WARNING:Xst:1710 - FF/Latch <dispdata_16> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <dispdata_28> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <zbt1/write_data_old1_35> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <zbt1/write_data_old1_34> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <zbt1/write_data_old1_33> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <zbt1/write_data_old1_32> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <zbt1/write_data_old1_31> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <zbt1/write_data_old1_30> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <hexdisp1/data_28> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <hexdisp1/data_16> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt1/write_data_old2_35> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt1/write_data_old2_34> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt1/write_data_old2_33> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
@@ -1516,7 +1574,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt1/write_data_old
 
 Mapping all equations...
 Building and optimizing final netlist ...
-INFO:Xst:2261 - The FF/Latch <dispdata_4> in Unit <zbt_6111_sample> is equivalent to the following FF/Latch, which will be removed : <hi/old_field> 
 Found area constraint ratio of 100 (+ 5) on block zbt_6111_sample, actual ratio is 2.
 
 Final Macro Processing ...
@@ -1611,8 +1668,8 @@ Unit <zbt_6111_sample> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 578
- Flip-Flops                                            : 578
+# Registers                                            : 531
+ Flip-Flops                                            : 531
 # Shift Registers                                      : 83
  2-bit shift register                                  : 60
  4-bit shift register                                  : 3
@@ -1645,34 +1702,34 @@ Design Statistics
 # IOs                              : 576
 
 Cell Usage :
-# BELS                             : 1903
+# BELS                             : 1779
 #      GND                         : 1
-#      INV                         : 66
-#      LUT1                        : 67
-#      LUT2                        : 216
-#      LUT2_D                      : 44
+#      INV                         : 64
+#      LUT1                        : 48
+#      LUT2                        : 235
+#      LUT2_D                      : 10
 #      LUT2_L                      : 1
-#      LUT3                        : 226
-#      LUT3_D                      : 5
-#      LUT3_L                      : 6
-#      LUT4                        : 617
-#      LUT4_D                      : 28
-#      LUT4_L                      : 16
-#      MULT_AND                    : 8
-#      MUXCY                       : 403
-#      MUXF5                       : 42
-#      MUXF6                       : 5
+#      LUT3                        : 246
+#      LUT3_D                      : 4
+#      LUT3_L                      : 5
+#      LUT4                        : 524
+#      LUT4_D                      : 43
+#      LUT4_L                      : 26
+#      MUXCY                       : 379
+#      MUXF5                       : 57
+#      MUXF6                       : 4
 #      MUXF7                       : 1
 #      VCC                         : 1
-#      XORCY                       : 150
-# FlipFlops/Latches                : 683
-#      FD                          : 141
-#      FDE                         : 292
-#      FDR                         : 111
-#      FDRE                        : 73
+#      XORCY                       : 130
+# FlipFlops/Latches                : 636
+#      FD                          : 129
+#      FDE                         : 272
+#      FDR                         : 115
+#      FDRE                        : 53
 #      FDRS                        : 9
 #      FDRSE                       : 2
 #      FDS                         : 33
+#      FDSE                        : 1
 #      LDE                         : 19
 #      OFDDRRSE                    : 3
 # Shift Registers                  : 85
@@ -1680,8 +1737,8 @@ Cell Usage :
 # Clock Buffers                    : 5
 #      BUFG                        : 4
 #      BUFGP                       : 1
-# IO Buffers                       : 299
-#      IBUF                        : 22
+# IO Buffers                       : 298
+#      IBUF                        : 21
 #      IBUFG                       : 2
 #      IOBUF                       : 30
 #      OBUF                        : 238
@@ -1697,13 +1754,13 @@ Device utilization summary:
 
 Selected Device : 2v6000bf957-4 
 
- Number of Slices:                      741  out of  33792     2%  
- Number of Slice Flip Flops:            683  out of  67584     1%  
- Number of 4 input LUTs:               1377  out of  67584     2%  
-    Number used as logic:              1292
+ Number of Slices:                      704  out of  33792     2%  
+ Number of Slice Flip Flops:            636  out of  67584     0%  
+ Number of 4 input LUTs:               1291  out of  67584     1%  
+    Number used as logic:              1206
     Number used as Shift registers:      85
  Number of IOs:                         576
- Number of bonded IOBs:                 302  out of    684    44%  
+ Number of bonded IOBs:                 301  out of    684    44%  
  Number of MULT18X18s:                    5  out of    144     3%  
  Number of GCLKs:                         5  out of     16    31%  
  Number of DCMs:                          3  out of     12    25%  
@@ -1729,7 +1786,7 @@ Clock Information:
 -----------------------------------------------------+----------------------------+-------+
 Clock Signal                                         | Clock buffer(FF name)      | Load  |
 -----------------------------------------------------+----------------------------+-------+
-clock_27mhz                                          | vclk1:CLKFX+rc/int_dcm:CLK0| 554   |
+clock_27mhz                                          | vclk1:CLKFX+rc/int_dcm:CLK0| 507   |
 adv7185/clock_slow1                                  | BUFG                       | 96    |
 clock_27mhz                                          | IBUFG                      | 17    |
 tv_in_line_clock1                                    | BUFGP                      | 90    |
@@ -1745,18 +1802,18 @@ Asynchronous Control Signals Information:
 -----------------------------------+----------------------------------+-------+
 Control Signal                     | Buffer(FF name)                  | Load  |
 -----------------------------------+----------------------------------+-------+
-analyzer1_data_0_OBUF(XST_GND:G)   | NONE(colCvt/Mmult_A_int_mult0000)| 5     |
-vga_out_sync_b_OBUF(XST_VCC:P)     | NONE(colCvt/Mmult_A_int_mult0000)| 5     |
+analyzer1_data_0_OBUF(XST_GND:G)   | NONE(colCvt/Mmult_X_int_mult0000)| 5     |
+vga_out_sync_b_OBUF(XST_VCC:P)     | NONE(colCvt/Mmult_X_int_mult0000)| 5     |
 -----------------------------------+----------------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 33.042ns (Maximum Frequency: 30.265MHz)
-   Minimum input arrival time before clock: 13.448ns
-   Maximum output required time after clock: 9.565ns
-   Maximum combinational path delay: 7.505ns
+   Minimum period: 32.136ns (Maximum Frequency: 31.118MHz)
+   Minimum input arrival time before clock: 8.725ns
+   Maximum output required time after clock: 9.426ns
+   Maximum combinational path delay: 6.799ns
 
 Timing Detail:
 --------------
@@ -1764,25 +1821,25 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_27mhz'
-  Clock period: 33.042ns (frequency: 30.265MHz)
-  Total number of paths / destination ports: 92465 / 936
+  Clock period: 32.136ns (frequency: 31.118MHz)
+  Total number of paths / destination ports: 89962 / 862
 -------------------------------------------------------------------------
-Delay:               5.507ns (Levels of Logic = 1)
+Delay:               5.356ns (Levels of Logic = 1)
   Source:            reset_sr (FF)
-  Destination:       adv7185/reset_count_6 (FF)
+  Destination:       adv7185/reset_count_7 (FF)
   Source Clock:      clock_27mhz rising 2.4X
   Destination Clock: clock_27mhz rising
 
-  Data Path: reset_sr to adv7185/reset_count_6
+  Data Path: reset_sr to adv7185/reset_count_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     SRL16:CLK->Q          9   2.901   1.071  reset_sr (power_on_reset)
-     LUT2:I1->O            7   0.439   0.816  reset1 (adv7185/reset_count_cst)
-     FDRS:S                    0.280          adv7185/reset_count_2
+     SRL16:CLK->Q         12   2.901   0.965  reset_sr (adv7185/reset_count_cst)
+     LUT3:I2->O            5   0.439   0.771  adv7185/Mcount_reset_count_val1 (adv7185/Mcount_reset_count_val)
+     FDR:R                     0.280          adv7185/reset_count_0
     ----------------------------------------
-    Total                      5.507ns (3.620ns logic, 1.887ns route)
-                                       (65.7% logic, 34.3% route)
+    Total                      5.356ns (3.620ns logic, 1.736ns route)
+                                       (67.6% logic, 32.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'adv7185/clock_slow1'
@@ -1816,59 +1873,53 @@ Delay:               5.738ns (Levels of Logic = 9)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'tv_in_line_clock1'
-  Clock period: 7.048ns (frequency: 141.884MHz)
+  Clock period: 7.514ns (frequency: 133.085MHz)
   Total number of paths / destination ports: 940 / 162
 -------------------------------------------------------------------------
-Delay:               7.048ns (Levels of Logic = 5)
+Delay:               7.514ns (Levels of Logic = 4)
   Source:            decode/current_state_2 (FF)
-  Destination:       decode/current_state_1 (FF)
+  Destination:       n2z/row_9 (FF)
   Source Clock:      tv_in_line_clock1 rising
   Destination Clock: tv_in_line_clock1 rising
 
-  Data Path: decode/current_state_2 to decode/current_state_1
+  Data Path: decode/current_state_2 to n2z/row_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             15   0.568   1.023  decode/current_state_2 (decode/current_state_2)
-     LUT3:I2->O            1   0.439   0.802  decode/current_state_mux0000<3>324 (decode/current_state_mux0000<3>324)
-     LUT4:I0->O            2   0.439   0.736  decode/current_state_mux0000<3>359 (decode/current_state_mux0000<3>359)
-     LUT3:I2->O            1   0.439   0.551  decode/current_state_mux0000<3>376 (decode/N8)
-     LUT4:I2->O            1   0.439   0.803  decode/current_state_mux0000<3>20 (decode/current_state_mux0000<3>20)
-     LUT2:I0->O            1   0.439   0.000  decode/current_state_mux0000<3>94 (decode/current_state_mux0000<3>)
-     FDE:D                     0.370          decode/current_state_1
+     FDE:C->Q             15   0.568   1.274  decode/current_state_2 (decode/current_state_2)
+     LUT2:I0->O            2   0.439   0.987  decode/current_state_mux0000<4>221 (decode/N311)
+     LUT4:I0->O            6   0.439   1.002  decode/current_state_mux0000<1>410 (decode/f_cmp_eq0000)
+     LUT2:I1->O            1   0.439   0.803  decode/_AUX_6<0>1 (fvh<0>)
+     LUT4:I0->O           10   0.439   0.885  n2z/row_not0001 (n2z/row_not0001)
+     FDRE:CE                   0.240          n2z/row_0
     ----------------------------------------
-    Total                      7.048ns (3.133ns logic, 3.915ns route)
-                                       (44.5% logic, 55.5% route)
+    Total                      7.514ns (2.564ns logic, 4.950ns route)
+                                       (34.1% logic, 65.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 43930 / 255
+  Total number of paths / destination ports: 380 / 176
 -------------------------------------------------------------------------
-Offset:              13.448ns (Levels of Logic = 12)
-  Source:            switch<6> (PAD)
-  Destination:       colCvt/Y_reg_8 (FF)
+Offset:              8.725ns (Levels of Logic = 7)
+  Source:            button_down (PAD)
+  Destination:       hic/corners2y_9 (FF)
   Destination Clock: clock_27mhz rising 2.4X
 
-  Data Path: switch<6> to colCvt/Y_reg_8
+  Data Path: button_down to hic/corners2y_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           224   0.825   1.870  switch_6_IBUF (switch_6_IBUF)
-     LUT2_D:I0->O          5   0.439   0.979  corners_register/corners_out<54>1 (corner_sprite_B/Msub_hline_sub00004)
-     LUT4:I1->O            4   0.439   0.781  corner_sprite_B/Madd_add0000_addsub0000_cy<5>11 (corner_sprite_B/Madd_add0000_addsub0000_cy<5>)
-     LUT4:I2->O            1   0.439   0.726  corner_sprite_B/Madd_add0000_addsub0000_xor<8>11 (corner_sprite_B/add0000_addsub0000<8>)
-     LUT2:I1->O            1   0.439   0.000  corner_sprite_B/Mcompar_hline_cmp_lt0000_lut<8> (corner_sprite_B/Mcompar_hline_cmp_lt0000_lut<8>)
-     MUXCY:S->O            1   0.298   0.000  corner_sprite_B/Mcompar_hline_cmp_lt0000_cy<8> (corner_sprite_B/Mcompar_hline_cmp_lt0000_cy<8>)
-     MUXCY:CI->O           1   0.053   0.000  corner_sprite_B/Mcompar_hline_cmp_lt0000_cy<9> (corner_sprite_B/Mcompar_hline_cmp_lt0000_cy<9>)
-     MUXCY:CI->O           1   0.942   0.726  corner_sprite_B/Mcompar_hline_cmp_lt0000_cy<10> (corner_sprite_B/Mcompar_hline_cmp_lt0000_cy<10>)
-     LUT3_L:I1->LO         1   0.439   0.134  corner_sprite_B/pixel_or0000_SW0 (N108)
-     LUT4:I2->O           13   0.439   1.162  corner_sprite_B/pixel_or0000 (corner_pixel_B<0>)
-     LUT3_D:I1->O          9   0.439   1.070  ycrcb_pixel<29>_SW0 (N78)
-     LUT3:I1->O            1   0.439   0.000  ycrcb_pixel<28>1 (ycrcb_pixel<28>1)
-     FDS:D                     0.370          colCvt/Y_reg_8
+     IBUF:I->O            13   0.825   1.162  button_down_IBUF (button_down_IBUF)
+     LUT2_D:I1->O         10   0.439   1.093  hic/corners2y_mux00011 (hic/corners2y_mux0001_inv1_inv)
+     LUT4:I1->O            3   0.439   0.765  hic/Maccum_corners2y_cy<3>11 (hic/Maccum_corners2y_cy<3>)
+     LUT4:I3->O            3   0.439   0.765  hic/Maccum_corners2y_cy<5>11 (hic/Maccum_corners2y_cy<5>)
+     LUT4_D:I3->O          1   0.439   0.725  hic/Maccum_corners2y_cy<7>11 (hic/Maccum_corners2y_cy<7>)
+     LUT4_L:I1->LO         1   0.439   0.385  hic/Eqn_95_SW0 (N145)
+     LUT3:I0->O            1   0.439   0.000  hic/Eqn_95 (hic/Eqn_95)
+     FDE:D                     0.370          hic/corners2y_9
     ----------------------------------------
-    Total                     13.448ns (6.000ns logic, 7.448ns route)
-                                       (44.6% logic, 55.4% route)
+    Total                      8.725ns (3.829ns logic, 4.896ns route)
+                                       (43.9% logic, 56.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'tv_in_line_clock1'
@@ -1885,7 +1936,7 @@ Offset:              8.723ns (Levels of Logic = 7)
     ----------------------------------------  ------------
      IBUF:I->O            12   0.825   1.216  tv_in_ycrcb_15_IBUF (tv_in_ycrcb_15_IBUF)
      LUT4:I0->O            1   0.439   0.557  decode/current_state_cmp_eq002210 (decode/current_state_cmp_eq002210)
-     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N197)
+     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N309)
      LUT4:I3->O            7   0.439   1.024  decode/current_state_cmp_eq002217 (decode/current_state_cmp_eq0022)
      LUT3:I1->O            1   0.439   0.551  decode/current_state_mux0000<3>376 (decode/N8)
      LUT4:I2->O            1   0.439   0.803  decode/current_state_mux0000<3>20 (decode/current_state_mux0000<3>20)
@@ -1916,9 +1967,9 @@ Offset:              5.630ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 133 / 97
+  Total number of paths / destination ports: 210 / 97
 -------------------------------------------------------------------------
-Offset:              9.565ns (Levels of Logic = 2)
+Offset:              9.426ns (Levels of Logic = 2)
   Source:            reset_sr (FF)
   Destination:       led<1> (PAD)
   Source Clock:      clock_27mhz rising 2.4X
@@ -1927,12 +1978,12 @@ Offset:              9.565ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     SRL16:CLK->Q          9   2.901   1.070  reset_sr (power_on_reset)
-     LUT2:I1->O            6   0.439   0.793  decode/reset_inv1 (decode/reset_inv)
+     SRL16:CLK->Q         12   2.901   0.931  reset_sr (adv7185/reset_count_cst)
+     INV:I->O              6   0.439   0.793  decode/reset_inv1_INV_0 (decode/reset_inv)
      OBUF:I->O                 4.361          led_1_OBUF (led<1>)
     ----------------------------------------
-    Total                      9.565ns (7.701ns logic, 1.864ns route)
-                                       (80.5% logic, 19.5% route)
+    Total                      9.426ns (7.701ns logic, 1.725ns route)
+                                       (81.7% logic, 18.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'vd1/vram_addr_cmp_lt0001'
@@ -1940,10 +1991,10 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'vd1/vram_addr_cmp_lt0001'
 -------------------------------------------------------------------------
 Offset:              6.901ns (Levels of Logic = 2)
   Source:            vd1/vram_addr_18 (LATCH)
-  Destination:       ram0_address<18> (PAD)
+  Destination:       led<7> (PAD)
   Source Clock:      vd1/vram_addr_cmp_lt0001 falling
 
-  Data Path: vd1/vram_addr_18 to ram0_address<18>
+  Data Path: vd1/vram_addr_18 to led<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -1956,35 +2007,34 @@ Offset:              6.901ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 28 / 28
+  Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Delay:               7.505ns (Levels of Logic = 3)
-  Source:            switch<7> (PAD)
-  Destination:       led<7> (PAD)
+Delay:               6.799ns (Levels of Logic = 2)
+  Source:            clock_27mhz (PAD)
+  Destination:       tv_in_clock (PAD)
 
-  Data Path: switch<7> to led<7>
+  Data Path: clock_27mhz to tv_in_clock
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            28   0.825   1.362  switch_7_IBUF (switch_7_IBUF)
-     LUT3:I0->O            1   0.439   0.517  vram_addr<9>1 (vram_addr<9>)
-     OBUF:I->O                 4.361          ram0_address_9_OBUF (ram0_address<9>)
+     IBUFG:I->O           18   1.414   1.023  clock_27mhz_IBUFG (tv_in_clock_OBUF)
+     OBUF:I->O                 4.361          tv_in_clock_OBUF (tv_in_clock)
     ----------------------------------------
-    Total                      7.505ns (5.625ns logic, 1.880ns route)
-                                       (75.0% logic, 25.0% route)
+    Total                      6.799ns (5.775ns logic, 1.023ns route)
+                                       (84.9% logic, 15.1% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 23.19 secs
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 22.30 secs
  
 --> 
 
 
-Total memory usage is 509036 kilobytes
+Total memory usage is 508820 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  536 (   0 filtered)
-Number of infos    :   13 (   0 filtered)
+Number of warnings :  552 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

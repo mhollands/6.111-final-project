@@ -413,7 +413,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 
    // ENTER button is user reset
    wire reset,user_reset;
-   debounce db1(power_on_reset, clk, ~button_enter, user_reset);
+   debounce db1(power_on_reset, clk, 1'b0, user_reset);
    assign reset = user_reset | power_on_reset;
 
    // display module for debugging
@@ -427,6 +427,21 @@ module zbt_6111_sample(beep, audio_reset_b,
    wire [9:0]  vcount;
    wire hsync,vsync,blank;
    xvga xvga1(clk,hcount,vcount,hsync,vsync,blank);
+
+	//set up the main fsm
+	wire auto_detection_done;
+	wire auto_detection_start;
+	wire set_corners;
+	wire [2:0] fsm_state;
+	main_fsm fsm (clk, ~button_enter, switch[7], auto_detection_done, fsm_state, auto_detection_start, set_corners);
+
+	//auto_detection_module - mock module for now\
+	wire [79:0] corners_auto;
+	corner_detector auto_corner_detector(
+							clk,
+							auto_detection_start,
+							auto_detection_done,
+							corners_auto);
 
    // wire up to ZBT ram
    wire [35:0] vram_write_data;
@@ -470,25 +485,14 @@ module zbt_6111_sample(beep, audio_reset_b,
    ntsc_to_zbt n2z (clk, tv_in_line_clock1, fvh, dv, ycrcb[29:0],
 		    ntsc_addr, ntsc_data, ntsc_we);
 
-	//switch between write and read mode
-   wire 	sw_ntsc = ~switch[7];
-
    wire [35:0] 	write_data = ntsc_data;
 	//address is either chosen by camera or display
-   assign 	vram_addr = sw_ntsc ? ntsc_addr : display_addr;
+   assign 	vram_addr = fsm_state == 0 ? ntsc_addr : display_addr;
 	//write enable when in write mode and camera wants to write
-   assign 	vram_we = sw_ntsc & ntsc_we;
+   assign 	vram_we = (fsm_state == 0) & ntsc_we;
    assign 	vram_write_data = write_data;
 
 	//handle corner selection
-	wire [9:0] corners1x_auto;
-	wire [9:0] corners1y_auto;
-	wire [9:0] corners2x_auto;
-	wire [9:0] corners2y_auto;
-	wire [9:0] corners3x_auto;
-	wire [9:0] corners3y_auto;
-	wire [9:0] corners4x_auto;
-	wire [9:0] corners4y_auto;
 	wire [9:0] corners1x_manual;
 	wire [9:0] corners1y_manual;
 	wire [9:0] corners2x_manual;
@@ -497,34 +501,10 @@ module zbt_6111_sample(beep, audio_reset_b,
 	wire [9:0] corners3y_manual;
 	wire [9:0] corners4x_manual;
 	wire [9:0] corners4y_manual;
-	wire [9:0] corners1x;
-	wire [9:0] corners1y;
-	wire [9:0] corners2x;
-	wire [9:0] corners2y;
-	wire [9:0] corners3x;
-	wire [9:0] corners3y;
-	wire [9:0] corners4x;
-	wire [9:0] corners4y;
-	wire corners_sel;
-	assign corners_sel = switch[6];
-	corner_reg corners_register (
-						{corners1x_manual, corners1y_manual,
-							corners2x_manual, corners2y_manual,
-							 corners3x_manual, corners3y_manual,
-						   	corners4x_manual, corners4y_manual},
-						{corners1x_auto, corners1y_auto,
-							corners2x_auto, corners2y_auto,
-							 corners3x_auto, corners3y_auto,
-						   	corners4x_auto, corners4y_auto}, 
-						corners_sel, 
-						{corners1x, corners1y,
-							corners2x, corners2y,
-							 corners3x, corners3y,
-						   	corners4x, corners4y});
 	
 	wire field_edge;
 	//human interface module
-	human_interface hi (clk, 
+	human_interface_corners hic (clk, 
 								fvh[2],
 								~button_left,
 								~button_right,
@@ -535,6 +515,8 @@ module zbt_6111_sample(beep, audio_reset_b,
 								~button1,
 								~button2,
 								~button3,
+								corners_auto,
+								set_corners,
 								corners1x_manual,
 								corners1y_manual,
 								corners2x_manual,
@@ -546,16 +528,16 @@ module zbt_6111_sample(beep, audio_reset_b,
 	
 	//handle drawing corner markers
 	wire [29:0] corner_pixel_A;
-	corner_sprite #(32'h3ff00000) corner_sprite_A (corners1x, corners1y, hcount, vcount, corner_pixel_A);
+	corner_sprite #(32'h3ff00000) corner_sprite_A (corners1x_manual, corners1y_manual, hcount, vcount, corner_pixel_A);
 	
 	wire [29:0] corner_pixel_B;
-	corner_sprite #(32'h3ff003ff) corner_sprite_B (corners2x, corners2y, hcount, vcount, corner_pixel_B);
+	corner_sprite #(32'h3ff003ff) corner_sprite_B (corners2x_manual, corners2y_manual, hcount, vcount, corner_pixel_B);
 	
 	wire [29:0] corner_pixel_C;
-	corner_sprite #(32'h3ffffc00) corner_sprite_C (corners3x, corners3y, hcount, vcount, corner_pixel_C);
+	corner_sprite #(32'h3ffffc00) corner_sprite_C (corners3x_manual, corners3y_manual, hcount, vcount, corner_pixel_C);
 	
 	wire [29:0] corner_pixel_D;
-	corner_sprite #(32'h3fffffff) corner_sprite_D (corners4x, corners4y, hcount, vcount, corner_pixel_D);
+	corner_sprite #(32'h3fffffff) corner_sprite_D (corners4x_manual, corners4y_manual, hcount, vcount, corner_pixel_D);
 	
 	//select which pixel to use
 	reg [29:0] ycrcb_pixel;
@@ -586,7 +568,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 	reg vsync_delay[2:0];
    always @(posedge clk)
      begin
-		pixel <= sw_ntsc ? 0 : rgb_pixel;
+		pixel <= fsm_state == 0 ? 0 : rgb_pixel;
 		b <= blank;
 		hs <= hsync;
 		vs <= vsync;
@@ -612,7 +594,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 	//displayed on hex display for debugging
    always @(posedge clk)
      // dispdata <= {vram_read_data,9'b0,vram_addr};
-     dispdata <= {2'b0, corners1y_manual,2'b0, corners1x_manual, 3'b0, ~button_left, 3'b0, ~button_right, 3'b0, fvh[2], 3'b0, field_edge};
+     dispdata <= fsm_state;
 
 endmodule
 
