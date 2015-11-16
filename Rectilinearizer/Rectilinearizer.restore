@@ -843,6 +843,7 @@ proc restore { { project_dir "" } } {
       "corner_sprite.v" 
       "debounce.v" 
       "display_16hex.v" 
+      "gaussian_blurrer.v" 
       "human_interface_corners.v" 
       "human_interface_corners_tf.v" 
       "labkit.ucf" 

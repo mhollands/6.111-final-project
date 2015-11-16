@@ -1,5 +1,5 @@
 NUM_USER_FILES
-17
+18
 s
 user_file_1
 debounce.v
@@ -27,6 +27,9 @@ human_interface_corners.v
 s
 user_file_17
 human_interface_corners_tf.v
+s
+user_file_18
+gaussian_blurrer.v
 s
 user_file_2
 display_16hex.v
