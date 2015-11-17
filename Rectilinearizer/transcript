@@ -8,27 +8,27 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-# do {human_interface_corners_tf.fdo} 
+# do {gaussian_blurrer_tf.fdo} 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
-# -- Compiling module human_interface_corners
+# -- Compiling module gaussian_blurrer
 # 
 # Top level modules:
-# 	human_interface_corners
+# 	gaussian_blurrer
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
-# -- Compiling module human_interface_corners_tf
+# -- Compiling module gaussian_blurrer_tf
 # 
 # Top level modules:
-# 	human_interface_corners_tf
+# 	gaussian_blurrer_tf
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
 # -- Compiling module glbl
 # 
 # Top level modules:
 # 	glbl
-# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -lib work -t 1ps human_interface_corners_tf glbl 
+# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -lib work -t 1ps gaussian_blurrer_tf glbl 
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.human_interface_corners_tf(fast)
-# Loading work.human_interface_corners(fast)
+# Loading work.gaussian_blurrer_tf(fast)
+# Loading work.gaussian_blurrer(fast)
 # Loading work.glbl(fast)
 # .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf
 # .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs

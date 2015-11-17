@@ -329,7 +329,7 @@ prop_14_name
 PROP_BehavioralSimTop
 s
 prop_14_val
-"Module|human_interface_corners_tf"
+"Module|gaussian_blurrer_tf"
 s
 prop_150_name
 PROP_xstUseSyncSet

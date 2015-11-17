@@ -1,5 +1,5 @@
 NUM_USER_FILES
-19
+20
 s
 user_file_1
 debounce.v
@@ -36,6 +36,9 @@ gaussian_blurrer.v
 s
 user_file_2
 display_16hex.v
+s
+user_file_20
+gaussian_blurrer_tf.v
 s
 user_file_3
 labkit.ucf
