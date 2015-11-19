@@ -1,7 +1,7 @@
 Release 10.1.03 par K.39 (lin64)
 Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 
-eecs-digital-01::  Wed Nov 18 23:22:06 2015
+eecs-digital-01::  Thu Nov 19 14:25:27 2015
 
 par -w -intstyle ise -ol std -t 1 zbt_6111_sample_map.ncd zbt_6111_sample.ncd
 zbt_6111_sample.pcf 
@@ -73,8 +73,8 @@ Device Utilization Summary:
    Number of External IOBs                 576 out of 684    84%
       Number of LOCed IOBs                 576 out of 576   100%
 
-   Number of MULT18X18s                      6 out of 144     4%
-   Number of SLICEs                        950 out of 33792   2%
+   Number of MULT18X18s                     14 out of 144     9%
+   Number of SLICEs                       1043 out of 33792   3%
 
 
 Overall effort level (-ol):   Standard 
@@ -325,95 +325,93 @@ WARNING:Par:288 - The signal user4<9>_IBUF has no load.  PAR will not attempt to
 Starting Placer
 
 Phase 1.1
-Phase 1.1 (Checksum:15461d7) REAL time: 3 secs 
+Phase 1.1 (Checksum:156d525) REAL time: 3 secs 
 
 Phase 2.7
-Phase 2.7 (Checksum:15461d7) REAL time: 3 secs 
+Phase 2.7 (Checksum:156d525) REAL time: 3 secs 
 
 Phase 3.31
-Phase 3.31 (Checksum:15461d7) REAL time: 3 secs 
+Phase 3.31 (Checksum:156d525) REAL time: 3 secs 
 
 Phase 4.2
 
 ......
 ................
-Phase 4.2 (Checksum:1598b51) REAL time: 4 secs 
+Phase 4.2 (Checksum:15bfe9f) REAL time: 4 secs 
 
 Phase 5.30
-Phase 5.30 (Checksum:1598b51) REAL time: 4 secs 
+Phase 5.30 (Checksum:15bfe9f) REAL time: 4 secs 
 
 Phase 6.3
-Phase 6.3 (Checksum:1598b51) REAL time: 4 secs 
+Phase 6.3 (Checksum:15bfe9f) REAL time: 4 secs 
 
 Phase 7.5
-Phase 7.5 (Checksum:1598b51) REAL time: 4 secs 
+Phase 7.5 (Checksum:15bfe9f) REAL time: 4 secs 
 
 Phase 8.8
 ........................................
-......................................
-.....
+.................
 ..
-........
 ..
-...
-Phase 8.8 (Checksum:3746915) REAL time: 13 secs 
+..
+..
+..
+Phase 8.8 (Checksum:3b28c5e) REAL time: 14 secs 
 
 Phase 9.5
-Phase 9.5 (Checksum:3746915) REAL time: 13 secs 
+Phase 9.5 (Checksum:3b28c5e) REAL time: 14 secs 
 
 Phase 10.18
-Phase 10.18 (Checksum:374cfb1) REAL time: 17 secs 
+Phase 10.18 (Checksum:3b3f89b) REAL time: 17 secs 
 
 Phase 11.5
-Phase 11.5 (Checksum:374cfb1) REAL time: 17 secs 
+Phase 11.5 (Checksum:3b3f89b) REAL time: 17 secs 
 
 Phase 12.27
-Phase 12.27 (Checksum:374cfb1) REAL time: 17 secs 
+Phase 12.27 (Checksum:3b3f89b) REAL time: 17 secs 
 
 Phase 13.24
-Phase 13.24 (Checksum:374cfb1) REAL time: 17 secs 
+Phase 13.24 (Checksum:3b3f89b) REAL time: 17 secs 
 
-REAL time consumed by placer: 18 secs 
+REAL time consumed by placer: 17 secs 
 CPU  time consumed by placer: 17 secs 
 Writing design to file zbt_6111_sample.ncd
 
 
 Total REAL time to Placer completion: 18 secs 
-Total CPU time to Placer completion: 18 secs 
+Total CPU time to Placer completion: 17 secs 
 
 Starting Router
 
-Phase 1: 7241 unrouted;       REAL time: 27 secs 
+Phase 1: 8240 unrouted;       REAL time: 27 secs 
 
-Phase 2: 5970 unrouted;       REAL time: 28 secs 
+Phase 2: 6717 unrouted;       REAL time: 28 secs 
 
-Phase 3: 1424 unrouted;       REAL time: 29 secs 
+Phase 3: 1684 unrouted;       REAL time: 29 secs 
 
-Phase 4: 1424 unrouted; (176590)      REAL time: 29 secs 
+Phase 4: 1684 unrouted; (31707)      REAL time: 29 secs 
 
-Phase 5: 1439 unrouted; (0)      REAL time: 29 secs 
+Phase 5: 1696 unrouted; (0)      REAL time: 30 secs 
 
-Phase 6: 0 unrouted; (258)      REAL time: 30 secs 
+Phase 6: 0 unrouted; (78)      REAL time: 31 secs 
 
-Phase 7: 0 unrouted; (258)      REAL time: 31 secs 
+Phase 7: 0 unrouted; (78)      REAL time: 31 secs 
 
-Phase 8: 0 unrouted; (258)      REAL time: 31 secs 
+Phase 8: 0 unrouted; (78)      REAL time: 31 secs 
 
-Phase 9: 0 unrouted; (74)      REAL time: 31 secs 
+Phase 9: 0 unrouted; (0)      REAL time: 32 secs 
 
-Phase 10: 0 unrouted; (19)      REAL time: 32 secs 
+Phase 10: 0 unrouted; (0)      REAL time: 32 secs 
 
-Phase 11: 0 unrouted; (19)      REAL time: 32 secs 
+Phase 11: 0 unrouted; (0)      REAL time: 32 secs 
 
-Phase 12: 0 unrouted; (19)      REAL time: 32 secs 
-
-Phase 13: 0 unrouted; (5)      REAL time: 33 secs 
+Phase 12: 0 unrouted; (0)      REAL time: 33 secs 
 
 WARNING:Route - CLK Net:tv_in_clock_OBUF is being routed on general routing resources. Please consider using a dedicated
    clocking routing resource. For more information on clock routing resources, see the target architecture's user guide.
 
 Total REAL time to Router completion: 33 secs 
-Total CPU time to Router completion: 33 secs 
+Total CPU time to Router completion: 32 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -431,21 +429,21 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|                 clk |     BUFGMUX6S| No   |  350 |  0.520     |  2.587      |
+|                 clk |     BUFGMUX6S| No   |  381 |  0.559     |  2.587      |
 +---------------------+--------------+------+------+------------+-------------+
 |tv_in_line_clock1_BU |              |      |      |            |             |
-|                 FGP |     BUFGMUX5S| No   |   50 |  0.153     |  2.526      |
+|                 FGP |     BUFGMUX5S| No   |   50 |  0.157     |  2.538      |
 +---------------------+--------------+------+------+------------+-------------+
 |        rc/ram_clock |     BUFGMUX3S| No   |    6 |  0.067     |  2.408      |
 +---------------------+--------------+------+------+------------+-------------+
 |         clock_65mhz |     BUFGMUX1P| No   |    3 |  0.000     |  2.385      |
 +---------------------+--------------+------+------+------------+-------------+
-|  adv7185/clock_slow |     BUFGMUX0P| No   |   61 |  0.137     |  2.375      |
+|  adv7185/clock_slow |     BUFGMUX0P| No   |   61 |  0.114     |  2.367      |
 +---------------------+--------------+------+------+------------+-------------+
-|    tv_in_clock_OBUF |         Local|      |   14 |  2.808     |  7.458      |
+|    tv_in_clock_OBUF |         Local|      |   14 |  1.322     |  7.601      |
 +---------------------+--------------+------+------+------------+-------------+
 |vd1/vram_addr_cmp_lt |              |      |      |            |             |
-|                0001 |         Local|      |   13 |  0.177     |  1.516      |
+|                0001 |         Local|      |   13 |  0.456     |  1.701      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -464,17 +462,17 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |  Check  | Worst Case |  Best Case | Timing |   Timing   
                                             |         |    Slack   | Achievable | Errors |    Score   
 ------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP   |         N/A|    13.725ns|     N/A|           0
-                                            | HOLD    |     1.281ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP   |         N/A|    13.994ns|     N/A|           0
+                                            | HOLD    |     1.234ns|            |       0|           0
 ------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net tv_ | SETUP   |         N/A|     5.385ns|     N/A|           0
-  in_clock_OBUF                             | HOLD    |     1.438ns|            |       0|           0
+  Autotimespec constraint for clock net tv_ | SETUP   |         N/A|     5.151ns|     N/A|           0
+  in_clock_OBUF                             | HOLD    |     1.935ns|            |       0|           0
 ------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net tv_ | SETUP   |         N/A|     6.028ns|     N/A|           0
-  in_line_clock1_BUFGP                      | HOLD    |     1.315ns|            |       0|           0
+  Autotimespec constraint for clock net tv_ | SETUP   |         N/A|     5.730ns|     N/A|           0
+  in_line_clock1_BUFGP                      | HOLD    |     1.231ns|            |       0|           0
 ------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net adv | SETUP   |         N/A|     5.267ns|     N/A|           0
-  7185/clock_slow                           | HOLD    |     1.324ns|            |       0|           0
+  Autotimespec constraint for clock net adv | SETUP   |         N/A|     5.068ns|     N/A|           0
+  7185/clock_slow                           | HOLD    |     1.239ns|            |       0|           0
 ------------------------------------------------------------------------------------------------------
 
 
@@ -485,10 +483,10 @@ Derived Constraints for tv_in_clock_OBUF
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|tv_in_clock_OBUF               |      5.923ns|      5.385ns|          N/A|            0|            0|          209|            0|
-| clock_65mhz_unbuf             |      2.468ns|          N/A|          N/A|            0|            0|            0|            0|
-|  rc/ram_clk                   |      2.468ns|          N/A|          N/A|            0|            0|            0|            0|
-|  rc/fpga_clk                  |      2.468ns|          N/A|          N/A|            0|            0|            0|            0|
+|tv_in_clock_OBUF               |      5.666ns|      5.151ns|          N/A|            0|            0|          209|            0|
+| clock_65mhz_unbuf             |      2.361ns|          N/A|          N/A|            0|            0|            0|            0|
+|  rc/ram_clk                   |      2.361ns|          N/A|          N/A|            0|            0|            0|            0|
+|  rc/fpga_clk                  |      2.361ns|          N/A|          N/A|            0|            0|            0|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 Derived Constraints for clock_65mhz
@@ -513,10 +511,10 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 239 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 43 secs 
+Total REAL time to PAR completion: 45 secs 
 Total CPU time to PAR completion: 39 secs 
 
-Peak Memory Usage:  618 MB
+Peak Memory Usage:  624 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.

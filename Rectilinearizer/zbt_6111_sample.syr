@@ -5,14 +5,14 @@ Parameter TMPDIR set to /afs/athena.mit.edu/user/h/o/hollands/6.111-final-projec
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to /afs/athena.mit.edu/user/h/o/hollands/6.111-final-project/Rectilinearizer/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: zbt_6111_sample.prj
@@ -565,20 +565,31 @@ WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be prese
     Found 19-bit register for signal <write_addr>.
     Found 19-bit register for signal <read_addr>.
     Found 1-bit register for signal <go>.
-    Found 4-bit up counter for signal <multiplication_count>.
+    Found 5-bit up counter for signal <multiplication_count>.
     Found 1-bit register for signal <old_go>.
     Found 20-bit register for signal <pixel>.
     Found 20-bit adder for signal <pixel$addsub0000>.
-    Found 10x7-bit multiplier for signal <pixel$mult0000>.
-    Found 50-bit register for signal <pixel_buffer>.
-    Found 19-bit adder for signal <read_addr$add0000> created at line 61.
+    Found 10x7-bit multiplier for signal <pixel$mult0000> created at line 47.
+    Found 10x7-bit multiplier for signal <pixel$mult0001> created at line 48.
+    Found 10x7-bit multiplier for signal <pixel$mult0002> created at line 50.
+    Found 10x7-bit multiplier for signal <pixel$mult0003> created at line 56.
+    Found 10x7-bit multiplier for signal <pixel$mult0004> created at line 59.
+    Found 10x7-bit multiplier for signal <pixel$mult0005> created at line 64.
+    Found 10x7-bit multiplier for signal <pixel$mult0006> created at line 65.
+    Found 10x7-bit multiplier for signal <pixel$mult0007> created at line 66.
+    Found 10x8-bit multiplier for signal <pixel$mult0008> created at line 57.
+    Found 90-bit register for signal <pixel_buffer>.
+    Found 30-bit register for signal <pixel_load_buffer>.
+    Found 19-bit adder for signal <read_addr$addsub0000>.
+    Found 9-bit adder carry out for signal <read_addr$addsub0001> created at line 62.
+    Found 11-bit subtractor for signal <read_addr$sub0000> created at line 83.
     Found 10-bit up counter for signal <x>.
     Found 9-bit up counter for signal <y>.
     Summary:
 	inferred   3 Counter(s).
-	inferred 146 D-type flip-flop(s).
-	inferred   2 Adder/Subtractor(s).
-	inferred   1 Multiplier(s).
+	inferred 216 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   9 Multiplier(s).
 Unit <gaussian_blurrer> synthesized.
 
 
@@ -1077,20 +1088,21 @@ HDL Synthesis Report
 Macro Statistics
 # ROMs                                                 : 1
  16x40-bit ROM                                         : 1
-# Multipliers                                          : 6
- 10x7-bit multiplier                                   : 1
+# Multipliers                                          : 14
+ 10x7-bit multiplier                                   : 8
+ 10x8-bit multiplier                                   : 1
  11x10-bit multiplier                                  : 2
  11x11-bit multiplier                                  : 1
  11x8-bit multiplier                                   : 1
  11x9-bit multiplier                                   : 1
-# Adders/Subtractors                                   : 39
+# Adders/Subtractors                                   : 41
  10-bit adder                                          : 1
  10-bit adder carry out                                : 4
  10-bit addsub                                         : 9
  10-bit subtractor                                     : 1
  11-bit adder carry out                                : 4
  11-bit addsub                                         : 1
- 11-bit subtractor                                     : 4
+ 11-bit subtractor                                     : 5
  12-bit subtractor                                     : 4
  13-bit subtractor                                     : 4
  19-bit adder                                          : 1
@@ -1098,19 +1110,19 @@ Macro Statistics
  21-bit adder                                          : 2
  21-bit subtractor                                     : 2
  4-bit subtractor                                      : 1
+ 9-bit adder carry out                                 : 1
 # Counters                                             : 13
  10-bit up counter                                     : 4
  11-bit up counter                                     : 1
  20-bit up counter                                     : 1
- 4-bit up counter                                      : 1
- 5-bit up counter                                      : 1
+ 5-bit up counter                                      : 2
  6-bit up counter                                      : 1
  8-bit down counter                                    : 2
  8-bit up counter                                      : 1
  9-bit up counter                                      : 1
-# Registers                                            : 107
+# Registers                                            : 114
  1-bit register                                        : 45
- 10-bit register                                       : 24
+ 10-bit register                                       : 31
  19-bit register                                       : 3
  2-bit register                                        : 2
  20-bit register                                       : 1
@@ -1247,7 +1259,7 @@ WARNING:Xst:2404 -  FFs/Latches <dispdata<63:5>> (without init value) have a con
 WARNING:Xst:2404 -  FFs/Latches <write_data<35:30>> (without init value) have a constant value of 0 in block <gaussian_blurrer>.
 WARNING:Xst:2404 -  FFs/Latches <ntsc_data<35:30>> (without init value) have a constant value of 0 in block <ntsc_to_zbt>.
 
-Synthesizing (advanced) Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_9_LPM_DFF_3>.
+Synthesizing (advanced) Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_11_LPM_DFF_3>.
 The following registers are absorbed into accumulator <corners1x>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners2x>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners3x>: 1 register on signal <human_interface_corners>.
@@ -1256,11 +1268,27 @@ The following registers are absorbed into accumulator <corners1y>: 1 register on
 The following registers are absorbed into accumulator <corners2y>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners3y>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners4y>: 1 register on signal <human_interface_corners>.
-Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_9_LPM_DFF_3> synthesized (advanced).
+Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_11_LPM_DFF_3> synthesized (advanced).
 
 Synthesizing (advanced) Unit <gaussian_blurrer>.
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0000 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0003 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0005 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0001 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0006 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0008 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0002 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0004 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0007 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0000 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0003 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0005 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0001 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0006 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0008 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0002 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0004 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0007 by adding 1 register level(s).
 Unit <gaussian_blurrer> synthesized (advanced).
 
 Synthesizing (advanced) Unit <ycrcb2rgb>.
@@ -1482,13 +1510,14 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # ROMs                                                 : 1
  16x40-bit ROM                                         : 1
-# Multipliers                                          : 6
- 10x7-bit multiplier                                   : 1
+# Multipliers                                          : 14
+ 10x7-bit multiplier                                   : 8
+ 10x8-bit multiplier                                   : 1
  11x10-bit registered multiplier                       : 2
  11x11-bit registered multiplier                       : 1
  11x8-bit registered multiplier                        : 1
  11x9-bit registered multiplier                        : 1
-# Adders/Subtractors                                   : 31
+# Adders/Subtractors                                   : 33
  10-bit adder                                          : 1
  10-bit adder carry out                                : 4
  10-bit addsub                                         : 1
@@ -1503,19 +1532,20 @@ Macro Statistics
  21-bit adder                                          : 2
  21-bit subtractor                                     : 2
  4-bit subtractor                                      : 1
+ 9-bit adder carry out                                 : 1
+ 9-bit subtractor                                      : 1
 # Counters                                             : 12
  10-bit up counter                                     : 4
  11-bit up counter                                     : 1
- 4-bit up counter                                      : 1
- 5-bit up counter                                      : 1
+ 5-bit up counter                                      : 2
  6-bit up counter                                      : 1
  8-bit down counter                                    : 2
  8-bit up counter                                      : 1
  9-bit up counter                                      : 1
 # Accumulators                                         : 8
  10-bit updown loadable accumulator                    : 8
-# Registers                                            : 911
- Flip-Flops                                            : 911
+# Registers                                            : 981
+ Flip-Flops                                            : 981
 # Latches                                              : 1
  19-bit latch                                          : 1
 # Comparators                                          : 30
@@ -1602,8 +1632,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_32> (without i
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_33> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_34> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <adv7185/state_FSM_FFd5> of sequential type is unconnected in block <zbt_6111_sample>.
-INFO:Xst:2261 - The FF/Latch <write_addr_1> in Unit <gaussian_blurrer> is equivalent to the following FF/Latch, which will be removed : <read_addr_1> 
-INFO:Xst:2261 - The FF/Latch <write_addr_0> in Unit <gaussian_blurrer> is equivalent to the following FF/Latch, which will be removed : <read_addr_0> 
 
 Optimizing unit <zbt_6111_sample> ...
 
@@ -1723,7 +1751,7 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block zbt_6111_sample, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block zbt_6111_sample, actual ratio is 3.
 
 Final Macro Processing ...
 
@@ -1772,6 +1800,16 @@ Processing Unit <zbt_6111_sample> :
 	Found 2-bit shift register for signal <zbt1/write_data_old2_2>.
 	Found 2-bit shift register for signal <zbt1/write_data_old2_1>.
 	Found 2-bit shift register for signal <zbt1/write_data_old2_0>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_8_9>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_8_8>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_8_7>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_8_6>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_8_5>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_8_4>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_8_3>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_8_2>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_8_1>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_8_0>.
 	Found 6-bit shift register for signal <n2z/eo_delay_3>.
 	Found 6-bit shift register for signal <n2z/we_delay_3>.
 	Found 6-bit shift register for signal <n2z/x_delay_39>.
@@ -1828,10 +1866,10 @@ Unit <zbt_6111_sample> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 678
- Flip-Flops                                            : 678
-# Shift Registers                                      : 94
- 2-bit shift register                                  : 71
+# Registers                                            : 731
+ Flip-Flops                                            : 731
+# Shift Registers                                      : 104
+ 2-bit shift register                                  : 81
  4-bit shift register                                  : 3
  6-bit shift register                                  : 20
 
@@ -1862,38 +1900,38 @@ Design Statistics
 # IOs                              : 576
 
 Cell Usage :
-# BELS                             : 2121
+# BELS                             : 2273
 #      GND                         : 1
-#      INV                         : 69
-#      LUT1                        : 84
-#      LUT2                        : 255
+#      INV                         : 70
+#      LUT1                        : 75
+#      LUT2                        : 249
 #      LUT2_D                      : 12
-#      LUT3                        : 308
-#      LUT3_D                      : 5
-#      LUT3_L                      : 7
-#      LUT4                        : 624
-#      LUT4_D                      : 48
-#      LUT4_L                      : 29
-#      MUXCY                       : 431
-#      MUXF5                       : 56
+#      LUT3                        : 337
+#      LUT3_D                      : 9
+#      LUT3_L                      : 9
+#      LUT4                        : 714
+#      LUT4_D                      : 52
+#      LUT4_L                      : 43
+#      MUXCY                       : 433
+#      MUXF5                       : 75
 #      MUXF6                       : 4
 #      MUXF7                       : 1
 #      VCC                         : 1
-#      XORCY                       : 186
-# FlipFlops/Latches                : 794
+#      XORCY                       : 188
+# FlipFlops/Latches                : 857
 #      FD                          : 98
-#      FDE                         : 327
+#      FDE                         : 387
 #      FDR                         : 115
-#      FDRE                        : 182
+#      FDRE                        : 185
 #      FDRS                        : 9
 #      FDRSE                       : 2
 #      FDS                         : 37
 #      FDSE                        : 2
 #      LDE                         : 19
 #      OFDDRRSE                    : 3
-# Shift Registers                  : 96
+# Shift Registers                  : 106
 #      SRL16                       : 55
-#      SRL16E                      : 41
+#      SRL16E                      : 51
 # Clock Buffers                    : 5
 #      BUFG                        : 4
 #      BUFGP                       : 1
@@ -1905,8 +1943,8 @@ Cell Usage :
 #      OBUFT                       : 13
 # DCMs                             : 3
 #      DCM                         : 3
-# MULTs                            : 6
-#      MULT18X18                   : 1
+# MULTs                            : 14
+#      MULT18X18                   : 9
 #      MULT18X18S                  : 5
 =========================================================================
 
@@ -1915,14 +1953,14 @@ Device utilization summary:
 
 Selected Device : 2v6000bf957-4 
 
- Number of Slices:                      842  out of  33792     2%  
- Number of Slice Flip Flops:            794  out of  67584     1%  
- Number of 4 input LUTs:               1537  out of  67584     2%  
-    Number used as logic:              1441
-    Number used as Shift registers:      96
+ Number of Slices:                      937  out of  33792     2%  
+ Number of Slice Flip Flops:            857  out of  67584     1%  
+ Number of 4 input LUTs:               1676  out of  67584     2%  
+    Number used as logic:              1570
+    Number used as Shift registers:     106
  Number of IOs:                         576
  Number of bonded IOBs:                 337  out of    684    49%  
- Number of MULT18X18s:                    6  out of    144     4%  
+ Number of MULT18X18s:                   14  out of    144     9%  
  Number of GCLKs:                         5  out of     16    31%  
  Number of DCMs:                          3  out of     12    25%  
 
@@ -1947,7 +1985,7 @@ Clock Information:
 -----------------------------------------------------+----------------------------+-------+
 Clock Signal                                         | Clock buffer(FF name)      | Load  |
 -----------------------------------------------------+----------------------------+-------+
-clock_27mhz                                          | vclk1:CLKFX+rc/int_dcm:CLK0| 676   |
+clock_27mhz                                          | vclk1:CLKFX+rc/int_dcm:CLK0| 749   |
 adv7185/clock_slow1                                  | BUFG                       | 96    |
 clock_27mhz                                          | IBUFG                      | 17    |
 tv_in_line_clock1                                    | BUFGP                      | 90    |
@@ -1971,7 +2009,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 35.080ns (Maximum Frequency: 28.507MHz)
+   Minimum period: 32.900ns (Maximum Frequency: 30.395MHz)
    Minimum input arrival time before clock: 8.723ns
    Maximum output required time after clock: 11.515ns
    Maximum combinational path delay: 6.799ns
@@ -1982,33 +2020,33 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_27mhz'
-  Clock period: 35.080ns (frequency: 28.507MHz)
-  Total number of paths / destination ports: 110637 / 1296
+  Clock period: 32.900ns (frequency: 30.395MHz)
+  Total number of paths / destination ports: 110485 / 1425
 -------------------------------------------------------------------------
-Delay:               14.617ns (Levels of Logic = 9)
-  Source:            gblur/multiplication_count_3 (FF)
+Delay:               13.709ns (Levels of Logic = 9)
+  Source:            gblur/pixel_buffer_7_9 (FF)
   Destination:       gblur/pixel_19 (FF)
   Source Clock:      clock_27mhz rising 2.4X
   Destination Clock: clock_27mhz rising 2.4X
 
-  Data Path: gblur/multiplication_count_3 to gblur/pixel_19
+  Data Path: gblur/pixel_buffer_7_9 to gblur/pixel_19
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             8   0.568   1.125  gblur/multiplication_count_3 (gblur/multiplication_count_3)
-     LUT4_D:I0->O          9   0.439   0.903  gblur/pixel_mux0003<0>11 (gblur/N1)
-     LUT4:I3->O            1   0.439   0.517  gblur/pixel_mux0003<9> (gblur/pixel_mux0003<9>)
-     MULT18X18:A9->P16     1   6.423   0.552  gblur/Mmult_pixel_mult0000 (gblur/pixel_mult0000<16>)
+     FDE:C->Q              2   0.568   0.701  gblur/pixel_buffer_7_9 (gblur/pixel_buffer_7_9)
+     MULT18X18:A9->P16     1   6.423   0.551  gblur/Mmult_pixel_mult0006 (gblur/pixel_mult0006<16>)
+     LUT3:I2->O            1   0.439   0.557  gblur/pixel_mux0001<16>77 (gblur/pixel_mux0001<16>77)
+     LUT4:I3->O            1   0.439   0.551  gblur/pixel_mux0001<16>97 (gblur/pixel_mux0001<16>97)
      LUT4:I2->O            1   0.439   0.000  gblur/Madd_pixel_addsub0000_lut<16> (gblur/Madd_pixel_addsub0000_lut<16>)
      MUXCY:S->O            1   0.298   0.000  gblur/Madd_pixel_addsub0000_cy<16> (gblur/Madd_pixel_addsub0000_cy<16>)
      MUXCY:CI->O           1   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<17> (gblur/Madd_pixel_addsub0000_cy<17>)
      MUXCY:CI->O           0   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<18> (gblur/Madd_pixel_addsub0000_cy<18>)
-     XORCY:CI->O           1   1.274   0.725  gblur/Madd_pixel_addsub0000_xor<19> (gblur/pixel_addsub0000<19>)
-     LUT2:I1->O            1   0.439   0.000  gblur/pixel_mux0000<19>1 (gblur/pixel_mux0000<19>)
+     XORCY:CI->O           1   1.274   0.551  gblur/Madd_pixel_addsub0000_xor<19> (gblur/pixel_addsub0000<19>)
+     LUT4:I2->O            1   0.439   0.000  gblur/pixel_mux0000<19>1 (gblur/pixel_mux0000<19>)
      FDRE:D                    0.370          gblur/pixel_19
     ----------------------------------------
-    Total                     14.617ns (10.795ns logic, 3.822ns route)
-                                       (73.9% logic, 26.1% route)
+    Total                     13.709ns (10.795ns logic, 2.913ns route)
+                                       (78.7% logic, 21.3% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'adv7185/clock_slow1'
@@ -2067,7 +2105,7 @@ Delay:               7.514ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 409 / 185
+  Total number of paths / destination ports: 429 / 205
 -------------------------------------------------------------------------
 Offset:              8.112ns (Levels of Logic = 7)
   Source:            button_down (PAD)
@@ -2080,10 +2118,10 @@ Offset:              8.112ns (Levels of Logic = 7)
     ----------------------------------------  ------------
      IBUF:I->O            17   0.825   1.220  button_down_IBUF (button_down_IBUF)
      LUT2_D:I1->O          8   0.439   1.048  hic/corners2y_mux00011 (hic/corners2y_mux0001_inv1_inv)
-     LUT4_D:I1->LO         1   0.439   0.140  hic/Maccum_corners2y_cy<3>11 (N698)
+     LUT4_D:I1->LO         1   0.439   0.140  hic/Maccum_corners2y_cy<3>11 (N749)
      LUT4:I3->O            3   0.439   0.765  hic/Maccum_corners2y_cy<5>11 (hic/Maccum_corners2y_cy<5>)
      LUT4_D:I3->O          1   0.439   0.725  hic/Maccum_corners2y_cy<7>11 (hic/Maccum_corners2y_cy<7>)
-     LUT4_L:I1->LO         1   0.439   0.385  hic/Eqn_95_SW0 (N196)
+     LUT4_L:I1->LO         1   0.439   0.385  hic/Eqn_95_SW0 (N205)
      LUT3:I0->O            1   0.439   0.000  hic/Eqn_95 (hic/Eqn_95)
      FDE:D                     0.370          hic/corners2y_9
     ----------------------------------------
@@ -2105,7 +2143,7 @@ Offset:              8.723ns (Levels of Logic = 7)
     ----------------------------------------  ------------
      IBUF:I->O            12   0.825   1.216  tv_in_ycrcb_15_IBUF (tv_in_ycrcb_15_IBUF)
      LUT4:I0->O            1   0.439   0.557  decode/current_state_cmp_eq002210 (decode/current_state_cmp_eq002210)
-     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N552)
+     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N581)
      LUT4:I3->O            7   0.439   1.024  decode/current_state_cmp_eq002217 (decode/current_state_cmp_eq0022)
      LUT3:I1->O            1   0.439   0.551  decode/current_state_mux0000<3>376 (decode/N8)
      LUT4:I2->O            1   0.439   0.803  decode/current_state_mux0000<3>20 (decode/current_state_mux0000<3>20)
@@ -2199,15 +2237,15 @@ Delay:               6.799ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 28.00 secs
-Total CPU time to Xst completion: 26.71 secs
+Total REAL time to Xst completion: 38.00 secs
+Total CPU time to Xst completion: 32.55 secs
  
 --> 
 
 
-Total memory usage is 518560 kilobytes
+Total memory usage is 522608 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  641 (   0 filtered)
-Number of infos    :   15 (   0 filtered)
+Number of infos    :   29 (   0 filtered)
 

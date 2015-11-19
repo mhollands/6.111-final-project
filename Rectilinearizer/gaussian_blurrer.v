@@ -29,8 +29,9 @@ module gaussian_blurrer #(parameter WIDTH = 640, HEIGHT = 480)
 								output reg [35:0] write_data);
 	reg [9:0] x;
 	reg [8:0] y;
-	reg [9:0] pixel_buffer [4:0];
-	reg [3:0] multiplication_count;
+	reg [9:0] pixel_buffer [8:0];
+	reg [9:0] pixel_load_buffer [2:0];
+	reg [4:0] multiplication_count;
 	reg go = 0;
 	reg old_go = 0;
 	reg [19:0] pixel;
@@ -43,26 +44,47 @@ module gaussian_blurrer #(parameter WIDTH = 640, HEIGHT = 480)
 			multiplication_count <= multiplication_count + 1;
 			case(multiplication_count)
 				//these are 1024 times too big
-				0: pixel <= pixel + (32 * pixel_buffer[0]);
-				1: pixel <= pixel + (77 * pixel_buffer[1]);
-				2: pixel <= pixel + (97 * pixel_buffer[2]);
-				3: pixel <= pixel + (77 * pixel_buffer[3]);
-				4: pixel <= pixel + (32 * pixel_buffer[4]);
+				0: pixel <= pixel + (95 * pixel_buffer[0]);
+				1: pixel <= pixel + (122 * pixel_buffer[1]);
+				2: begin 
+						pixel <= pixel + (95 * pixel_buffer[2]);
+						//load in pixel data
+						pixel_load_buffer[0] <= read_data[29:20];
+						//set address of next pixel to read
+						read_addr <= {y[8:0], x[9:0]} + 3; 
+					end
+				3: pixel <= pixel + (122 * pixel_buffer[3]);
+				4: pixel <= pixel + (155 * pixel_buffer[4]);
+				5: begin
+						pixel <= pixel + (122 * pixel_buffer[5]);
+						pixel_load_buffer[1] <= read_data[29:20];
+						//set address of next pixel to read
+						read_addr <= {y[8:0] + 1, x[9:0]} + 3; 
+					end
+				6: pixel <= pixel + (95 * pixel_buffer[6]);
+				7: pixel <= pixel + (122 * pixel_buffer[7]);
+				8: pixel <= pixel + (95 * pixel_buffer[8]);
 				default begin
 					multiplication_count <= 0;
 					//shift in new data
-					pixel_buffer[4] <= pixel_buffer[3];
-					pixel_buffer[3] <= pixel_buffer[2];
-					pixel_buffer[2] <= pixel_buffer[1];
-					pixel_buffer[1] <= pixel_buffer[0];
-					pixel_buffer[0] <= read_data[29:20];
+					pixel_buffer[0] <= pixel_buffer[1];
+					pixel_buffer[1] <= pixel_buffer[2];
+					pixel_buffer[2] <= pixel_load_buffer[0];
+					pixel_buffer[3] <= pixel_buffer[4];
+					pixel_buffer[4] <= pixel_buffer[5];
+					pixel_buffer[5] <= pixel_load_buffer[1];
+					pixel_buffer[6] <= pixel_buffer[7];
+					pixel_buffer[7] <= pixel_buffer[8];
+					pixel_buffer[8] <= pixel_load_buffer[2];
 					
+					//load in pixel data
+					pixel_load_buffer[2] <= read_data[29:20];
 					//set address of next pixel to read
-					read_addr <= {y[8:0], x[9:0]} + 4; 
+					read_addr <= {y[8:0] - 1 , x[9:0]} + 3; 
 					//write blurred grayscale pixel in YCrCb
 					write_addr <= {y[8:0], x[9:0]};
 					write_data <= {6'b0,pixel[19:10],10'd512,10'd512};
-					//write_data <= 0;
+
 					x <= x + 1; //move to next pixel
 					if(x == WIDTH - 1) begin
 						x <= 0;
