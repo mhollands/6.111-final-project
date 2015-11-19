@@ -411,10 +411,42 @@ module zbt_6111_sample(beep, audio_reset_b,
 		   .A0(1'b1), .A1(1'b1), .A2(1'b1), .A3(1'b1));
    defparam reset_sr.INIT = 16'hFFFF;
 
-   // ENTER button is user reset
+   // ENTER button is user reset (not anymore)
    wire reset,user_reset;
    debounce db1(power_on_reset, clk, 1'b0, user_reset);
    assign reset = user_reset | power_on_reset;
+
+   // debounce left button
+   wire button_left_debounced;
+   debounce dbleft(power_on_reset, clk, button_left, button_left_debounced);
+	
+	// debounce right button
+   wire button_right_debounced;
+   debounce dbright(power_on_reset, clk, button_right, button_right_debounced);
+	
+	// debounce up button
+   wire button_up_debounced;
+   debounce dbup(power_on_reset, clk, button_up, button_up_debounced);
+	
+	// debounce down button
+   wire button_down_debounced;
+   debounce dbdown(power_on_reset, clk, button_down, button_down_debounced);
+	
+	// debounce zero button
+   wire button_zero_debounced;
+   debounce dbzero(power_on_reset, clk, button0, button_zero_debounced);
+	
+	// debounce one button
+   wire button_one_debounced;
+   debounce dbone(power_on_reset, clk, button1, button_one_debounced);
+	
+	// debounce two button
+   wire button_two_debounced;
+   debounce dbotwo(power_on_reset, clk, button2, button_two_debounced);
+	
+	// debounce three button
+   wire button_three_debounced;
+   debounce dbthree(power_on_reset, clk, button3, button_three_debounced);
 
    // display module for debugging
    reg [63:0] dispdata;
@@ -548,15 +580,15 @@ module zbt_6111_sample(beep, audio_reset_b,
 	//human interface module
 	human_interface_corners hic (clk, 
 								fvh[2],
-								~button_left,
-								~button_right,
-								~button_up,
-								~button_down,
-								~button_enter,
-								~button0,
-								~button1,
-								~button2,
-								~button3,
+								~button_left_debounced,
+								~button_right_debounced,
+								~button_up_debounced,
+								~button_down_debounced,
+								~button_enter_debounced,
+								~button_zero_debounced,
+								~button_one_debounced,
+								~button_two_debounced,
+								~button_three_debounced,
 								corners_auto,
 								set_corners,
 								corners1x_manual,

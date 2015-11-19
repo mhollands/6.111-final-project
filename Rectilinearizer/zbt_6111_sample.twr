@@ -37,76 +37,76 @@ Setup/Hold to clock clock_27mhz
              |  Setup to  |  Hold to   |                  | Clock  |
 Source       | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 -------------+------------+------------+------------------+--------+
-button0      |   -0.794(R)|    1.552(R)|clk               |   0.000|
-button1      |   -0.173(R)|    2.005(R)|clk               |   0.000|
-button2      |    0.002(R)|    2.413(R)|clk               |   0.000|
-button3      |    0.084(R)|    1.782(R)|clk               |   0.000|
-button_down  |    6.610(R)|   -0.613(R)|clk               |   0.000|
-button_enter |    2.271(R)|   -1.999(R)|clk               |   0.000|
-button_left  |    3.159(R)|   -0.058(R)|clk               |   0.000|
-button_right |    6.037(R)|    0.061(R)|clk               |   0.000|
-button_up    |    3.767(R)|   -0.639(R)|clk               |   0.000|
-ram0_data<0> |    2.205(R)|   -1.933(R)|clk               |   0.000|
-ram0_data<1> |    2.745(R)|   -2.473(R)|clk               |   0.000|
-ram0_data<2> |    2.121(R)|   -1.849(R)|clk               |   0.000|
-ram0_data<3> |    3.153(R)|   -2.881(R)|clk               |   0.000|
-ram0_data<4> |    3.107(R)|   -2.835(R)|clk               |   0.000|
-ram0_data<5> |    2.640(R)|   -2.368(R)|clk               |   0.000|
-ram0_data<6> |    2.982(R)|   -2.710(R)|clk               |   0.000|
-ram0_data<7> |    2.584(R)|   -2.312(R)|clk               |   0.000|
-ram0_data<8> |    2.886(R)|   -2.614(R)|clk               |   0.000|
-ram0_data<9> |    2.112(R)|   -1.840(R)|clk               |   0.000|
-ram0_data<10>|    1.675(R)|   -1.403(R)|clk               |   0.000|
-ram0_data<11>|    2.393(R)|   -2.121(R)|clk               |   0.000|
-ram0_data<12>|    2.214(R)|   -1.942(R)|clk               |   0.000|
-ram0_data<13>|    3.925(R)|   -3.653(R)|clk               |   0.000|
-ram0_data<14>|    3.444(R)|   -3.172(R)|clk               |   0.000|
-ram0_data<15>|    3.368(R)|   -3.096(R)|clk               |   0.000|
-ram0_data<16>|    3.051(R)|   -2.779(R)|clk               |   0.000|
-ram0_data<17>|    3.491(R)|   -3.219(R)|clk               |   0.000|
-ram0_data<18>|    3.019(R)|   -2.747(R)|clk               |   0.000|
-ram0_data<19>|    3.547(R)|   -3.275(R)|clk               |   0.000|
-ram0_data<20>|    3.660(R)|    0.395(R)|clk               |   0.000|
-ram0_data<21>|    4.410(R)|   -0.879(R)|clk               |   0.000|
-ram0_data<22>|    4.511(R)|   -2.335(R)|clk               |   0.000|
-ram0_data<23>|    4.251(R)|   -1.475(R)|clk               |   0.000|
-ram0_data<24>|    3.802(R)|   -1.825(R)|clk               |   0.000|
-ram0_data<25>|    4.361(R)|   -3.159(R)|clk               |   0.000|
-ram0_data<26>|    3.227(R)|   -1.722(R)|clk               |   0.000|
-ram0_data<27>|    5.455(R)|   -0.442(R)|clk               |   0.000|
-ram0_data<28>|    3.699(R)|   -1.131(R)|clk               |   0.000|
-ram0_data<29>|    4.567(R)|   -2.863(R)|clk               |   0.000|
-ram1_data<0> |    1.013(R)|   -0.741(R)|clk               |   0.000|
-ram1_data<1> |    0.644(R)|   -0.372(R)|clk               |   0.000|
-ram1_data<2> |    1.224(R)|   -0.952(R)|clk               |   0.000|
-ram1_data<3> |    1.378(R)|   -1.106(R)|clk               |   0.000|
-ram1_data<4> |    1.538(R)|   -1.266(R)|clk               |   0.000|
-ram1_data<5> |    2.373(R)|   -2.101(R)|clk               |   0.000|
-ram1_data<6> |    1.923(R)|   -1.651(R)|clk               |   0.000|
-ram1_data<7> |    1.374(R)|   -1.102(R)|clk               |   0.000|
-ram1_data<8> |    1.342(R)|   -1.070(R)|clk               |   0.000|
-ram1_data<9> |    0.144(R)|    0.128(R)|clk               |   0.000|
-ram1_data<10>|    1.100(R)|   -0.828(R)|clk               |   0.000|
-ram1_data<11>|    1.195(R)|   -0.923(R)|clk               |   0.000|
-ram1_data<12>|    1.656(R)|   -1.384(R)|clk               |   0.000|
-ram1_data<13>|    1.776(R)|   -1.504(R)|clk               |   0.000|
-ram1_data<14>|    2.079(R)|   -1.807(R)|clk               |   0.000|
-ram1_data<15>|    2.142(R)|   -1.870(R)|clk               |   0.000|
-ram1_data<16>|    2.102(R)|   -1.830(R)|clk               |   0.000|
-ram1_data<17>|    2.158(R)|   -1.886(R)|clk               |   0.000|
-ram1_data<18>|    2.884(R)|   -2.612(R)|clk               |   0.000|
-ram1_data<19>|    3.014(R)|   -2.742(R)|clk               |   0.000|
-ram1_data<20>|    2.635(R)|   -2.363(R)|clk               |   0.000|
-ram1_data<21>|    4.012(R)|   -3.740(R)|clk               |   0.000|
-ram1_data<22>|    3.210(R)|   -2.938(R)|clk               |   0.000|
-ram1_data<23>|    3.416(R)|   -3.144(R)|clk               |   0.000|
-ram1_data<24>|    3.023(R)|   -2.751(R)|clk               |   0.000|
-ram1_data<25>|    3.252(R)|   -2.980(R)|clk               |   0.000|
-ram1_data<26>|    2.878(R)|   -2.606(R)|clk               |   0.000|
-ram1_data<27>|    2.550(R)|   -2.278(R)|clk               |   0.000|
-ram1_data<28>|    2.255(R)|   -1.983(R)|clk               |   0.000|
-ram1_data<29>|    2.654(R)|   -2.382(R)|clk               |   0.000|
-switch<7>    |    2.398(R)|   -2.126(R)|clk               |   0.000|
+button0      |   -1.279(R)|    2.933(R)|clk               |   0.000|
+button1      |   -0.554(R)|    2.787(R)|clk               |   0.000|
+button2      |   -1.427(R)|    2.849(R)|clk               |   0.000|
+button3      |   -0.460(R)|    2.257(R)|clk               |   0.000|
+button_down  |   -0.074(R)|    2.192(R)|clk               |   0.000|
+button_enter |    3.367(R)|   -0.107(R)|clk               |   0.000|
+button_left  |    0.178(R)|    2.356(R)|clk               |   0.000|
+button_right |    1.669(R)|    1.544(R)|clk               |   0.000|
+button_up    |   -0.040(R)|    2.425(R)|clk               |   0.000|
+ram0_data<0> |    2.875(R)|   -2.603(R)|clk               |   0.000|
+ram0_data<1> |    2.738(R)|   -2.466(R)|clk               |   0.000|
+ram0_data<2> |    3.235(R)|   -2.963(R)|clk               |   0.000|
+ram0_data<3> |    2.652(R)|   -2.380(R)|clk               |   0.000|
+ram0_data<4> |    2.873(R)|   -2.601(R)|clk               |   0.000|
+ram0_data<5> |    1.610(R)|   -1.338(R)|clk               |   0.000|
+ram0_data<6> |    2.704(R)|   -2.432(R)|clk               |   0.000|
+ram0_data<7> |    1.947(R)|   -1.675(R)|clk               |   0.000|
+ram0_data<8> |    2.089(R)|   -1.817(R)|clk               |   0.000|
+ram0_data<9> |    2.986(R)|   -2.714(R)|clk               |   0.000|
+ram0_data<10>|    2.688(R)|   -2.416(R)|clk               |   0.000|
+ram0_data<11>|    2.856(R)|   -2.584(R)|clk               |   0.000|
+ram0_data<12>|    3.091(R)|   -2.819(R)|clk               |   0.000|
+ram0_data<13>|    3.393(R)|   -3.121(R)|clk               |   0.000|
+ram0_data<14>|    2.786(R)|   -2.514(R)|clk               |   0.000|
+ram0_data<15>|    2.807(R)|   -2.535(R)|clk               |   0.000|
+ram0_data<16>|    2.096(R)|   -1.824(R)|clk               |   0.000|
+ram0_data<17>|    1.884(R)|   -1.612(R)|clk               |   0.000|
+ram0_data<18>|    1.856(R)|   -1.584(R)|clk               |   0.000|
+ram0_data<19>|    1.574(R)|   -1.302(R)|clk               |   0.000|
+ram0_data<20>|    2.905(R)|   -1.170(R)|clk               |   0.000|
+ram0_data<21>|    6.759(R)|   -2.947(R)|clk               |   0.000|
+ram0_data<22>|    3.863(R)|   -2.271(R)|clk               |   0.000|
+ram0_data<23>|    3.471(R)|   -1.743(R)|clk               |   0.000|
+ram0_data<24>|    4.595(R)|   -2.592(R)|clk               |   0.000|
+ram0_data<25>|    6.932(R)|   -3.364(R)|clk               |   0.000|
+ram0_data<26>|    3.516(R)|   -0.799(R)|clk               |   0.000|
+ram0_data<27>|    7.877(R)|   -1.601(R)|clk               |   0.000|
+ram0_data<28>|    9.084(R)|   -4.027(R)|clk               |   0.000|
+ram0_data<29>|    8.413(R)|   -3.323(R)|clk               |   0.000|
+ram1_data<0> |    1.536(R)|   -1.264(R)|clk               |   0.000|
+ram1_data<1> |    1.244(R)|   -0.972(R)|clk               |   0.000|
+ram1_data<2> |    1.792(R)|   -1.520(R)|clk               |   0.000|
+ram1_data<3> |    1.350(R)|   -1.078(R)|clk               |   0.000|
+ram1_data<4> |    0.924(R)|   -0.652(R)|clk               |   0.000|
+ram1_data<5> |    1.432(R)|   -1.160(R)|clk               |   0.000|
+ram1_data<6> |    0.810(R)|   -0.538(R)|clk               |   0.000|
+ram1_data<7> |    0.689(R)|   -0.417(R)|clk               |   0.000|
+ram1_data<8> |    2.185(R)|   -1.913(R)|clk               |   0.000|
+ram1_data<9> |    2.206(R)|   -1.934(R)|clk               |   0.000|
+ram1_data<10>|    0.903(R)|   -0.631(R)|clk               |   0.000|
+ram1_data<11>|    1.494(R)|   -1.222(R)|clk               |   0.000|
+ram1_data<12>|    1.705(R)|   -1.433(R)|clk               |   0.000|
+ram1_data<13>|    0.651(R)|   -0.379(R)|clk               |   0.000|
+ram1_data<14>|    0.898(R)|   -0.626(R)|clk               |   0.000|
+ram1_data<15>|    0.864(R)|   -0.592(R)|clk               |   0.000|
+ram1_data<16>|    0.698(R)|   -0.426(R)|clk               |   0.000|
+ram1_data<17>|    2.044(R)|   -1.772(R)|clk               |   0.000|
+ram1_data<18>|    1.413(R)|   -1.141(R)|clk               |   0.000|
+ram1_data<19>|    1.557(R)|   -1.285(R)|clk               |   0.000|
+ram1_data<20>|    1.007(R)|   -0.735(R)|clk               |   0.000|
+ram1_data<21>|    1.885(R)|   -1.613(R)|clk               |   0.000|
+ram1_data<22>|    2.010(R)|   -1.738(R)|clk               |   0.000|
+ram1_data<23>|    1.933(R)|   -1.661(R)|clk               |   0.000|
+ram1_data<24>|    1.754(R)|   -1.482(R)|clk               |   0.000|
+ram1_data<25>|    1.736(R)|   -1.464(R)|clk               |   0.000|
+ram1_data<26>|    1.200(R)|   -0.928(R)|clk               |   0.000|
+ram1_data<27>|    1.828(R)|   -1.556(R)|clk               |   0.000|
+ram1_data<28>|    0.155(R)|    0.117(R)|clk               |   0.000|
+ram1_data<29>|    1.200(R)|   -0.928(R)|clk               |   0.000|
+switch<7>    |    4.712(R)|   -1.109(R)|clk               |   0.000|
 -------------+------------+------------+------------------+--------+
 
 Setup/Hold to clock tv_in_line_clock1
@@ -114,16 +114,16 @@ Setup/Hold to clock tv_in_line_clock1
                |  Setup to  |  Hold to   |                       | Clock  |
 Source         | clk (edge) | clk (edge) |Internal Clock(s)      | Phase  |
 ---------------+------------+------------+-----------------------+--------+
-tv_in_ycrcb<10>|    5.446(R)|   -0.622(R)|tv_in_line_clock1_BUFGP|   0.000|
-tv_in_ycrcb<11>|    5.568(R)|   -0.677(R)|tv_in_line_clock1_BUFGP|   0.000|
-tv_in_ycrcb<12>|    5.094(R)|    0.799(R)|tv_in_line_clock1_BUFGP|   0.000|
-tv_in_ycrcb<13>|    3.419(R)|   -1.014(R)|tv_in_line_clock1_BUFGP|   0.000|
-tv_in_ycrcb<14>|    3.889(R)|    0.036(R)|tv_in_line_clock1_BUFGP|   0.000|
-tv_in_ycrcb<15>|    4.005(R)|   -0.414(R)|tv_in_line_clock1_BUFGP|   0.000|
-tv_in_ycrcb<16>|    4.364(R)|    0.125(R)|tv_in_line_clock1_BUFGP|   0.000|
-tv_in_ycrcb<17>|    4.773(R)|    0.127(R)|tv_in_line_clock1_BUFGP|   0.000|
-tv_in_ycrcb<18>|    3.989(R)|   -0.145(R)|tv_in_line_clock1_BUFGP|   0.000|
-tv_in_ycrcb<19>|    5.033(R)|   -1.038(R)|tv_in_line_clock1_BUFGP|   0.000|
+tv_in_ycrcb<10>|    5.500(R)|   -0.806(R)|tv_in_line_clock1_BUFGP|   0.000|
+tv_in_ycrcb<11>|    5.122(R)|    0.180(R)|tv_in_line_clock1_BUFGP|   0.000|
+tv_in_ycrcb<12>|    4.263(R)|    0.096(R)|tv_in_line_clock1_BUFGP|   0.000|
+tv_in_ycrcb<13>|    4.721(R)|   -0.371(R)|tv_in_line_clock1_BUFGP|   0.000|
+tv_in_ycrcb<14>|    3.574(R)|    0.517(R)|tv_in_line_clock1_BUFGP|   0.000|
+tv_in_ycrcb<15>|    4.543(R)|    0.231(R)|tv_in_line_clock1_BUFGP|   0.000|
+tv_in_ycrcb<16>|    4.023(R)|    0.118(R)|tv_in_line_clock1_BUFGP|   0.000|
+tv_in_ycrcb<17>|    4.567(R)|   -0.314(R)|tv_in_line_clock1_BUFGP|   0.000|
+tv_in_ycrcb<18>|    4.585(R)|   -0.077(R)|tv_in_line_clock1_BUFGP|   0.000|
+tv_in_ycrcb<19>|    5.184(R)|   -0.688(R)|tv_in_line_clock1_BUFGP|   0.000|
 ---------------+------------+------------+-----------------------+--------+
 
 Clock clock_27mhz to Pad
@@ -133,160 +133,160 @@ Destination       |   to PAD   |Internal Clock(s) | Phase  |
 ------------------+------------+------------------+--------+
 clock_feedback_out|   12.696(R)|rc/ram_clock      |   0.000|
                   |   12.696(F)|rc/ram_clock      |   0.000|
-disp_ce_b         |   10.036(R)|clk               |   0.000|
-disp_clock        |   11.742(R)|clk               |   0.000|
-disp_data_out     |    9.751(R)|clk               |   0.000|
-disp_reset_b      |   10.357(R)|clk               |   0.000|
-disp_rs           |    9.772(R)|clk               |   0.000|
-led<1>            |   15.624(R)|clk               |   0.000|
-led<2>            |   20.831(R)|clk               |   0.000|
-led<3>            |   22.094(R)|clk               |   0.000|
-led<4>            |   21.630(R)|clk               |   0.000|
-led<5>            |   21.540(R)|clk               |   0.000|
-led<6>            |   21.263(R)|clk               |   0.000|
-led<7>            |   21.289(R)|clk               |   0.000|
-ram0_address<0>   |   20.872(R)|clk               |   0.000|
-ram0_address<1>   |   18.859(R)|clk               |   0.000|
-ram0_address<2>   |   20.545(R)|clk               |   0.000|
-ram0_address<3>   |   19.525(R)|clk               |   0.000|
-ram0_address<4>   |   20.989(R)|clk               |   0.000|
-ram0_address<5>   |   20.236(R)|clk               |   0.000|
-ram0_address<6>   |   19.539(R)|clk               |   0.000|
-ram0_address<7>   |   19.525(R)|clk               |   0.000|
-ram0_address<8>   |   20.258(R)|clk               |   0.000|
-ram0_address<9>   |   20.529(R)|clk               |   0.000|
-ram0_address<10>  |   19.192(R)|clk               |   0.000|
-ram0_address<11>  |   18.823(R)|clk               |   0.000|
-ram0_address<12>  |   18.998(R)|clk               |   0.000|
-ram0_address<13>  |   20.171(R)|clk               |   0.000|
-ram0_address<14>  |   20.833(R)|clk               |   0.000|
-ram0_address<15>  |   20.368(R)|clk               |   0.000|
-ram0_address<16>  |   20.392(R)|clk               |   0.000|
-ram0_address<17>  |   20.209(R)|clk               |   0.000|
-ram0_address<18>  |   20.759(R)|clk               |   0.000|
+disp_ce_b         |    9.924(R)|clk               |   0.000|
+disp_clock        |   11.247(R)|clk               |   0.000|
+disp_data_out     |    9.907(R)|clk               |   0.000|
+disp_reset_b      |   10.364(R)|clk               |   0.000|
+disp_rs           |    9.488(R)|clk               |   0.000|
+led<1>            |   17.030(R)|clk               |   0.000|
+led<2>            |   23.239(R)|clk               |   0.000|
+led<3>            |   23.495(R)|clk               |   0.000|
+led<4>            |   23.414(R)|clk               |   0.000|
+led<5>            |   23.002(R)|clk               |   0.000|
+led<6>            |   23.975(R)|clk               |   0.000|
+led<7>            |   23.611(R)|clk               |   0.000|
+ram0_address<0>   |   22.676(R)|clk               |   0.000|
+ram0_address<1>   |   22.452(R)|clk               |   0.000|
+ram0_address<2>   |   22.251(R)|clk               |   0.000|
+ram0_address<3>   |   22.846(R)|clk               |   0.000|
+ram0_address<4>   |   22.566(R)|clk               |   0.000|
+ram0_address<5>   |   22.277(R)|clk               |   0.000|
+ram0_address<6>   |   22.417(R)|clk               |   0.000|
+ram0_address<7>   |   22.261(R)|clk               |   0.000|
+ram0_address<8>   |   23.182(R)|clk               |   0.000|
+ram0_address<9>   |   24.191(R)|clk               |   0.000|
+ram0_address<10>  |   21.930(R)|clk               |   0.000|
+ram0_address<11>  |   22.231(R)|clk               |   0.000|
+ram0_address<12>  |   22.220(R)|clk               |   0.000|
+ram0_address<13>  |   23.216(R)|clk               |   0.000|
+ram0_address<14>  |   22.267(R)|clk               |   0.000|
+ram0_address<15>  |   22.319(R)|clk               |   0.000|
+ram0_address<16>  |   22.511(R)|clk               |   0.000|
+ram0_address<17>  |   22.469(R)|clk               |   0.000|
+ram0_address<18>  |   23.021(R)|clk               |   0.000|
 ram0_clk          |   12.593(R)|rc/ram_clock      |   0.000|
                   |   12.593(F)|rc/ram_clock      |   0.000|
-ram0_data<0>      |   13.570(R)|clk               |   0.000|
-ram0_data<1>      |   13.851(R)|clk               |   0.000|
-ram0_data<2>      |   14.140(R)|clk               |   0.000|
-ram0_data<3>      |   13.857(R)|clk               |   0.000|
-ram0_data<4>      |   14.142(R)|clk               |   0.000|
-ram0_data<5>      |   13.537(R)|clk               |   0.000|
-ram0_data<6>      |   13.230(R)|clk               |   0.000|
-ram0_data<7>      |   13.543(R)|clk               |   0.000|
-ram0_data<8>      |   12.902(R)|clk               |   0.000|
-ram0_data<9>      |   13.513(R)|clk               |   0.000|
-ram0_data<10>     |   13.252(R)|clk               |   0.000|
-ram0_data<11>     |   13.525(R)|clk               |   0.000|
-ram0_data<12>     |   13.529(R)|clk               |   0.000|
-ram0_data<13>     |   13.254(R)|clk               |   0.000|
-ram0_data<14>     |   13.532(R)|clk               |   0.000|
-ram0_data<15>     |   13.832(R)|clk               |   0.000|
-ram0_data<16>     |   12.613(R)|clk               |   0.000|
-ram0_data<17>     |   13.786(R)|clk               |   0.000|
-ram0_data<18>     |   12.958(R)|clk               |   0.000|
-ram0_data<19>     |   13.240(R)|clk               |   0.000|
-ram0_data<20>     |   12.962(R)|clk               |   0.000|
-ram0_data<21>     |   14.714(R)|clk               |   0.000|
-ram0_data<22>     |   15.611(R)|clk               |   0.000|
-ram0_data<23>     |   14.722(R)|clk               |   0.000|
-ram0_data<24>     |   15.615(R)|clk               |   0.000|
-ram0_data<25>     |   16.200(R)|clk               |   0.000|
-ram0_data<26>     |   12.887(R)|clk               |   0.000|
-ram0_data<27>     |   14.965(R)|clk               |   0.000|
-ram0_data<28>     |   14.403(R)|clk               |   0.000|
-ram0_data<29>     |   15.863(R)|clk               |   0.000|
-ram0_data<30>     |   14.409(R)|clk               |   0.000|
-ram0_data<31>     |   15.855(R)|clk               |   0.000|
-ram0_data<32>     |   15.589(R)|clk               |   0.000|
-ram0_data<33>     |   15.576(R)|clk               |   0.000|
-ram0_data<34>     |   16.196(R)|clk               |   0.000|
-ram0_data<35>     |   14.065(R)|clk               |   0.000|
-ram0_we_b         |   20.223(R)|clk               |   0.000|
-ram1_address<0>   |   18.171(R)|clk               |   0.000|
-ram1_address<1>   |   16.631(R)|clk               |   0.000|
-ram1_address<2>   |   17.410(R)|clk               |   0.000|
-ram1_address<3>   |   17.328(R)|clk               |   0.000|
-ram1_address<4>   |   17.163(R)|clk               |   0.000|
-ram1_address<5>   |   16.903(R)|clk               |   0.000|
-ram1_address<6>   |   17.053(R)|clk               |   0.000|
-ram1_address<7>   |   18.260(R)|clk               |   0.000|
-ram1_address<8>   |   18.301(R)|clk               |   0.000|
-ram1_address<9>   |   15.320(R)|clk               |   0.000|
-ram1_address<10>  |   17.057(R)|clk               |   0.000|
-ram1_address<11>  |   16.595(R)|clk               |   0.000|
-ram1_address<12>  |   17.302(R)|clk               |   0.000|
-ram1_address<13>  |   17.752(R)|clk               |   0.000|
-ram1_address<14>  |   17.135(R)|clk               |   0.000|
-ram1_address<15>  |   17.404(R)|clk               |   0.000|
-ram1_address<16>  |   18.298(R)|clk               |   0.000|
-ram1_address<17>  |   17.013(R)|clk               |   0.000|
-ram1_address<18>  |   17.181(R)|clk               |   0.000|
+ram0_data<0>      |   14.379(R)|clk               |   0.000|
+ram0_data<1>      |   14.967(R)|clk               |   0.000|
+ram0_data<2>      |   15.257(R)|clk               |   0.000|
+ram0_data<3>      |   14.973(R)|clk               |   0.000|
+ram0_data<4>      |   15.259(R)|clk               |   0.000|
+ram0_data<5>      |   16.152(R)|clk               |   0.000|
+ram0_data<6>      |   16.731(R)|clk               |   0.000|
+ram0_data<7>      |   16.158(R)|clk               |   0.000|
+ram0_data<8>      |   16.408(R)|clk               |   0.000|
+ram0_data<9>      |   14.649(R)|clk               |   0.000|
+ram0_data<10>     |   14.061(R)|clk               |   0.000|
+ram0_data<11>     |   14.661(R)|clk               |   0.000|
+ram0_data<12>     |   14.646(R)|clk               |   0.000|
+ram0_data<13>     |   14.063(R)|clk               |   0.000|
+ram0_data<14>     |   14.649(R)|clk               |   0.000|
+ram0_data<15>     |   14.948(R)|clk               |   0.000|
+ram0_data<16>     |   16.709(R)|clk               |   0.000|
+ram0_data<17>     |   15.811(R)|clk               |   0.000|
+ram0_data<18>     |   16.752(R)|clk               |   0.000|
+ram0_data<19>     |   16.741(R)|clk               |   0.000|
+ram0_data<20>     |   16.756(R)|clk               |   0.000|
+ram0_data<21>     |   18.509(R)|clk               |   0.000|
+ram0_data<22>     |   19.405(R)|clk               |   0.000|
+ram0_data<23>     |   18.517(R)|clk               |   0.000|
+ram0_data<24>     |   19.409(R)|clk               |   0.000|
+ram0_data<25>     |   19.687(R)|clk               |   0.000|
+ram0_data<26>     |   16.393(R)|clk               |   0.000|
+ram0_data<27>     |   18.465(R)|clk               |   0.000|
+ram0_data<28>     |   18.197(R)|clk               |   0.000|
+ram0_data<29>     |   19.665(R)|clk               |   0.000|
+ram0_data<30>     |   18.210(R)|clk               |   0.000|
+ram0_data<31>     |   19.657(R)|clk               |   0.000|
+ram0_data<32>     |   19.390(R)|clk               |   0.000|
+ram0_data<33>     |   19.377(R)|clk               |   0.000|
+ram0_data<34>     |   19.683(R)|clk               |   0.000|
+ram0_data<35>     |   17.860(R)|clk               |   0.000|
+ram0_we_b         |   19.144(R)|clk               |   0.000|
+ram1_address<0>   |   18.826(R)|clk               |   0.000|
+ram1_address<1>   |   18.750(R)|clk               |   0.000|
+ram1_address<2>   |   19.978(R)|clk               |   0.000|
+ram1_address<3>   |   18.558(R)|clk               |   0.000|
+ram1_address<4>   |   19.899(R)|clk               |   0.000|
+ram1_address<5>   |   19.540(R)|clk               |   0.000|
+ram1_address<6>   |   20.008(R)|clk               |   0.000|
+ram1_address<7>   |   20.632(R)|clk               |   0.000|
+ram1_address<8>   |   20.181(R)|clk               |   0.000|
+ram1_address<9>   |   18.206(R)|clk               |   0.000|
+ram1_address<10>  |   19.721(R)|clk               |   0.000|
+ram1_address<11>  |   19.507(R)|clk               |   0.000|
+ram1_address<12>  |   19.504(R)|clk               |   0.000|
+ram1_address<13>  |   20.897(R)|clk               |   0.000|
+ram1_address<14>  |   20.407(R)|clk               |   0.000|
+ram1_address<15>  |   21.380(R)|clk               |   0.000|
+ram1_address<16>  |   21.819(R)|clk               |   0.000|
+ram1_address<17>  |   19.503(R)|clk               |   0.000|
+ram1_address<18>  |   19.136(R)|clk               |   0.000|
 ram1_clk          |   12.598(R)|rc/ram_clock      |   0.000|
                   |   12.598(F)|rc/ram_clock      |   0.000|
-ram1_data<0>      |   10.714(R)|clk               |   0.000|
-ram1_data<1>      |   10.705(R)|clk               |   0.000|
-ram1_data<2>      |   10.717(R)|clk               |   0.000|
-ram1_data<3>      |    9.962(R)|clk               |   0.000|
-ram1_data<4>      |    9.967(R)|clk               |   0.000|
-ram1_data<5>      |   10.998(R)|clk               |   0.000|
-ram1_data<6>      |    9.974(R)|clk               |   0.000|
-ram1_data<7>      |    9.718(R)|clk               |   0.000|
-ram1_data<8>      |   11.292(R)|clk               |   0.000|
-ram1_data<9>      |   11.022(R)|clk               |   0.000|
-ram1_data<10>     |   10.748(R)|clk               |   0.000|
-ram1_data<11>     |    9.984(R)|clk               |   0.000|
-ram1_data<12>     |   10.753(R)|clk               |   0.000|
-ram1_data<13>     |    9.989(R)|clk               |   0.000|
-ram1_data<14>     |    9.740(R)|clk               |   0.000|
-ram1_data<15>     |    9.748(R)|clk               |   0.000|
-ram1_data<16>     |    9.746(R)|clk               |   0.000|
-ram1_data<17>     |   11.892(R)|clk               |   0.000|
-ram1_data<18>     |   10.425(R)|clk               |   0.000|
-ram1_data<19>     |   10.431(R)|clk               |   0.000|
-ram1_data<20>     |   10.189(R)|clk               |   0.000|
-ram1_data<21>     |   11.332(R)|clk               |   0.000|
-ram1_data<22>     |   11.330(R)|clk               |   0.000|
-ram1_data<23>     |   11.338(R)|clk               |   0.000|
-ram1_data<24>     |   11.344(R)|clk               |   0.000|
-ram1_data<25>     |   11.633(R)|clk               |   0.000|
-ram1_data<26>     |   10.885(R)|clk               |   0.000|
-ram1_data<27>     |   10.945(R)|clk               |   0.000|
-ram1_data<28>     |   10.252(R)|clk               |   0.000|
-ram1_data<29>     |   10.750(R)|clk               |   0.000|
-ram1_data<30>     |   10.163(R)|clk               |   0.000|
-ram1_data<31>     |   10.477(R)|clk               |   0.000|
-ram1_data<32>     |   10.172(R)|clk               |   0.000|
-ram1_data<33>     |   10.481(R)|clk               |   0.000|
-ram1_data<34>     |   11.641(R)|clk               |   0.000|
-ram1_data<35>     |   10.109(R)|clk               |   0.000|
-ram1_we_b         |   15.549(R)|clk               |   0.000|
-vga_out_blank_b   |   11.991(R)|clk               |   0.000|
-vga_out_blue<0>   |   15.406(R)|clk               |   0.000|
-vga_out_blue<1>   |   15.077(R)|clk               |   0.000|
-vga_out_blue<2>   |   14.064(R)|clk               |   0.000|
-vga_out_blue<3>   |   13.892(R)|clk               |   0.000|
-vga_out_blue<4>   |   12.259(R)|clk               |   0.000|
-vga_out_blue<5>   |   12.510(R)|clk               |   0.000|
-vga_out_blue<6>   |   13.182(R)|clk               |   0.000|
-vga_out_blue<7>   |   11.778(R)|clk               |   0.000|
-vga_out_green<0>  |   13.890(R)|clk               |   0.000|
-vga_out_green<1>  |   15.071(R)|clk               |   0.000|
-vga_out_green<2>  |   13.473(R)|clk               |   0.000|
-vga_out_green<3>  |   13.547(R)|clk               |   0.000|
-vga_out_green<4>  |   15.171(R)|clk               |   0.000|
-vga_out_green<5>  |   14.862(R)|clk               |   0.000|
-vga_out_green<6>  |   15.179(R)|clk               |   0.000|
-vga_out_green<7>  |   15.095(R)|clk               |   0.000|
-vga_out_hsync     |   11.949(R)|clk               |   0.000|
-vga_out_red<0>    |   14.839(R)|clk               |   0.000|
-vga_out_red<1>    |   14.357(R)|clk               |   0.000|
-vga_out_red<2>    |   15.416(R)|clk               |   0.000|
-vga_out_red<3>    |   14.759(R)|clk               |   0.000|
-vga_out_red<4>    |   14.850(R)|clk               |   0.000|
-vga_out_red<5>    |   13.103(R)|clk               |   0.000|
-vga_out_red<6>    |   15.484(R)|clk               |   0.000|
-vga_out_red<7>    |   14.776(R)|clk               |   0.000|
+ram1_data<0>      |   11.471(R)|clk               |   0.000|
+ram1_data<1>      |   11.462(R)|clk               |   0.000|
+ram1_data<2>      |   11.474(R)|clk               |   0.000|
+ram1_data<3>      |   10.958(R)|clk               |   0.000|
+ram1_data<4>      |   10.963(R)|clk               |   0.000|
+ram1_data<5>      |   11.460(R)|clk               |   0.000|
+ram1_data<6>      |   10.970(R)|clk               |   0.000|
+ram1_data<7>      |   11.263(R)|clk               |   0.000|
+ram1_data<8>      |   12.048(R)|clk               |   0.000|
+ram1_data<9>      |   11.779(R)|clk               |   0.000|
+ram1_data<10>     |   11.491(R)|clk               |   0.000|
+ram1_data<11>     |   10.980(R)|clk               |   0.000|
+ram1_data<12>     |   11.496(R)|clk               |   0.000|
+ram1_data<13>     |   10.985(R)|clk               |   0.000|
+ram1_data<14>     |   11.285(R)|clk               |   0.000|
+ram1_data<15>     |   11.575(R)|clk               |   0.000|
+ram1_data<16>     |   11.291(R)|clk               |   0.000|
+ram1_data<17>     |   12.354(R)|clk               |   0.000|
+ram1_data<18>     |   13.312(R)|clk               |   0.000|
+ram1_data<19>     |   13.318(R)|clk               |   0.000|
+ram1_data<20>     |   13.033(R)|clk               |   0.000|
+ram1_data<21>     |   14.220(R)|clk               |   0.000|
+ram1_data<22>     |   14.218(R)|clk               |   0.000|
+ram1_data<23>     |   14.226(R)|clk               |   0.000|
+ram1_data<24>     |   14.232(R)|clk               |   0.000|
+ram1_data<25>     |   14.521(R)|clk               |   0.000|
+ram1_data<26>     |   12.997(R)|clk               |   0.000|
+ram1_data<27>     |   12.778(R)|clk               |   0.000|
+ram1_data<28>     |   11.578(R)|clk               |   0.000|
+ram1_data<29>     |   12.768(R)|clk               |   0.000|
+ram1_data<30>     |   13.051(R)|clk               |   0.000|
+ram1_data<31>     |   13.364(R)|clk               |   0.000|
+ram1_data<32>     |   13.060(R)|clk               |   0.000|
+ram1_data<33>     |   13.368(R)|clk               |   0.000|
+ram1_data<34>     |   14.529(R)|clk               |   0.000|
+ram1_data<35>     |   12.997(R)|clk               |   0.000|
+ram1_we_b         |   17.422(R)|clk               |   0.000|
+vga_out_blank_b   |   12.294(R)|clk               |   0.000|
+vga_out_blue<0>   |   13.242(R)|clk               |   0.000|
+vga_out_blue<1>   |   13.226(R)|clk               |   0.000|
+vga_out_blue<2>   |   12.731(R)|clk               |   0.000|
+vga_out_blue<3>   |   12.405(R)|clk               |   0.000|
+vga_out_blue<4>   |   12.036(R)|clk               |   0.000|
+vga_out_blue<5>   |   12.084(R)|clk               |   0.000|
+vga_out_blue<6>   |   11.564(R)|clk               |   0.000|
+vga_out_blue<7>   |   11.318(R)|clk               |   0.000|
+vga_out_green<0>  |   13.039(R)|clk               |   0.000|
+vga_out_green<1>  |   13.879(R)|clk               |   0.000|
+vga_out_green<2>  |   12.548(R)|clk               |   0.000|
+vga_out_green<3>  |   12.569(R)|clk               |   0.000|
+vga_out_green<4>  |   13.690(R)|clk               |   0.000|
+vga_out_green<5>  |   13.735(R)|clk               |   0.000|
+vga_out_green<6>  |   13.999(R)|clk               |   0.000|
+vga_out_green<7>  |   13.243(R)|clk               |   0.000|
+vga_out_hsync     |   11.968(R)|clk               |   0.000|
+vga_out_red<0>    |   13.156(R)|clk               |   0.000|
+vga_out_red<1>    |   12.824(R)|clk               |   0.000|
+vga_out_red<2>    |   13.607(R)|clk               |   0.000|
+vga_out_red<3>    |   13.224(R)|clk               |   0.000|
+vga_out_red<4>    |   14.566(R)|clk               |   0.000|
+vga_out_red<5>    |   13.075(R)|clk               |   0.000|
+vga_out_red<6>    |   14.258(R)|clk               |   0.000|
+vga_out_red<7>    |   13.315(R)|clk               |   0.000|
 vga_out_vsync     |   12.275(R)|clk               |   0.000|
 ------------------+------------+------------------+--------+
 
@@ -295,8 +295,8 @@ Clock to Setup on destination clock clock_27mhz
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-clock_27mhz      |   13.994|         |         |         |
-tv_in_line_clock1|    9.926|         |         |         |
+clock_27mhz      |   14.540|         |         |         |
+tv_in_line_clock1|    9.628|         |         |         |
 -----------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock tv_in_line_clock1
@@ -304,28 +304,28 @@ Clock to Setup on destination clock tv_in_line_clock1
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-clock_27mhz      |    6.584|         |         |         |
-tv_in_line_clock1|    5.730|         |         |         |
+clock_27mhz      |    8.957|         |         |         |
+tv_in_line_clock1|    6.417|         |         |         |
 -----------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+-------------------+---------+
 Source Pad     |Destination Pad    |  Delay  |
 ---------------+-------------------+---------+
-clock_27mhz    |tv_in_clock        |   14.012|
+clock_27mhz    |tv_in_clock        |   14.522|
 clock_27mhz    |vga_out_pixel_clock|   11.498|
 switch<0>      |led<0>             |    6.115|
 ---------------+-------------------+---------+
 
 
-Analysis completed Thu Nov 19 14:26:18 2015 
+Analysis completed Thu Nov 19 15:03:48 2015 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 378 MB
+Peak Memory Usage: 385 MB
 
 
 
