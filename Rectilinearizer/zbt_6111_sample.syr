@@ -5,14 +5,14 @@ Parameter TMPDIR set to /afs/athena.mit.edu/user/h/o/hollands/6.111-final-projec
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to /afs/athena.mit.edu/user/h/o/hollands/6.111-final-project/Rectilinearizer/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: zbt_6111_sample.prj
@@ -122,10 +122,10 @@ Compiling verilog file "main_fsm.v" in library work
 Module <ntsc_to_zbt> compiled
 Compiling verilog file "human_interface_corners.v" in library work
 Module <main_fsm> compiled
-Compiling verilog file "gaussian_x_blurrer.v" in library work
+Compiling verilog file "gaussian_blurrer.v" in library work
 Module <human_interface_corners> compiled
 Compiling verilog file "display_16hex.v" in library work
-Module <gaussian_x_blurrer> compiled
+Module <gaussian_blurrer> compiled
 Compiling verilog file "debounce.v" in library work
 Module <display_16hex> compiled
 Compiling verilog file "corner_sprite.v" in library work
@@ -176,7 +176,7 @@ Analyzing hierarchy for module <vram_display> in library <work> with parameters.
 
 Analyzing hierarchy for module <zbt_6111> in library <work>.
 
-Analyzing hierarchy for module <gaussian_x_blurrer> in library <work> with parameters.
+Analyzing hierarchy for module <gaussian_blurrer> in library <work> with parameters.
 	HEIGHT = "00000000000000000000000111100000"
 	WIDTH = "00000000000000000000001010000000"
 
@@ -339,10 +339,10 @@ Module <vram_display> is correct for synthesis.
 Analyzing module <zbt_6111> in library <work>.
 Module <zbt_6111> is correct for synthesis.
  
-Analyzing module <gaussian_x_blurrer> in library <work>.
+Analyzing module <gaussian_blurrer> in library <work>.
 	HEIGHT = 32'sb00000000000000000000000111100000
 	WIDTH = 32'sb00000000000000000000001010000000
-Module <gaussian_x_blurrer> is correct for synthesis.
+Module <gaussian_blurrer> is correct for synthesis.
  
 Analyzing module <adv7185init> in library <work>.
 "video_decoder.v" line 521: $display : ADV7185 Initialization values:
@@ -556,8 +556,8 @@ Synthesizing Unit <zbt_6111>.
 Unit <zbt_6111> synthesized.
 
 
-Synthesizing Unit <gaussian_x_blurrer>.
-    Related source file is "gaussian_x_blurrer.v".
+Synthesizing Unit <gaussian_blurrer>.
+    Related source file is "gaussian_blurrer.v".
 WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <read_data<35:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -579,7 +579,7 @@ WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be prese
 	inferred 146 D-type flip-flop(s).
 	inferred   2 Adder/Subtractor(s).
 	inferred   1 Multiplier(s).
-Unit <gaussian_x_blurrer> synthesized.
+Unit <gaussian_blurrer> synthesized.
 
 
 Synthesizing Unit <ntsc_decode>.
@@ -1244,7 +1244,7 @@ Optimizing FSM <adv7185/i2c/state/FSM> on signal <state[1:42]> with speed1 encod
 --------------------------------------------------------
 Loading device for application Rf_Device from file '2v6000.nph' in environment /afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE.
 WARNING:Xst:2404 -  FFs/Latches <dispdata<63:5>> (without init value) have a constant value of 0 in block <zbt_6111_sample>.
-WARNING:Xst:2404 -  FFs/Latches <write_data<35:30>> (without init value) have a constant value of 0 in block <gaussian_x_blurrer>.
+WARNING:Xst:2404 -  FFs/Latches <write_data<35:30>> (without init value) have a constant value of 0 in block <gaussian_blurrer>.
 WARNING:Xst:2404 -  FFs/Latches <ntsc_data<35:30>> (without init value) have a constant value of 0 in block <ntsc_to_zbt>.
 
 Synthesizing (advanced) Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_9_LPM_DFF_3>.
@@ -1258,10 +1258,10 @@ The following registers are absorbed into accumulator <corners3y>: 1 register on
 The following registers are absorbed into accumulator <corners4y>: 1 register on signal <human_interface_corners>.
 Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_9_LPM_DFF_3> synthesized (advanced).
 
-Synthesizing (advanced) Unit <gaussian_x_blurrer>.
+Synthesizing (advanced) Unit <gaussian_blurrer>.
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0000 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0000 by adding 1 register level(s).
-Unit <gaussian_x_blurrer> synthesized (advanced).
+Unit <gaussian_blurrer> synthesized (advanced).
 
 Synthesizing (advanced) Unit <ycrcb2rgb>.
 	Found pipelined multiplier on signal <B1_int_mult0000>:
@@ -1282,26 +1282,26 @@ Synthesizing (advanced) Unit <ycrcb2rgb>.
 Unit <ycrcb2rgb> synthesized (advanced).
 WARNING:Xst:1710 - FF/Latch <xnew> (without init value) has a constant value of 0 in block <debounce>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <clean> (without init value) has a constant value of 0 in block <debounce>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <write_data_19> (without init value) has a constant value of 1 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_18> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_17> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_16> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_15> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_14> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_13> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_12> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_11> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_10> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_9> (without init value) has a constant value of 1 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_8> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_7> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_6> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_5> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_4> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_3> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_2> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_1> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_0> (without init value) has a constant value of 0 in block <gaussian_x_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_19> (without init value) has a constant value of 1 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_18> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_17> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_16> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_15> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_14> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_13> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_12> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_11> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_10> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_9> (without init value) has a constant value of 1 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_8> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_7> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_6> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_5> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_4> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_3> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_2> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_1> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_0> (without init value) has a constant value of 0 in block <gaussian_blurrer>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <y_0_8> of sequential type is unconnected in block <ntsc_to_zbt>.
 WARNING:Xst:2677 - Node <y_0_9> of sequential type is unconnected in block <ntsc_to_zbt>.
 WARNING:Xst:2677 - Node <y_1_8> of sequential type is unconnected in block <ntsc_to_zbt>.
@@ -1602,8 +1602,8 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_32> (without i
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_33> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_34> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <adv7185/state_FSM_FFd5> of sequential type is unconnected in block <zbt_6111_sample>.
-INFO:Xst:2261 - The FF/Latch <write_addr_1> in Unit <gaussian_x_blurrer> is equivalent to the following FF/Latch, which will be removed : <read_addr_1> 
-INFO:Xst:2261 - The FF/Latch <write_addr_0> in Unit <gaussian_x_blurrer> is equivalent to the following FF/Latch, which will be removed : <read_addr_0> 
+INFO:Xst:2261 - The FF/Latch <write_addr_1> in Unit <gaussian_blurrer> is equivalent to the following FF/Latch, which will be removed : <read_addr_1> 
+INFO:Xst:2261 - The FF/Latch <write_addr_0> in Unit <gaussian_blurrer> is equivalent to the following FF/Latch, which will be removed : <read_addr_0> 
 
 Optimizing unit <zbt_6111_sample> ...
 
@@ -1613,7 +1613,7 @@ Optimizing unit <xvga> ...
 
 Optimizing unit <main_fsm> ...
 
-Optimizing unit <gaussian_x_blurrer> ...
+Optimizing unit <gaussian_blurrer> ...
 
 Optimizing unit <ntsc_decode> ...
 
@@ -1986,26 +1986,26 @@ Timing constraint: Default period analysis for Clock 'clock_27mhz'
   Total number of paths / destination ports: 110637 / 1296
 -------------------------------------------------------------------------
 Delay:               14.617ns (Levels of Logic = 9)
-  Source:            gblurx/multiplication_count_3 (FF)
-  Destination:       gblurx/pixel_19 (FF)
+  Source:            gblur/multiplication_count_3 (FF)
+  Destination:       gblur/pixel_19 (FF)
   Source Clock:      clock_27mhz rising 2.4X
   Destination Clock: clock_27mhz rising 2.4X
 
-  Data Path: gblurx/multiplication_count_3 to gblurx/pixel_19
+  Data Path: gblur/multiplication_count_3 to gblur/pixel_19
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             8   0.568   1.125  gblurx/multiplication_count_3 (gblurx/multiplication_count_3)
-     LUT4_D:I0->O          9   0.439   0.903  gblurx/pixel_mux0003<0>11 (gblurx/N1)
-     LUT4:I3->O            1   0.439   0.517  gblurx/pixel_mux0003<9> (gblurx/pixel_mux0003<9>)
-     MULT18X18:A9->P16     1   6.423   0.552  gblurx/Mmult_pixel_mult0000 (gblurx/pixel_mult0000<16>)
-     LUT4:I2->O            1   0.439   0.000  gblurx/Madd_pixel_addsub0000_lut<16> (gblurx/Madd_pixel_addsub0000_lut<16>)
-     MUXCY:S->O            1   0.298   0.000  gblurx/Madd_pixel_addsub0000_cy<16> (gblurx/Madd_pixel_addsub0000_cy<16>)
-     MUXCY:CI->O           1   0.053   0.000  gblurx/Madd_pixel_addsub0000_cy<17> (gblurx/Madd_pixel_addsub0000_cy<17>)
-     MUXCY:CI->O           0   0.053   0.000  gblurx/Madd_pixel_addsub0000_cy<18> (gblurx/Madd_pixel_addsub0000_cy<18>)
-     XORCY:CI->O           1   1.274   0.725  gblurx/Madd_pixel_addsub0000_xor<19> (gblurx/pixel_addsub0000<19>)
-     LUT2:I1->O            1   0.439   0.000  gblurx/pixel_mux0000<19>1 (gblurx/pixel_mux0000<19>)
-     FDRE:D                    0.370          gblurx/pixel_19
+     FDRE:C->Q             8   0.568   1.125  gblur/multiplication_count_3 (gblur/multiplication_count_3)
+     LUT4_D:I0->O          9   0.439   0.903  gblur/pixel_mux0003<0>11 (gblur/N1)
+     LUT4:I3->O            1   0.439   0.517  gblur/pixel_mux0003<9> (gblur/pixel_mux0003<9>)
+     MULT18X18:A9->P16     1   6.423   0.552  gblur/Mmult_pixel_mult0000 (gblur/pixel_mult0000<16>)
+     LUT4:I2->O            1   0.439   0.000  gblur/Madd_pixel_addsub0000_lut<16> (gblur/Madd_pixel_addsub0000_lut<16>)
+     MUXCY:S->O            1   0.298   0.000  gblur/Madd_pixel_addsub0000_cy<16> (gblur/Madd_pixel_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<17> (gblur/Madd_pixel_addsub0000_cy<17>)
+     MUXCY:CI->O           0   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<18> (gblur/Madd_pixel_addsub0000_cy<18>)
+     XORCY:CI->O           1   1.274   0.725  gblur/Madd_pixel_addsub0000_xor<19> (gblur/pixel_addsub0000<19>)
+     LUT2:I1->O            1   0.439   0.000  gblur/pixel_mux0000<19>1 (gblur/pixel_mux0000<19>)
+     FDRE:D                    0.370          gblur/pixel_19
     ----------------------------------------
     Total                     14.617ns (10.795ns logic, 3.822ns route)
                                        (73.9% logic, 26.1% route)
@@ -2200,12 +2200,12 @@ Delay:               6.799ns (Levels of Logic = 2)
 
 
 Total REAL time to Xst completion: 28.00 secs
-Total CPU time to Xst completion: 26.85 secs
+Total CPU time to Xst completion: 26.71 secs
  
 --> 
 
 
-Total memory usage is 518524 kilobytes
+Total memory usage is 518560 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  641 (   0 filtered)

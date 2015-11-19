@@ -32,9 +32,13 @@ module gaussian_blurrer #(parameter WIDTH = 640, HEIGHT = 480)
 	reg [9:0] pixel_buffer [4:0];
 	reg [3:0] multiplication_count;
 	reg go = 0;
+	reg old_go = 0;
 	reg [19:0] pixel;
 
+	assign done = ~go & old_go; //generate the done signal
+	
 	always @(posedge clk) begin	
+		old_go <= go; //used to generate the done signal
 		if(go) begin
 			multiplication_count <= multiplication_count + 1;
 			case(multiplication_count)
@@ -56,8 +60,9 @@ module gaussian_blurrer #(parameter WIDTH = 640, HEIGHT = 480)
 					//set address of next pixel to read
 					read_addr <= {y[8:0], x[9:0]} + 4; 
 					//write blurred grayscale pixel in YCrCb
-					write_addr <= {y, x};
+					write_addr <= {y[8:0], x[9:0]};
 					write_data <= {6'b0,pixel[19:10],10'd512,10'd512};
+					//write_data <= 0;
 					x <= x + 1; //move to next pixel
 					if(x == WIDTH - 1) begin
 						x <= 0;

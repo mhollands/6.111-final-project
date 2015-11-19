@@ -1,7 +1,7 @@
 Release 10.1.03 par K.39 (lin64)
 Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 
-eecs-digital-01::  Wed Nov 18 22:40:04 2015
+eecs-digital-01::  Wed Nov 18 23:22:06 2015
 
 par -w -intstyle ise -ol std -t 1 zbt_6111_sample_map.ncd zbt_6111_sample.ncd
 zbt_6111_sample.pcf 
@@ -373,7 +373,7 @@ Phase 12.27 (Checksum:374cfb1) REAL time: 17 secs
 Phase 13.24
 Phase 13.24 (Checksum:374cfb1) REAL time: 17 secs 
 
-REAL time consumed by placer: 17 secs 
+REAL time consumed by placer: 18 secs 
 CPU  time consumed by placer: 17 secs 
 Writing design to file zbt_6111_sample.ncd
 
@@ -513,7 +513,7 @@ All signals are completely routed.
 
 WARNING:Par:283 - There are 239 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 44 secs 
+Total REAL time to PAR completion: 43 secs 
 Total CPU time to PAR completion: 39 secs 
 
 Peak Memory Usage:  618 MB

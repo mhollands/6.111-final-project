@@ -38,7 +38,7 @@ user_file_2
 display_16hex.v
 s
 user_file_20
-gaussian_x_blurrer.v
+gaussian_blurrer.v
 s
 user_file_3
 labkit.ucf

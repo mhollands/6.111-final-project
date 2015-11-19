@@ -486,7 +486,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 	wire [35:0] blur_read_data;
 	wire [18:0] blur_write_addr;
 	wire [35:0] blur_write_data;
-	gaussian_x_blurrer gblurx(.reset(1'b0),
+	gaussian_blurrer gblur(.reset(1'b0),
 								  .clk(clk),
 								  .start(blur_start),
 								  .done(blur_done),
