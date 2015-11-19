@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    20:38:15 11/15/2015 
+// Create Date:    15:12:42 11/19/2015 
 // Design Name: 
-// Module Name:    gaussian_blurrer 
+// Module Name:    edge_detector 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,55 +18,69 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module gaussian_blurrer #(parameter WIDTH = 640, HEIGHT = 480) 
+module edge_detector #(parameter WIDTH = 640, HEIGHT = 480, THRESHOLD = 768) 
 							  (input reset,
 								input clk,
 								input start,
 								output done,
 								output reg [18:0] read_addr,
-								input [35:0] read_data,
+								input  [35:0] read_data,
 								output reg [18:0] write_addr,
-								output reg [35:0] write_data);
+								output reg write_data);
 	reg [9:0] x;
 	reg [8:0] y;
 	reg [9:0] pixel_buffer [8:0];
 	reg [9:0] pixel_load_buffer [2:0];
-	reg [4:0] multiplication_count;
+	reg [4:0] operation_count;
 	reg go = 0;
 	reg old_go = 0;
-	reg [19:0] pixel;
-
+	reg [10:0] gradient_x;
+	reg [10:0] gradient_y;
+	reg [21:0] GxSqr;
+	reg [21:0] GySqr;
 	assign done = ~go & old_go; //generate the done signal
 	
 	always @(posedge clk) begin	
 		old_go <= go; //used to generate the done signal
 		if(go) begin
-			multiplication_count <= multiplication_count + 1;
-			case(multiplication_count)
-				//these are 1024 times too big
-				0: pixel <= pixel + (95 * pixel_buffer[0]);
-				1: pixel <= pixel + (122 * pixel_buffer[1]);
+			operation_count <= operation_count + 1;
+			case(operation_count)
+				0: begin
+						gradient_x <= gradient_x - pixel_buffer[0];
+						gradient_y <= gradient_y - pixel_buffer[0];
+					end
+				1: begin 
+						gradient_x <= gradient_x + pixel_buffer[2];
+						gradient_y <= gradient_y - 2 * pixel_buffer[1];
+					end
 				2: begin 
-						pixel <= pixel + (95 * pixel_buffer[2]);
+						gradient_x <= gradient_x - 2 * pixel_buffer[3];
+						gradient_y <= gradient_y - pixel_buffer[2];
 						//load in pixel data
 						pixel_load_buffer[0] <= read_data[29:20];
 						//set address of next pixel to read
 						read_addr <= {y[8:0], x[9:0]} + 3; 
 					end
-				3: pixel <= pixel + (122 * pixel_buffer[3]);
-				4: pixel <= pixel + (155 * pixel_buffer[4]);
+				3: begin 
+						gradient_x <= gradient_x + 2 * pixel_buffer[5];
+						gradient_y <= gradient_y + pixel_buffer[6];
+					end
+				4: begin 
+						gradient_x <= gradient_x - pixel_buffer[6];
+						gradient_y <= gradient_y + 2 * pixel_buffer[7];
+					end
 				5: begin
-						pixel <= pixel + (122 * pixel_buffer[5]);
+						gradient_x <= gradient_x + pixel_buffer[8];
+						gradient_y <= gradient_y + pixel_buffer[8];
 						//load in pixel data
 						pixel_load_buffer[1] <= read_data[29:20];
 						//set address of next pixel to read
-						read_addr <= {y[8:0] + 1, x[9:0]} + 3; 
+						read_addr <= {y[8:0] + 1, x[9:0]} + 3;
 					end
-				6: pixel <= pixel + (95 * pixel_buffer[6]);
-				7: pixel <= pixel + (122 * pixel_buffer[7]);
-				8: pixel <= pixel + (95 * pixel_buffer[8]);
+				6: GxSqr <= gradient_x * gradient_x;
+				7: GySqr <= gradient_y * gradient_y;
 				default begin
-					multiplication_count <= 0;
+					operation_count <= 0;
 					//shift in new data
 					pixel_buffer[0] <= pixel_buffer[1];
 					pixel_buffer[1] <= pixel_buffer[2];
@@ -82,9 +96,9 @@ module gaussian_blurrer #(parameter WIDTH = 640, HEIGHT = 480)
 					pixel_load_buffer[2] <= read_data[29:20];
 					//set address of next pixel to read
 					read_addr <= {y[8:0] - 1 , x[9:0]} + 3; 
-					//write blurred grayscale pixel in YCrCb
+					//write edge or not
 					write_addr <= {y[8:0], x[9:0]};
-					write_data <= {6'b0,pixel[19:10],10'd512,10'd512};
+					write_data <= (GxSqr + GySqr > THRESHOLD) ? 1 : 0;
 
 					x <= x + 1; //move to next pixel
 					if(x == WIDTH - 1) begin
@@ -96,7 +110,8 @@ module gaussian_blurrer #(parameter WIDTH = 640, HEIGHT = 480)
 						go <= 0;
 					end
 					
-					pixel <= 0;
+					gradient_x <= 0;
+					gradient_y <= 0;
 				end
 			endcase
 		end
@@ -104,10 +119,12 @@ module gaussian_blurrer #(parameter WIDTH = 640, HEIGHT = 480)
 		if(start) begin
 				read_addr <= 0;
 				write_addr <= 0;
+				write_data <= 0;
 				x <= 0;
 				y <= 0;
-				multiplication_count <= 0;
-				pixel <= 0;
+				operation_count <= 0;
+				gradient_x <= 0;
+				gradient_y <= 0;
 				go <= 1;
 				pixel_buffer[0] <= 0;
 				pixel_buffer[1] <= 0;
@@ -118,3 +135,4 @@ module gaussian_blurrer #(parameter WIDTH = 640, HEIGHT = 480)
 	end
 
 endmodule
+

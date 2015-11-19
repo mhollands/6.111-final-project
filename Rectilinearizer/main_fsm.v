@@ -41,6 +41,8 @@ module main_fsm(
 	  parameter MANUAL_DETECTION_WAIT = 5'b00100;
 	  parameter BLUR_START = 5'b00101;
 	  parameter BLUR_WAIT = 5'b00110;
+	  parameter EDGE_DETECTION_START = 5'b00111;
+	  parameter EDGE_DETECTION_WAIT = 5'b01000;
 	  parameter SHOW_TRANSFORMED = 5'b11111;
 
 	//if we are in the AUTO_DETECTION_START state then 

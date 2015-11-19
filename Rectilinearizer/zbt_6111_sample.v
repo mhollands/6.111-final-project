@@ -477,8 +477,6 @@ module zbt_6111_sample(beep, audio_reset_b,
 							auto_detection_done,
 							corners_auto);
 
-
-
    // wire up to ZBT ram
    wire [35:0] vram_write_data;
    wire [35:0] vram_read_data;
@@ -530,6 +528,31 @@ module zbt_6111_sample(beep, audio_reset_b,
 	assign vram_addr1 = (fsm_state == 5'b00101 || fsm_state == 5'b00110) ? blur_write_addr : display_addr;
 	assign blur_read_data = vram_read_data;
 	
+	//wire bram
+	wire [18:0] bram_address;
+	wire bram_write_enable;
+	wire bram_mem_in;
+	wire bram_mem_out;
+	mybram #(.LOGSIZE(19),.WIDTH(1))
+   bram(.addr(address),.clk(clock),.we(write_enable),.din(mem_in),.dout(mem_out));
+	assign bram_write_enable = (fsm_state == 5'b00111 | fsm_state == 5'b01000);
+	
+	//wire edge detector
+	wire edge_detector_start;
+	wire edge_detector_done;
+	wire [18:0] edge_detector_read_addr;
+	wire [35:0] edge_detector_read_data;
+	wire [18:0] edge_detector_write_addr;
+	wire edge_detector_write_data;
+	edge_detector edgedetector(.reset(1'b0),
+										.clk(clk),
+										.start(edge_detector_start),
+										.done(edge_detector_done),
+										.read_addr(	edge_detector_read_addr),							
+										.read_data(edge_detector_read_data),
+										.write_addr(edge_detector_write_addr),
+										.write_data(edge_detector_write_data));
+
    // ADV7185 NTSC decoder interface code
    // adv7185 initialization module
    adv7185init adv7185(.reset(reset), .clock_27mhz(clock_27mhz), 
@@ -673,7 +696,6 @@ endmodule
 
 ///////////////////////////////////////////////////////////////////////////////
 // xvga: Generate XVGA display signals (1024 x 768 @ 60Hz)
-
 module xvga(vclock,hcount,vcount,hsync,vsync,blank);
    input vclock;
    output [10:0] hcount;

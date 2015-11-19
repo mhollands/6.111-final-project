@@ -1,5 +1,5 @@
 NUM_USER_FILES
-20
+22
 s
 user_file_1
 debounce.v
@@ -39,6 +39,12 @@ display_16hex.v
 s
 user_file_20
 gaussian_blurrer.v
+s
+user_file_21
+edge_detector.v
+s
+user_file_22
+mybram.v
 s
 user_file_3
 labkit.ucf
