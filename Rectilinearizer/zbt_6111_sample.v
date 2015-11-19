@@ -288,17 +288,17 @@ module zbt_6111_sample(beep, audio_reset_b,
 
 /**********/
 
-   assign ram1_data = 36'hZ; 
-   assign ram1_address = 19'h0;
-   assign ram1_adv_ld = 1'b0;
-   assign ram1_clk = 1'b0;
+   //assign ram1_data = 36'hZ; 
+   //assign ram1_address = 19'h0;
+   //assign ram1_adv_ld = 1'b0;
+   //assign ram1_clk = 1'b0;
    
    //These values has to be set to 0 like ram0 if ram1 is used.
-   assign ram1_cen_b = 1'b1;
-   assign ram1_ce_b = 1'b1;
-   assign ram1_oe_b = 1'b1;
-   assign ram1_we_b = 1'b1;
-   assign ram1_bwe_b = 4'hF;
+   //assign ram1_cen_b = 1'b0;
+   assign ram1_ce_b = 1'b0;
+   assign ram1_oe_b = 1'b0;
+   //assign ram1_we_b = 1'b0;
+   assign ram1_bwe_b = 4'h0;
 
    // clock_feedback_out will be assigned by ramclock
    // assign clock_feedback_out = 1'b0;  //2011-Nov-10
@@ -454,6 +454,17 @@ module zbt_6111_sample(beep, audio_reset_b,
 		   vram_write_data, vram_read_data,
 		   ram0_clk_not_used,   //to get good timing, don't connect ram_clk to zbt_6111
 		   ram0_we_b, ram0_address, ram0_data, ram0_cen_b);
+			
+	wire [35:0] vram_write_data1;
+   wire [35:0] vram_read_data1;
+   wire [18:0] vram_addr1;
+   wire vram_we1;
+
+   wire ram1_clk_not_used;
+   zbt_6111 zbt2(clk, 1'b1, vram_we1, vram_addr1,
+		   vram_write_data1, vram_read_data1,
+		   ram1_clk_not_used,   //to get good timing, don't connect ram_clk to zbt_6111
+		   ram1_we_b, ram1_address, ram1_data, ram1_cen_b);
 
    // generate pixel value from reading ZBT memory
    wire [29:0] 	vr_pixel;

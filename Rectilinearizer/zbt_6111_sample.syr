@@ -4,15 +4,15 @@ Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to /afs/athena.mit.edu/user/h/o/hollands/6.111-final-project/Rectilinearizer/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to /afs/athena.mit.edu/user/h/o/hollands/6.111-final-project/Rectilinearizer/xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: zbt_6111_sample.prj
@@ -218,21 +218,21 @@ WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLKFX_DI
 WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLKFX_MULTIPLY> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLKIN_PERIOD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 752: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 769: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 782: attribute on instance <INIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 763: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 763: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 763: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 763: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 763: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 763: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 763: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 780: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 780: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 780: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 780: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 780: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 780: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 780: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 793: attribute on instance <INIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 
 =========================================================================
 *                            HDL Analysis                               *
@@ -426,7 +426,6 @@ INFO:Xst:2561 - Always blocking tristate driving signal <user1> in unit <zbt_611
 INFO:Xst:2561 - Always blocking tristate driving signal <user2> in unit <zbt_6111_sample> is removed.
 INFO:Xst:2561 - Always blocking tristate driving signal <user3> in unit <zbt_6111_sample> is removed.
 INFO:Xst:2561 - Always blocking tristate driving signal <user4> in unit <zbt_6111_sample> is removed.
-INFO:Xst:2561 - Always blocking tristate driving signal <ram1_data> in unit <zbt_6111_sample> is removed.
 INFO:Xst:2561 - Always blocking tristate driving signal <daughtercard> in unit <zbt_6111_sample> is removed.
 INFO:Xst:2561 - Always blocking tristate driving signal <systemace_data> in unit <zbt_6111_sample> is removed.
 
@@ -528,10 +527,10 @@ WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and l
 WARNING:Xst:647 - Input <vram_read_data<35:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:737 - Found 19-bit latch for signal <vram_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 11-bit addsub for signal <hcount_f>.
-    Found 10-bit adder for signal <vcount_f$addsub0000> created at line 665.
-    Found 11-bit comparator greatequal for signal <vcount_f$cmp_ge0000> created at line 665.
-    Found 10-bit comparator less for signal <vram_addr$cmp_lt0000> created at line 669.
-    Found 11-bit comparator less for signal <vram_addr$cmp_lt0001> created at line 669.
+    Found 10-bit adder for signal <vcount_f$addsub0000> created at line 676.
+    Found 11-bit comparator greatequal for signal <vcount_f$cmp_ge0000> created at line 676.
+    Found 10-bit comparator less for signal <vram_addr$cmp_lt0000> created at line 680.
+    Found 11-bit comparator less for signal <vram_addr$cmp_lt0001> created at line 680.
     Found 11-bit subtractor for signal <x>.
     Found 10-bit subtractor for signal <y>.
     Summary:
@@ -791,6 +790,7 @@ WARNING:Xst:2565 - Inout <user3<29>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<5>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<6>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<7>> is never assigned.
+WARNING:Xst:1306 - Output <ram1_adv_ld> is never assigned.
 WARNING:Xst:2565 - Inout <user3<8>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<9>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<10>> is never assigned.
@@ -913,113 +913,78 @@ WARNING:Xst:2565 - Inout <user4<15>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<6>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<16>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<21>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<10>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<7>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<22>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<17>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<11>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<8>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<23>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<18>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<12>> is never assigned.
 WARNING:Xst:2565 - Inout <daughtercard<9>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<19>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<24>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<13>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<0>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<30>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<25>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<14>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<1>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<26>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<31>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<20>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<2>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<15>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<27>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<3>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<16>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<21>> is never assigned.
 WARNING:Xst:647 - Input <tv_in_data_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:2565 - Inout <user4<28>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<22>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<4>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<17>> is never assigned.
 WARNING:Xst:647 - Input <tv_in_hff> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:2565 - Inout <user1<10>> is never assigned.
 WARNING:Xst:2565 - Inout <user4<29>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<23>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<5>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<18>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<0>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<11>> is never assigned.
 WARNING:Xst:647 - Input <tv_in_ycrcb<9:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:2565 - Inout <ram1_data<24>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<6>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<19>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<1>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<12>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<7>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<25>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<30>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<2>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<13>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<31>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<8>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<26>> is never assigned.
+WARNING:Xst:1306 - Output <ram1_clk> is never assigned.
 WARNING:Xst:2565 - Inout <user2<3>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<14>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<32>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<9>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<27>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<4>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<15>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<20>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<28>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<33>> is never assigned.
 WARNING:Xst:647 - Input <tv_in_line_clock2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:2565 - Inout <ram1_data<0>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<5>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<21>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<16>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<29>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<34>> is never assigned.
 WARNING:Xst:647 - Input <keyboard_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:2565 - Inout <ram1_data<1>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<6>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<17>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<22>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<35>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<2>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<7>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<18>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<23>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<3>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<10>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<8>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<24>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<19>> is never assigned.
 WARNING:Xst:647 - Input <ac97_sdata_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:2565 - Inout <ram1_data<4>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<11>> is never assigned.
 WARNING:Xst:2565 - Inout <user2<9>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<25>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<30>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<5>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<12>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<26>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<31>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<6>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<13>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<27>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<7>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<14>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<28>> is never assigned.
-WARNING:Xst:2565 - Inout <ram1_data<8>> is never assigned.
 WARNING:Xst:2565 - Inout <systemace_data<15>> is never assigned.
 WARNING:Xst:2565 - Inout <user1<29>> is never assigned.
 WARNING:Xst:647 - Input <systemace_mpbrdy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:2565 - Inout <ram1_data<9>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<10>> is never assigned.
 WARNING:Xst:647 - Input <mouse_clock> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:2565 - Inout <user3<11>> is never assigned.
@@ -1046,6 +1011,11 @@ WARNING:Xst:2565 - Inout <user3<26>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<2>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<27>> is never assigned.
 WARNING:Xst:2565 - Inout <user3<3>> is never assigned.
+WARNING:Xst:653 - Signal <vram_write_data1> is used but never assigned. This sourceless signal will be automatically connected to value 000000000000000000000000000000000000.
+WARNING:Xst:653 - Signal <vram_we1> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:646 - Signal <vram_read_data1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <vram_addr1> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000000.
+WARNING:Xst:646 - Signal <ram1_clk_not_used> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <ram0_clk_not_used> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <locked> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <field_edge> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
@@ -1096,17 +1066,17 @@ Macro Statistics
  6-bit up counter                                      : 1
  8-bit down counter                                    : 2
  8-bit up counter                                      : 1
-# Registers                                            : 93
+# Registers                                            : 96
  1-bit register                                        : 43
  10-bit register                                       : 19
  19-bit register                                       : 1
- 2-bit register                                        : 1
+ 2-bit register                                        : 2
  21-bit register                                       : 8
  24-bit register                                       : 1
  3-bit register                                        : 1
  30-bit register                                       : 3
  32-bit register                                       : 1
- 36-bit register                                       : 3
+ 36-bit register                                       : 5
  4-bit register                                        : 4
  40-bit register                                       : 2
  5-bit register                                        : 1
@@ -1129,9 +1099,9 @@ Macro Statistics
 # Multiplexers                                         : 2
  1-bit 40-to-1 multiplexer                             : 1
  4-bit 16-to-1 multiplexer                             : 1
-# Tristates                                            : 2
+# Tristates                                            : 3
  1-bit tristate buffer                                 : 1
- 36-bit tristate buffer                                : 1
+ 36-bit tristate buffer                                : 2
 
 =========================================================================
 
@@ -1307,24 +1277,18 @@ WARNING:Xst:2677 - Node <G_int_7> of sequential type is unconnected in block <yc
 WARNING:Xst:2677 - Node <G_int_8> of sequential type is unconnected in block <ycrcb2rgb>.
 WARNING:Xst:2677 - Node <G_int_9> of sequential type is unconnected in block <ycrcb2rgb>.
 WARNING:Xst:1710 - FF/Latch <old_source> (without init value) has a constant value of 0 in block <adv7185init>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_53> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_52> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_51> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_50> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_49> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_48> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_47> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_46> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_45> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_44> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_43> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_42> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_41> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_40> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_39> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_38> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_37> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <FSM_FFd4> (without init value) has a constant value of 0 in block <state>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_10> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_9> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_8> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_7> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_6> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_5> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_4> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_3> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_2> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_1> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_0> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <we_delay_0> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <write_data_old1_35> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <write_data_old1_34> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <write_data_old1_33> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
@@ -1339,8 +1303,45 @@ WARNING:Xst:1710 - FF/Latch <data_59> (without init value) has a constant value 
 WARNING:Xst:1710 - FF/Latch <data_58> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_57> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_56> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_55> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_54> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <FSM_FFd4> (without init value) has a constant value of 0 in block <state>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_35> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_34> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_33> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_32> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_31> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_30> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_29> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_28> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_27> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_26> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_25> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_24> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_23> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_22> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_21> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_20> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_19> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_18> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_17> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_16> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_15> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_14> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_13> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_12> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_old1_11> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_32> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_31> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_30> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_29> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_28> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_27> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_26> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_25> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_24> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_23> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_22> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_21> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_20> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_19> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_18> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_17> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
@@ -1358,29 +1359,72 @@ WARNING:Xst:1710 - FF/Latch <data_6> (without init value) has a constant value o
 WARNING:Xst:1710 - FF/Latch <data_5> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_4> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_3> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_36> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_35> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_55> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_54> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_53> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_52> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_51> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_50> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_49> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_48> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_47> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_46> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_45> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_44> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_43> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_42> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_41> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_34> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_35> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_36> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_37> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_38> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_39> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_40> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <data_33> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_32> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_31> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_30> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_29> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_28> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_27> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_26> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_25> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_24> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_23> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_22> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_21> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_20> (without init value) has a constant value of 0 in block <hexdisp1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_20> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_19> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_18> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_17> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_16> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_15> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_21> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_22> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_23> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_24> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_25> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_26> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_27> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_28> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_29> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_30> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_31> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_32> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_33> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_34> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_35> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_30> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_31> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_32> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_33> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_34> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_35> (without init value) has a constant value of 0 in block <zbt1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <we_delay_1> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_0> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_1> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_2> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_3> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_4> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_5> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_6> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_7> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_8> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_9> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_10> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_11> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_12> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_13> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_old2_14> (without init value) has a constant value of 0 in block <zbt2>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <FSM_FFd2> (without init value) has a constant value of 0 in block <state>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <FSM_FFd1> (without init value) has a constant value of 0 in block <state>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <FSM_FFd3> (without init value) has a constant value of 0 in block <state>. This FF/Latch will be trimmed during the optimization process.
@@ -1421,8 +1465,8 @@ Macro Statistics
  8-bit up counter                                      : 1
 # Accumulators                                         : 8
  10-bit updown loadable accumulator                    : 8
-# Registers                                            : 713
- Flip-Flops                                            : 713
+# Registers                                            : 787
+ Flip-Flops                                            : 787
 # Latches                                              : 1
  19-bit latch                                          : 1
 # Comparators                                          : 30
@@ -1510,6 +1554,80 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_30> (without i
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_31> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_32> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_33> (without init value) has a constant value of 0 in block <display_16hex>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_17> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_18> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_19> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_20> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_21> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_22> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_23> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_24> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_25> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_26> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_27> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_28> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_29> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_30> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_31> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_32> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_33> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_34> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/we_delay_0> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_0> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_1> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_2> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_3> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_4> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_5> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_6> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_7> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_8> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_9> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_10> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_11> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_12> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_13> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_14> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_15> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_16> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <zbt2/write_data_old1_35> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_19> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_20> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_21> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_22> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_23> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_24> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_25> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_26> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_27> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_28> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_29> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_30> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_31> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_32> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_33> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_34> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/we_delay_1> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_35> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_0> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_1> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_2> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_3> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_4> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_5> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_6> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_7> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_8> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_9> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_10> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_11> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_12> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_13> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_14> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_15> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_16> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_17> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old2_18> (without init value) has a constant value of 0 in block <zbt_6111_sample>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <adv7185/state_FSM_FFd5> of sequential type is unconnected in block <zbt_6111_sample>.
 
 Optimizing unit <zbt_6111_sample> ...
@@ -1722,8 +1840,8 @@ Cell Usage :
 #      VCC                         : 1
 #      XORCY                       : 130
 # FlipFlops/Latches                : 636
-#      FD                          : 128
-#      FDE                         : 272
+#      FD                          : 96
+#      FDE                         : 304
 #      FDR                         : 115
 #      FDRE                        : 53
 #      FDRS                        : 9
@@ -1733,16 +1851,17 @@ Cell Usage :
 #      LDE                         : 19
 #      OFDDRRSE                    : 3
 # Shift Registers                  : 85
-#      SRL16                       : 85
+#      SRL16                       : 55
+#      SRL16E                      : 30
 # Clock Buffers                    : 5
 #      BUFG                        : 4
 #      BUFGP                       : 1
-# IO Buffers                       : 298
+# IO Buffers                       : 332
 #      IBUF                        : 21
 #      IBUFG                       : 2
 #      IOBUF                       : 30
-#      OBUF                        : 238
-#      OBUFT                       : 7
+#      OBUF                        : 236
+#      OBUFT                       : 43
 # DCMs                             : 3
 #      DCM                         : 3
 # MULTs                            : 5
@@ -1760,7 +1879,7 @@ Selected Device : 2v6000bf957-4
     Number used as logic:              1205
     Number used as Shift registers:      85
  Number of IOs:                         576
- Number of bonded IOBs:                 301  out of    684    44%  
+ Number of bonded IOBs:                 335  out of    684    48%  
  Number of MULT18X18s:                    5  out of    144     3%  
  Number of GCLKs:                         5  out of     16    31%  
  Number of DCMs:                          3  out of     12    25%  
@@ -1802,8 +1921,8 @@ Asynchronous Control Signals Information:
 -----------------------------------+----------------------------------+-------+
 Control Signal                     | Buffer(FF name)                  | Load  |
 -----------------------------------+----------------------------------+-------+
-analyzer1_data_0_OBUF(XST_GND:G)   | NONE(colCvt/Mmult_X_int_mult0000)| 5     |
-vga_out_sync_b_OBUF(XST_VCC:P)     | NONE(colCvt/Mmult_X_int_mult0000)| 5     |
+ram0_cen_b_OBUF(XST_GND:G)         | NONE(colCvt/Mmult_A_int_mult0000)| 5     |
+ram1_we_b_OBUF(XST_VCC:P)          | NONE(colCvt/Mmult_A_int_mult0000)| 5     |
 -----------------------------------+----------------------------------+-------+
 
 Timing Summary:
@@ -1936,7 +2055,7 @@ Offset:              8.723ns (Levels of Logic = 7)
     ----------------------------------------  ------------
      IBUF:I->O            12   0.825   1.216  tv_in_ycrcb_15_IBUF (tv_in_ycrcb_15_IBUF)
      LUT4:I0->O            1   0.439   0.557  decode/current_state_cmp_eq002210 (decode/current_state_cmp_eq002210)
-     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N306)
+     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N342)
      LUT4:I3->O            7   0.439   1.024  decode/current_state_cmp_eq002217 (decode/current_state_cmp_eq0022)
      LUT3:I1->O            1   0.439   0.551  decode/current_state_mux0000<3>376 (decode/N8)
      LUT4:I2->O            1   0.439   0.803  decode/current_state_mux0000<3>20 (decode/current_state_mux0000<3>20)
@@ -2026,15 +2145,15 @@ Delay:               6.799ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 30.00 secs
-Total CPU time to Xst completion: 22.35 secs
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 22.48 secs
  
 --> 
 
 
-Total memory usage is 508984 kilobytes
+Total memory usage is 509460 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  552 (   0 filtered)
-Number of infos    :   12 (   0 filtered)
+Number of warnings :  671 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
 
