@@ -290,7 +290,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 
    //assign ram1_data = 36'hZ; 
    //assign ram1_address = 19'h0;
-   //assign ram1_adv_ld = 1'b0;
+   assign ram1_adv_ld = 1'b0;
    //assign ram1_clk = 1'b0;
    
    //These values has to be set to 0 like ram0 if ram1 is used.
@@ -400,7 +400,7 @@ module zbt_6111_sample(beep, audio_reset_b,
    
    ramclock rc(.ref_clock(clock_65mhz), .fpga_clock(clk),
 					.ram0_clock(ram0_clk), 
-					//.ram1_clock(ram1_clk),   //uncomment if ram1 is used
+					.ram1_clock(ram1_clk),   //uncomment if ram1 is used
 					.clock_feedback_in(clock_feedback_in),
 					.clock_feedback_out(clock_feedback_out), .locked(locked));
 
@@ -429,11 +429,13 @@ module zbt_6111_sample(beep, audio_reset_b,
    xvga xvga1(clk,hcount,vcount,hsync,vsync,blank);
 
 	//set up the main fsm
+	wire blur_start;
+	wire blur_done;
 	wire auto_detection_done;
 	wire auto_detection_start;
 	wire set_corners;
-	wire [2:0] fsm_state;
-	main_fsm fsm (clk, ~button_enter, switch[7], auto_detection_done, fsm_state, auto_detection_start, set_corners);
+	wire [4:0] fsm_state;
+	main_fsm fsm (clk, ~button_enter, switch[7], auto_detection_done, blur_done, fsm_state, auto_detection_start, set_corners, blur_start);
 
 	//auto_detection_module - mock module for now\
 	wire [79:0] corners_auto;
@@ -443,11 +445,20 @@ module zbt_6111_sample(beep, audio_reset_b,
 							auto_detection_done,
 							corners_auto);
 
+
+
    // wire up to ZBT ram
    wire [35:0] vram_write_data;
    wire [35:0] vram_read_data;
-   wire [18:0] vram_addr;
+   reg [18:0] vram_addr;
    wire vram_we;
+
+   // generate pixel value from reading ZBT memory
+   wire [29:0] 	vr_pixel;
+   wire [18:0] 	display_addr;
+	wire [35:0] display_read_data;
+   vram_display #(192,144) vd1(reset,clk,hcount,vcount,vr_pixel,
+		    display_addr,display_read_data);
 
    wire ram0_clk_not_used;
    zbt_6111 zbt1(clk, 1'b1, vram_we, vram_addr,
@@ -465,15 +476,17 @@ module zbt_6111_sample(beep, audio_reset_b,
 		   vram_write_data1, vram_read_data1,
 		   ram1_clk_not_used,   //to get good timing, don't connect ram_clk to zbt_6111
 		   ram1_we_b, ram1_address, ram1_data, ram1_cen_b);
+	//write into the second zbt if you are in the blurring states
+	assign vram_we1 = (fsm_state == 5'b00101 || fsm_state == 5'b00110) ? 1 : 0;
+	//this line is causing upset?!
+	assign display_read_data = (fsm_state == 5'b11111) ? vram_read_data1 : vram_read_data;
 
 	//wire gaussian blurrer
-	wire blur_start;
-	wire blur_done;
 	wire [18:0] blur_read_addr;
 	wire [35:0] blur_read_data;
 	wire [18:0] blur_write_addr;
 	wire [35:0] blur_write_data;
-	gaussian_blurrer gblur(.reset(1'b0),
+	gaussian_x_blurrer gblurx(.reset(1'b0),
 								  .clk(clk),
 								  .start(blur_start),
 								  .done(blur_done),
@@ -481,14 +494,10 @@ module zbt_6111_sample(beep, audio_reset_b,
 								  .read_data(blur_read_data),
 								  .write_addr(blur_write_addr),
 								  .write_data(blur_write_data));
-
-   // generate pixel value from reading ZBT memory
-   wire [29:0] 	vr_pixel;
-   wire [18:0] 	display_addr;
-
-   vram_display #(192,144) vd1(reset,clk,hcount,vcount,vr_pixel,
-		    display_addr,vram_read_data);
-
+	assign vram_write_data1 = blur_write_data;
+	assign vram_addr1 = (fsm_state == 5'b00101 || fsm_state == 5'b00110) ? blur_write_addr : display_addr;
+	assign blur_read_data = vram_read_data;
+	
    // ADV7185 NTSC decoder interface code
    // adv7185 initialization module
    adv7185init adv7185(.reset(reset), .clock_27mhz(clock_27mhz), 
@@ -512,12 +521,18 @@ module zbt_6111_sample(beep, audio_reset_b,
    ntsc_to_zbt n2z (clk, tv_in_line_clock1, fvh, dv, ycrcb[29:0],
 		    ntsc_addr, ntsc_data, ntsc_we);
 
-   wire [35:0] 	write_data = ntsc_data;
-	//address is either chosen by camera or display
-   assign 	vram_addr = fsm_state == 0 ? ntsc_addr : display_addr;
+	//choose first zbt bank signals
+	always @(*) begin
+		case(fsm_state)
+			5'b00000: vram_addr = ntsc_addr;
+			5'b00101: vram_addr = blur_read_addr;
+			5'b00110: vram_addr = blur_read_addr;
+			default:	vram_addr = display_addr;
+		endcase
+	end
 	//write enable when in write mode and camera wants to write
-   assign 	vram_we = (fsm_state == 0) & ntsc_we;
-   assign 	vram_write_data = write_data;
+	assign 	vram_write_data = ntsc_data;
+	assign 	vram_we = (fsm_state == 0) & ntsc_we;
 
 	//handle corner selection
 	wire [9:0] corners1x_manual;
@@ -603,7 +618,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 		{vsync_delay[2],vsync_delay[1],vsync_delay[0]} <= {vsync_delay[1],vsync_delay[0], vs};
 		{blank_delay[2],blank_delay[1],blank_delay[0]} <= {blank_delay[1],blank_delay[0], b};
      end
-
+	
    // VGA Output.  In order to meet the setup and hold times of the
    // AD7125, we send it ~clk.
    assign vga_out_red = pixel[23:16];
@@ -619,10 +634,9 @@ module zbt_6111_sample(beep, audio_reset_b,
    assign led = ~{vram_addr[18:13],reset,switch[0]};
 
 	//displayed on hex display for debugging
-   always @(posedge clk)
-     // dispdata <= {vram_read_data,9'b0,vram_addr};
+   always @(posedge clk) begin
      dispdata <= fsm_state;
-
+	end
 endmodule
 
 ///////////////////////////////////////////////////////////////////////////////

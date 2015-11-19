@@ -11,34 +11,34 @@ Target Device  : xc2v6000
 Target Package : bf957
 Target Speed   : -4
 Mapper Version : virtex2 -- $Revision: 1.46.12.2 $
-Mapped Date    : Tue Nov 17 14:08:40 2015
+Mapped Date    : Wed Nov 18 22:39:44 2015
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:  279
+Number of warnings:  243
 Logic Utilization:
-  Total Number Slice Registers:         633 out of  67,584    1%
-    Number used as Flip Flops:          614
+  Total Number Slice Registers:         791 out of  67,584    1%
+    Number used as Flip Flops:          772
     Number used as Latches:              19
-  Number of 4 input LUTs:             1,240 out of  67,584    1%
+  Number of 4 input LUTs:             1,450 out of  67,584    2%
 Logic Distribution:
-  Number of occupied Slices:            779 out of  33,792    2%
-    Number of Slices containing only related logic:     779 out of     779 100%
-    Number of Slices containing unrelated logic:          0 out of     779   0%
+  Number of occupied Slices:            950 out of  33,792    2%
+    Number of Slices containing only related logic:     950 out of     950 100%
+    Number of Slices containing unrelated logic:          0 out of     950   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       1,289 out of  67,584    1%
-    Number used as logic:             1,155
-    Number used as a route-thru:         49
-    Number used as Shift registers:      85
-  Number of bonded IOBs:                577 out of     684   84%
+  Total Number of 4 input LUTs:       1,537 out of  67,584    2%
+    Number used as logic:             1,354
+    Number used as a route-thru:         87
+    Number used as Shift registers:      96
+  Number of bonded IOBs:                576 out of     684   84%
     IOB Flip Flops:                       6
-  Number of MULT18X18s:                   5 out of     144    3%
+  Number of MULT18X18s:                   6 out of     144    4%
   Number of BUFGMUXs:                     5 out of      16   31%
   Number of DCMs:                         3 out of      12   25%
 
-Peak Memory Usage:  496 MB
-Total REAL time to MAP completion:  8 secs 
+Peak Memory Usage:  500 MB
+Total REAL time to MAP completion:  5 secs 
 Total CPU time to MAP completion:   4 secs 
 
 NOTES:
@@ -82,7 +82,7 @@ Section 1 - Errors
 Section 2 - Warnings
 --------------------
 WARNING:LIT:243 - Logical network user3<28>_IBUF has no load.
-WARNING:LIT:395 - The above warning message base_net_load_rule is repeated 274
+WARNING:LIT:395 - The above warning message base_net_load_rule is repeated 238
    more times for the following (max. 5 shown):
    user3<4>_IBUF,
    user3<29>_IBUF,
@@ -96,26 +96,6 @@ WARNING:LIT:162 - Only DFS outputs (CLKFX/FX180/CONCUR) of DCM symbol "vclk1"
 WARNING:PhysDesignRules:372 - Gated clock. Clock net vd1/vram_addr_cmp_lt0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<0>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<1>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<2>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<3>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<4>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<5>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<6>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<7>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<8>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<9>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <disp_data_in_IBUF> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <tv_in_data_valid_IBUF> is incomplete.
@@ -140,62 +120,10 @@ WARNING:PhysDesignRules:367 - The signal <tv_in_ycrcb<8>_IBUF> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <tv_in_ycrcb<9>_IBUF> is incomplete.
    The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<10>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<11>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<20>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<12>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<21>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<13>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<30>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<22>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<14>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<31>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<23>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<15>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<32>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<24>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<16>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<33>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<25>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<17>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<34>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<26>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<18>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<35>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<27>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<19>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <systemace_data<0>_IBUF> is incomplete.
    The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<28>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <systemace_data<1>_IBUF> is incomplete.
    The signal does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <ram1_data<29>_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <systemace_data<2>_IBUF> is incomplete.
    The signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <systemace_data<3>_IBUF> is incomplete.
@@ -659,7 +587,7 @@ INFO:PhysDesignRules:772 - To achieve optimal frequency synthesis performance
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-  87 block(s) optimized away
+  57 block(s) optimized away
 
 Section 5 - Removed Logic
 -------------------------
@@ -679,7 +607,6 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Strength | Rate |              |          | Delay    |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
-| Q                                  | IOB              | OUTPUT    | LVTTL                | 12       | SLOW | OUTDDR       |          |          |
 | ac97_bit_clock                     | IOB              | INPUT     | LVTTL                |          |      |              |          |          |
 | ac97_sdata_in                      | IOB              | INPUT     | LVTTL                |          |      |              |          |          |
 | ac97_sdata_out                     | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
@@ -968,43 +895,43 @@ Section 6 - IOB Properties
 | ram1_bwe_b<3>                      | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
 | ram1_ce_b                          | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
 | ram1_cen_b                         | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
-| ram1_clk                           | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
-| ram1_data<0>                       | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<1>                       | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<2>                       | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<3>                       | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<4>                       | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<5>                       | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<6>                       | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<7>                       | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<8>                       | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<9>                       | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<10>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<11>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<12>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<13>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<14>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<15>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<16>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<17>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<18>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<19>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<20>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<21>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<22>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<23>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<24>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<25>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<26>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<27>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<28>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<29>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<30>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<31>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<32>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<33>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<34>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
-| ram1_data<35>                      | IOB              | INPUT     | LVDCI_33             |          |      |              |          |          |
+| ram1_clk                           | IOB              | OUTPUT    | LVDCI_33             |          |      | OUTDDR       |          |          |
+| ram1_data<0>                       | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<1>                       | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<2>                       | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<3>                       | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<4>                       | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<5>                       | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<6>                       | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<7>                       | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<8>                       | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<9>                       | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<10>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<11>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<12>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<13>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<14>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<15>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<16>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<17>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<18>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<19>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<20>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<21>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<22>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<23>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<24>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<25>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<26>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<27>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<28>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<29>                      | IOB              | BIDIR     | LVDCI_33             |          |      |              |          |          |
+| ram1_data<30>                      | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
+| ram1_data<31>                      | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
+| ram1_data<32>                      | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
+| ram1_data<33>                      | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
+| ram1_data<34>                      | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
+| ram1_data<35>                      | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
 | ram1_oe_b                          | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
 | ram1_we_b                          | IOB              | OUTPUT    | LVDCI_33             |          |      |              |          |          |
 | rs232_cts                          | IOB              | INPUT     | LVTTL                |          |      |              |          |          |

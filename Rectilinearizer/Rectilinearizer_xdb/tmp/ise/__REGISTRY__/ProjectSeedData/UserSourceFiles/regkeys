@@ -32,13 +32,13 @@ user_file_18
 human_interface_corners_tf.v
 s
 user_file_19
-gaussian_blurrer.v
+gaussian_blurrer_tf.v
 s
 user_file_2
 display_16hex.v
 s
 user_file_20
-gaussian_blurrer_tf.v
+gaussian_x_blurrer.v
 s
 user_file_3
 labkit.ucf
