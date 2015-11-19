@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module gaussian_blurrer#(parameter WIDTH = 640, HEIGHT = 480) 
+module gaussian_blurrer #(parameter WIDTH = 640, HEIGHT = 480) 
 							  (input reset,
 								input clk,
 								input start,

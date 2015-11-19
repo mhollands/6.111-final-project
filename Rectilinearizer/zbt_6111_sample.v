@@ -466,6 +466,22 @@ module zbt_6111_sample(beep, audio_reset_b,
 		   ram1_clk_not_used,   //to get good timing, don't connect ram_clk to zbt_6111
 		   ram1_we_b, ram1_address, ram1_data, ram1_cen_b);
 
+	//wire gaussian blurrer
+	wire blur_start;
+	wire blur_done;
+	wire [18:0] blur_read_addr;
+	wire [35:0] blur_read_data;
+	wire [18:0] blur_write_addr;
+	wire [35:0] blur_write_data;
+	gaussian_blurrer gblur(.reset(1'b0),
+								  .clk(clk),
+								  .start(blur_start),
+								  .done(blur_done),
+								  .read_addr(blur_read_addr),
+								  .read_data(blur_read_data),
+								  .write_addr(blur_write_addr),
+								  .write_data(blur_write_data));
+
    // generate pixel value from reading ZBT memory
    wire [29:0] 	vr_pixel;
    wire [18:0] 	display_addr;

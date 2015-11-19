@@ -23,7 +23,7 @@ module main_fsm(
     input button_enter,
 	 input switch,
 	 input auto_detection_done,
-    output reg [2:0] state,
+    output reg [4:0] state,
 	 output auto_detection_start,
 	 output set_corners
     );
@@ -32,11 +32,11 @@ module main_fsm(
 		state = 0;
 	end
 	
-	  parameter VIEW_FINDER = 3'b000;
-	  parameter AUTO_DETECTION_START = 3'b001;
-	  parameter AUTO_DETECTION_WAIT = 3'b010;
-	  parameter MANUAL_DETECTION_START = 3'b011;
-	  parameter MANUAL_DETECTION_WAIT = 3'b100;
+	  parameter VIEW_FINDER = 5'b00000;
+	  parameter AUTO_DETECTION_START = 5'b00001;
+	  parameter AUTO_DETECTION_WAIT = 5'b00010;
+	  parameter MANUAL_DETECTION_START = 5'b00011;
+	  parameter MANUAL_DETECTION_WAIT = 5'b00100;
 
 	//if we are in the AUTO_DETECTION_START state then 
 	assign auto_detection_start = (state == AUTO_DETECTION_START ? 1 : 0);
