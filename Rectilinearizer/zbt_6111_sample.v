@@ -461,15 +461,17 @@ module zbt_6111_sample(beep, audio_reset_b,
    xvga xvga1(clk,hcount,vcount,hsync,vsync,blank);
 
 	//set up the main fsm
+	wire edge_detector_start;
+	wire edge_detector_done;
 	wire blur_start;
 	wire blur_done;
 	wire auto_detection_done;
 	wire auto_detection_start;
 	wire set_corners;
 	wire [4:0] fsm_state;
-	main_fsm fsm (clk, ~button_enter, switch[7], auto_detection_done, blur_done, fsm_state, auto_detection_start, set_corners, blur_start);
+	main_fsm fsm (clk, ~button_enter, switch[7], auto_detection_done, blur_done, edge_detector_done,fsm_state, auto_detection_start, set_corners, blur_start,edge_detector_start);
 
-	//auto_detection_module - mock module for now\
+	//auto_detection_module - mock module for now
 	wire [79:0] corners_auto;
 	corner_detector auto_corner_detector(
 							clk,
@@ -485,10 +487,10 @@ module zbt_6111_sample(beep, audio_reset_b,
 
    // generate pixel value from reading ZBT memory
    wire [29:0] 	vr_pixel;
-   wire [18:0] 	display_addr;
-	wire [35:0] display_read_data;
+   wire [18:0] 	vram_display_addr;
+	wire [35:0] vram_display_read_data;
    vram_display #(192,144) vd1(reset,clk,hcount,vcount,vr_pixel,
-		    display_addr,display_read_data);
+		    vram_display_addr,vram_display_read_data);
 
    wire ram0_clk_not_used;
    zbt_6111 zbt1(clk, 1'b1, vram_we, vram_addr,
@@ -498,7 +500,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 			
 	wire [35:0] vram_write_data1;
    wire [35:0] vram_read_data1;
-   wire [18:0] vram_addr1;
+   reg [18:0] vram_addr1;
    wire vram_we1;
 
    wire ram1_clk_not_used;
@@ -509,9 +511,10 @@ module zbt_6111_sample(beep, audio_reset_b,
 	//write into the second zbt if you are in the blurring states
 	assign vram_we1 = (fsm_state == 5'b00101 || fsm_state == 5'b00110) ? 1 : 0;
 	//this line is causing upset?!
-	assign display_read_data = (fsm_state == 5'b11111) ? vram_read_data1 : vram_read_data;
+	assign vram_display_read_data = (fsm_state == 5'b11111) ? vram_read_data1 : vram_read_data;
 
 	//wire gaussian blurrer
+	wire [18:0] edge_detector_read_addr;
 	wire [18:0] blur_read_addr;
 	wire [35:0] blur_read_data;
 	wire [18:0] blur_write_addr;
@@ -525,22 +528,35 @@ module zbt_6111_sample(beep, audio_reset_b,
 								  .write_addr(blur_write_addr),
 								  .write_data(blur_write_data));
 	assign vram_write_data1 = blur_write_data;
-	assign vram_addr1 = (fsm_state == 5'b00101 || fsm_state == 5'b00110) ? blur_write_addr : display_addr;
+	always @(*) begin
+		case(fsm_state)
+			5'b00101: vram_addr1 = blur_write_addr;
+			5'b00110: vram_addr1 = blur_write_addr;
+			5'b00111: vram_addr1 = edge_detector_read_addr;
+			5'b01000: vram_addr1 = edge_detector_read_addr;
+			default: vram_addr1 = vram_display_addr;
+		endcase
+	end
 	assign blur_read_data = vram_read_data;
 	
 	//wire bram
-	wire [18:0] bram_address;
+	wire [18:0] bram_addr;
 	wire bram_write_enable;
 	wire bram_mem_in;
 	wire bram_mem_out;
-	mybram #(.LOGSIZE(19),.WIDTH(1))
-   bram(.addr(address),.clk(clock),.we(write_enable),.din(mem_in),.dout(mem_out));
-	assign bram_write_enable = (fsm_state == 5'b00111 | fsm_state == 5'b01000);
+	mybram #(.LOGSIZE(19),.WIDTH(1)) bram(.addr(bram_addr),.clk(clk),.we(bram_write_enable),.din(bram_mem_in),.dout(bram_mem_out));
+	assign bram_write_enable = (fsm_state == 5'b00111 | fsm_state == 5'b01000) ? 1 : 0;
+	
+	// generate pixel value from reading bram
+   wire [29:0] 	br_pixel;
+   wire [18:0] 	bram_display_addr;
+	wire bram_display_read_data;
+   bram_display #(192,144) bd1(reset,clk,hcount,vcount,br_pixel,
+		    bram_display_addr,bram_display_read_data);
+	//assign bram_display_read_data = bram_mem_out;
+	assign bram_display_read_data = bram_mem_out;
 	
 	//wire edge detector
-	wire edge_detector_start;
-	wire edge_detector_done;
-	wire [18:0] edge_detector_read_addr;
 	wire [35:0] edge_detector_read_data;
 	wire [18:0] edge_detector_write_addr;
 	wire edge_detector_write_data;
@@ -551,8 +567,13 @@ module zbt_6111_sample(beep, audio_reset_b,
 										.read_addr(	edge_detector_read_addr),							
 										.read_data(edge_detector_read_data),
 										.write_addr(edge_detector_write_addr),
-										.write_data(edge_detector_write_data));
-
+										.write_data(edge_detector_write_data),
+										.thres(switch[6:0]));
+	assign bram_addr = (fsm_state == 5'b00111 | fsm_state == 5'b01000) ? edge_detector_write_addr : bram_display_addr;
+	assign bram_mem_in = edge_detector_write_data;
+	assign edge_detector_read_data = vram_read_data1;
+	//assign bram_mem_in = hcount[2];
+	
    // ADV7185 NTSC decoder interface code
    // adv7185 initialization module
    adv7185init adv7185(.reset(reset), .clock_27mhz(clock_27mhz), 
@@ -582,7 +603,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 			5'b00000: vram_addr = ntsc_addr;
 			5'b00101: vram_addr = blur_read_addr;
 			5'b00110: vram_addr = blur_read_addr;
-			default:	vram_addr = display_addr;
+			default:	vram_addr = vram_display_addr;
 		endcase
 	end
 	//write enable when in write mode and camera wants to write
@@ -646,7 +667,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 			2: ycrcb_pixel <= corner_pixel_B;
 			3: ycrcb_pixel <= corner_pixel_C;
 			4: ycrcb_pixel <= corner_pixel_D;
-			default: ycrcb_pixel <= vr_pixel;
+			default: ycrcb_pixel <= (fsm_state == 5'b01001 ? br_pixel : vr_pixel);
 		endcase
 	end
 	

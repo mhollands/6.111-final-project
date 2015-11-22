@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module edge_detector #(parameter WIDTH = 640, HEIGHT = 480, THRESHOLD = 768) 
+module edge_detector #(parameter WIDTH = 640, HEIGHT = 480, THRESHOLD = 40000) 
 							  (input reset,
 								input clk,
 								input start,
@@ -26,7 +26,8 @@ module edge_detector #(parameter WIDTH = 640, HEIGHT = 480, THRESHOLD = 768)
 								output reg [18:0] read_addr,
 								input  [35:0] read_data,
 								output reg [18:0] write_addr,
-								output reg write_data);
+								output reg write_data,
+								input [6:0] thres);
 	reg [9:0] x;
 	reg [8:0] y;
 	reg [9:0] pixel_buffer [8:0];
@@ -98,7 +99,8 @@ module edge_detector #(parameter WIDTH = 640, HEIGHT = 480, THRESHOLD = 768)
 					read_addr <= {y[8:0] - 1 , x[9:0]} + 3; 
 					//write edge or not
 					write_addr <= {y[8:0], x[9:0]};
-					write_data <= (GxSqr + GySqr > THRESHOLD) ? 1 : 0;
+					write_data <= (((GxSqr + GySqr) > {thres, 16'b0}) ? 1 : 0);
+					//write_data <= x[0] & y[0];
 
 					x <= x + 1; //move to next pixel
 					if(x == WIDTH - 1) begin
@@ -131,6 +133,13 @@ module edge_detector #(parameter WIDTH = 640, HEIGHT = 480, THRESHOLD = 768)
 				pixel_buffer[2] <= 0;
 				pixel_buffer[3] <= 0;
 				pixel_buffer[4] <= 0;
+				pixel_buffer[5] <= 0;
+				pixel_buffer[6] <= 0;
+				pixel_buffer[7] <= 0;
+				pixel_buffer[8] <= 0;
+				pixel_load_buffer[0] <= 0;
+				pixel_load_buffer[1] <= 0;
+				pixel_load_buffer[2] <= 0;
 		end
 	end
 

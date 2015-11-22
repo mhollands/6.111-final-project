@@ -20,5 +20,5 @@ module debounce (reset, clk, noisy, clean);
      else if (noisy != xnew) begin xnew <= noisy; count <= 0; end
      else if (count == NDELAY) clean <= xnew;
      else count <= count+1;
-
+	  
 endmodule

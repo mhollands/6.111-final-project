@@ -24,10 +24,12 @@ module main_fsm(
 	 input switch,
 	 input auto_detection_done,
 	 input blur_done,
+	 input edge_detection_done,
     output reg [4:0] state,
 	 output auto_detection_start,
 	 output set_corners,
-	 output blur_start
+	 output blur_start,
+	 output edge_detection_start
     );
 	
 	initial begin
@@ -43,6 +45,7 @@ module main_fsm(
 	  parameter BLUR_WAIT = 5'b00110;
 	  parameter EDGE_DETECTION_START = 5'b00111;
 	  parameter EDGE_DETECTION_WAIT = 5'b01000;
+	  parameter SHOW_BRAM = 5'b01001;
 	  parameter SHOW_TRANSFORMED = 5'b11111;
 
 	//if we are in the AUTO_DETECTION_START state then 
@@ -51,6 +54,8 @@ module main_fsm(
 	assign set_corners = (state == MANUAL_DETECTION_START ? 1 : 0);
 	//if we are in the BLUR_START state then
 	assign blur_start = (state == BLUR_START ? 1 : 0);
+		//if we are in the EDGE_DETECTION_START state then
+	assign edge_detection_start = (state == EDGE_DETECTION_START ? 1 : 0);
 	
 	//select if the enter button goes forwards or backwards
 	wire forwards_edge, backwards_edge, forwards, backwards;
@@ -68,8 +73,11 @@ module main_fsm(
 			MANUAL_DETECTION_START: next_state = MANUAL_DETECTION_WAIT;
 			MANUAL_DETECTION_WAIT: next_state = backwards_edge ? VIEW_FINDER : forwards_edge ? BLUR_START : MANUAL_DETECTION_WAIT;
 			BLUR_START: next_state = BLUR_WAIT;
-			BLUR_WAIT: next_state = blur_done ? SHOW_TRANSFORMED : BLUR_WAIT;
-			SHOW_TRANSFORMED: next_state = backwards_edge ? MANUAL_DETECTION_WAIT : SHOW_TRANSFORMED;
+			BLUR_WAIT: next_state = blur_done ? EDGE_DETECTION_START : BLUR_WAIT;
+			EDGE_DETECTION_START: next_state = EDGE_DETECTION_WAIT;
+			EDGE_DETECTION_WAIT: next_state = edge_detection_done ? SHOW_TRANSFORMED : EDGE_DETECTION_WAIT;
+			SHOW_TRANSFORMED: next_state = backwards_edge ? MANUAL_DETECTION_WAIT : forwards_edge ? SHOW_BRAM : SHOW_TRANSFORMED;
+			SHOW_BRAM: next_state = backwards_edge ? SHOW_TRANSFORMED : SHOW_BRAM;
 			default: next_state = state;
 		endcase
 	end
