@@ -11,34 +11,34 @@ Target Device  : xc2v6000
 Target Package : bf957
 Target Speed   : -4
 Mapper Version : virtex2 -- $Revision: 1.46.12.2 $
-Mapped Date    : Sun Nov 22 16:12:13 2015
+Mapped Date    : Sun Nov 22 16:36:44 2015
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:  238
 Logic Utilization:
-  Total Number Slice Registers:       1,263 out of  67,584    1%
-    Number used as Flip Flops:        1,225
+  Total Number Slice Registers:       1,448 out of  67,584    2%
+    Number used as Flip Flops:        1,410
     Number used as Latches:              38
-  Number of 4 input LUTs:             2,106 out of  67,584    3%
+  Number of 4 input LUTs:             2,254 out of  67,584    3%
 Logic Distribution:
-  Number of occupied Slices:          1,486 out of  33,792    4%
-    Number of Slices containing only related logic:   1,486 out of   1,486 100%
-    Number of Slices containing unrelated logic:          0 out of   1,486   0%
+  Number of occupied Slices:          1,659 out of  33,792    4%
+    Number of Slices containing only related logic:   1,659 out of   1,659 100%
+    Number of Slices containing unrelated logic:          0 out of   1,659   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       2,364 out of  67,584    3%
-    Number used as logic:             2,000
+  Total Number of 4 input LUTs:       2,512 out of  67,584    3%
+    Number used as logic:             2,148
     Number used as a route-thru:        258
     Number used as Shift registers:     106
   Number of bonded IOBs:                576 out of     684   84%
     IOB Flip Flops:                       6
   Number of RAMB16s:                     32 out of     144   22%
-  Number of MULT18X18s:                  16 out of     144   11%
+  Number of MULT18X18s:                  28 out of     144   19%
   Number of BUFGMUXs:                     5 out of      16   31%
   Number of DCMs:                         3 out of      12   25%
 
-Peak Memory Usage:  520 MB
+Peak Memory Usage:  524 MB
 Total REAL time to MAP completion:  7 secs 
 Total CPU time to MAP completion:   6 secs 
 
@@ -94,10 +94,10 @@ WARNING:LIT:395 - The above warning message base_net_load_rule is repeated 232
 WARNING:LIT:162 - Only DFS outputs (CLKFX/FX180/CONCUR) of DCM symbol "vclk1"
    are routed, but CLKFB is not routed. Proper phase relationship of output
    clocks to CLKIN cannot be guaranteed.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net vd1/vram_addr_cmp_lt0001 is
+WARNING:PhysDesignRules:372 - Gated clock. Clock net bd1/bram_addr_cmp_lt0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net bd1/bram_addr_cmp_lt0001 is
+WARNING:PhysDesignRules:372 - Gated clock. Clock net vd1/vram_addr_cmp_lt0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:367 - The signal <rs232_cts_IBUF> is incomplete. The

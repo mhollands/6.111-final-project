@@ -1,7 +1,7 @@
-WARNING:PhysDesignRules:372 - Gated clock. Clock net vd1/vram_addr_cmp_lt0001 is
+WARNING:PhysDesignRules:372 - Gated clock. Clock net bd1/bram_addr_cmp_lt0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net bd1/bram_addr_cmp_lt0001 is
+WARNING:PhysDesignRules:372 - Gated clock. Clock net vd1/vram_addr_cmp_lt0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:367 - The signal <rs232_cts_IBUF> is incomplete. The

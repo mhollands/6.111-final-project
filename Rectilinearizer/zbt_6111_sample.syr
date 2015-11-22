@@ -249,21 +249,21 @@ WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLKFX_DI
 WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLKFX_MULTIPLY> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLKIN_PERIOD> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 WARNING:Xst:2591 - "zbt_6111_sample.v" line 374: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 868: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 868: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 868: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 868: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 868: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 868: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 868: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 885: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 885: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 885: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 885: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 885: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 885: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 885: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
-WARNING:Xst:2591 - "zbt_6111_sample.v" line 898: attribute on instance <INIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 866: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 866: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 866: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 866: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 866: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 866: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 866: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 883: attribute on instance <CLKOUT_PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 883: attribute on instance <CLK_FEEDBACK> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 883: attribute on instance <DFS_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 883: attribute on instance <DLL_FREQUENCY_MODE> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 883: attribute on instance <DUTY_CYCLE_CORRECTION> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 883: attribute on instance <PHASE_SHIFT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 883: attribute on instance <STARTUP_WAIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
+WARNING:Xst:2591 - "zbt_6111_sample.v" line 896: attribute on instance <INIT> overrides generic/parameter on entity. It is possible that simulator will not take this attribute into account.
 
 =========================================================================
 *                            HDL Analysis                               *
@@ -577,10 +577,10 @@ WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and l
 WARNING:Xst:647 - Input <vram_read_data<35:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:737 - Found 19-bit latch for signal <vram_addr>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Found 11-bit addsub for signal <hcount_f>.
-    Found 10-bit adder for signal <vcount_f$addsub0000> created at line 781.
-    Found 11-bit comparator greatequal for signal <vcount_f$cmp_ge0000> created at line 781.
-    Found 10-bit comparator less for signal <vram_addr$cmp_lt0000> created at line 785.
-    Found 11-bit comparator less for signal <vram_addr$cmp_lt0001> created at line 785.
+    Found 10-bit adder for signal <vcount_f$addsub0000> created at line 779.
+    Found 11-bit comparator greatequal for signal <vcount_f$cmp_ge0000> created at line 779.
+    Found 10-bit comparator less for signal <vram_addr$cmp_lt0000> created at line 783.
+    Found 11-bit comparator less for signal <vram_addr$cmp_lt0001> created at line 783.
     Found 11-bit subtractor for signal <x>.
     Found 10-bit subtractor for signal <y>.
     Summary:
@@ -614,27 +614,41 @@ WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be prese
     Found 1-bit register for signal <old_go>.
     Found 20-bit register for signal <pixel>.
     Found 20-bit adder for signal <pixel$addsub0000>.
-    Found 10x7-bit multiplier for signal <pixel$mult0000> created at line 47.
-    Found 10x7-bit multiplier for signal <pixel$mult0001> created at line 48.
-    Found 10x7-bit multiplier for signal <pixel$mult0002> created at line 50.
-    Found 10x7-bit multiplier for signal <pixel$mult0003> created at line 56.
-    Found 10x7-bit multiplier for signal <pixel$mult0004> created at line 59.
-    Found 10x7-bit multiplier for signal <pixel$mult0005> created at line 65.
-    Found 10x7-bit multiplier for signal <pixel$mult0006> created at line 66.
-    Found 10x7-bit multiplier for signal <pixel$mult0007> created at line 67.
-    Found 10x8-bit multiplier for signal <pixel$mult0008> created at line 57.
-    Found 90-bit register for signal <pixel_buffer>.
-    Found 30-bit register for signal <pixel_load_buffer>.
+    Found 10x4-bit multiplier for signal <pixel$mult0000> created at line 47.
+    Found 10x5-bit multiplier for signal <pixel$mult0001> created at line 48.
+    Found 10x6-bit multiplier for signal <pixel$mult0002> created at line 50.
+    Found 10x5-bit multiplier for signal <pixel$mult0003> created at line 56.
+    Found 10x4-bit multiplier for signal <pixel$mult0004> created at line 57.
+    Found 10x5-bit multiplier for signal <pixel$mult0005> created at line 59.
+    Found 10x6-bit multiplier for signal <pixel$mult0006> created at line 65.
+    Found 10x6-bit multiplier for signal <pixel$mult0007> created at line 67.
+    Found 10x5-bit multiplier for signal <pixel$mult0008> created at line 68.
+    Found 10x6-bit multiplier for signal <pixel$mult0009> created at line 70.
+    Found 10x6-bit multiplier for signal <pixel$mult0010> created at line 85.
+    Found 10x5-bit multiplier for signal <pixel$mult0011> created at line 86.
+    Found 10x6-bit multiplier for signal <pixel$mult0012> created at line 87.
+    Found 10x6-bit multiplier for signal <pixel$mult0013> created at line 89.
+    Found 10x5-bit multiplier for signal <pixel$mult0014> created at line 90.
+    Found 10x4-bit multiplier for signal <pixel$mult0015> created at line 91.
+    Found 10x5-bit multiplier for signal <pixel$mult0016> created at line 92.
+    Found 10x6-bit multiplier for signal <pixel$mult0017> created at line 93.
+    Found 10x5-bit multiplier for signal <pixel$mult0018> created at line 94.
+    Found 10x4-bit multiplier for signal <pixel$mult0019> created at line 95.
+    Found 10x7-bit multiplier for signal <pixel$mult0020>.
+    Found 250-bit register for signal <pixel_buffer>.
+    Found 50-bit register for signal <pixel_load_buffer>.
     Found 19-bit adder for signal <read_addr$addsub0000>.
-    Found 9-bit adder carry out for signal <read_addr$addsub0001> created at line 63.
-    Found 11-bit subtractor for signal <read_addr$sub0000> created at line 84.
+    Found 9-bit adder carry out for signal <read_addr$addsub0001> created at line 74.
+    Found 9-bit adder carry out for signal <read_addr$addsub0002> created at line 83.
+    Found 11-bit subtractor for signal <read_addr$sub0000> created at line 54.
+    Found 11-bit subtractor for signal <read_addr$sub0001> created at line 128.
     Found 10-bit up counter for signal <x>.
     Found 9-bit up counter for signal <y>.
     Summary:
 	inferred   3 Counter(s).
-	inferred 216 D-type flip-flop(s).
-	inferred   4 Adder/Subtractor(s).
-	inferred   9 Multiplier(s).
+	inferred 396 D-type flip-flop(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred  21 Multiplier(s).
 Unit <gaussian_blurrer> synthesized.
 
 
@@ -671,7 +685,6 @@ WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be prese
     Found 1-bit register for signal <write_data>.
     Found 19-bit register for signal <write_addr>.
     Found 19-bit register for signal <read_addr>.
-    Found 22-bit adder carry out for signal <add0000$addsub0000> created at line 102.
     Found 1-bit register for signal <go>.
     Found 11-bit register for signal <gradient_x>.
     Found 11-bit addsub for signal <gradient_x$addsub0000>.
@@ -688,7 +701,8 @@ WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be prese
     Found 19-bit adder for signal <read_addr$addsub0000>.
     Found 9-bit adder carry out for signal <read_addr$addsub0001> created at line 79.
     Found 11-bit subtractor for signal <read_addr$sub0000> created at line 99.
-    Found 23-bit comparator greater for signal <write_data$cmp_gt0000> created at line 102.
+    Found 22-bit adder carry out for signal <write_data$addsub0000> created at line 102.
+    Found 24-bit comparator greater for signal <write_data$cmp_gt0000> created at line 102.
     Found 10-bit up counter for signal <x>.
     Found 9-bit up counter for signal <y>.
     Summary:
@@ -1197,21 +1211,23 @@ Macro Statistics
  524288x1-bit single-port RAM                          : 1
 # ROMs                                                 : 1
  16x40-bit ROM                                         : 1
-# Multipliers                                          : 16
- 10x7-bit multiplier                                   : 8
- 10x8-bit multiplier                                   : 1
+# Multipliers                                          : 28
+ 10x4-bit multiplier                                   : 4
+ 10x5-bit multiplier                                   : 8
+ 10x6-bit multiplier                                   : 8
+ 10x7-bit multiplier                                   : 1
  11x10-bit multiplier                                  : 2
  11x11-bit multiplier                                  : 3
  11x8-bit multiplier                                   : 1
  11x9-bit multiplier                                   : 1
-# Adders/Subtractors                                   : 49
+# Adders/Subtractors                                   : 51
  10-bit adder                                          : 1
  10-bit adder carry out                                : 4
  10-bit addsub                                         : 9
  10-bit subtractor                                     : 2
  11-bit adder carry out                                : 4
  11-bit addsub                                         : 3
- 11-bit subtractor                                     : 7
+ 11-bit subtractor                                     : 8
  12-bit subtractor                                     : 4
  13-bit subtractor                                     : 4
  19-bit adder                                          : 2
@@ -1220,7 +1236,7 @@ Macro Statistics
  21-bit subtractor                                     : 2
  22-bit adder carry out                                : 1
  4-bit subtractor                                      : 1
- 9-bit adder carry out                                 : 2
+ 9-bit adder carry out                                 : 3
 # Counters                                             : 24
  10-bit up counter                                     : 5
  11-bit up counter                                     : 1
@@ -1230,9 +1246,9 @@ Macro Statistics
  8-bit down counter                                    : 2
  8-bit up counter                                      : 1
  9-bit up counter                                      : 2
-# Registers                                            : 154
+# Registers                                            : 172
  1-bit register                                        : 67
- 10-bit register                                       : 43
+ 10-bit register                                       : 61
  11-bit register                                       : 2
  19-bit register                                       : 5
  2-bit register                                        : 2
@@ -1261,7 +1277,7 @@ Macro Statistics
  12-bit comparator greater                             : 4
  12-bit comparator less                                : 4
  13-bit comparator greater                             : 4
- 23-bit comparator greater                             : 1
+ 24-bit comparator greater                             : 1
  6-bit comparator less                                 : 1
 # Multiplexers                                         : 2
  1-bit 40-to-1 multiplexer                             : 1
@@ -1374,7 +1390,7 @@ WARNING:Xst:2404 -  FFs/Latches <dispdata<63:5>> (without init value) have a con
 WARNING:Xst:2404 -  FFs/Latches <write_data<35:30>> (without init value) have a constant value of 0 in block <gaussian_blurrer>.
 WARNING:Xst:2404 -  FFs/Latches <ntsc_data<35:30>> (without init value) have a constant value of 0 in block <ntsc_to_zbt>.
 
-Synthesizing (advanced) Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_12_LPM_DFF_3>.
+Synthesizing (advanced) Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_15_LPM_DFF_3>.
 The following registers are absorbed into accumulator <corners1x>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners2x>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners3x>: 1 register on signal <human_interface_corners>.
@@ -1383,7 +1399,7 @@ The following registers are absorbed into accumulator <corners1y>: 1 register on
 The following registers are absorbed into accumulator <corners2y>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners3y>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners4y>: 1 register on signal <human_interface_corners>.
-Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_12_LPM_DFF_3> synthesized (advanced).
+Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_15_LPM_DFF_3> synthesized (advanced).
 
 Synthesizing (advanced) Unit <edge_detector>.
 	Found pipelined multiplier on signal <GxSqr_mult0000>:
@@ -1396,23 +1412,47 @@ Unit <edge_detector> synthesized (advanced).
 
 Synthesizing (advanced) Unit <gaussian_blurrer>.
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0000 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0003 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0005 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0009 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0011 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0015 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0001 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0006 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0008 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0012 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0016 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0002 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0004 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0017 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0003 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0007 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0013 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0018 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0004 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0008 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0010 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0014 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0019 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0020 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0000 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0003 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0005 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0009 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0011 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0015 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0001 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0006 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0008 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0012 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0016 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0002 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0004 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0017 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0003 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0007 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0013 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0018 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0004 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0008 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0010 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0014 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0019 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0020 by adding 1 register level(s).
 Unit <gaussian_blurrer> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mybram>.
@@ -1652,14 +1692,16 @@ Macro Statistics
  524288x1-bit single-port block RAM                    : 1
 # ROMs                                                 : 1
  16x40-bit ROM                                         : 1
-# Multipliers                                          : 16
- 10x7-bit multiplier                                   : 8
- 10x8-bit multiplier                                   : 1
+# Multipliers                                          : 28
+ 10x4-bit multiplier                                   : 4
+ 10x5-bit multiplier                                   : 8
+ 10x6-bit multiplier                                   : 8
+ 10x7-bit multiplier                                   : 1
  11x10-bit registered multiplier                       : 2
  11x11-bit registered multiplier                       : 3
  11x8-bit registered multiplier                        : 1
  11x9-bit registered multiplier                        : 1
-# Adders/Subtractors                                   : 41
+# Adders/Subtractors                                   : 43
  10-bit adder                                          : 1
  10-bit adder carry out                                : 4
  10-bit addsub                                         : 1
@@ -1675,8 +1717,8 @@ Macro Statistics
  21-bit subtractor                                     : 2
  22-bit adder carry out                                : 1
  4-bit subtractor                                      : 1
- 9-bit adder carry out                                 : 2
- 9-bit subtractor                                      : 2
+ 9-bit adder carry out                                 : 3
+ 9-bit subtractor                                      : 3
 # Counters                                             : 24
  10-bit up counter                                     : 5
  11-bit up counter                                     : 1
@@ -1688,8 +1730,8 @@ Macro Statistics
  9-bit up counter                                      : 2
 # Accumulators                                         : 8
  10-bit updown loadable accumulator                    : 8
-# Registers                                            : 1184
- Flip-Flops                                            : 1184
+# Registers                                            : 1364
+ Flip-Flops                                            : 1364
 # Latches                                              : 2
  19-bit latch                                          : 2
 # Comparators                                          : 33
@@ -1702,7 +1744,7 @@ Macro Statistics
  12-bit comparator greater                             : 4
  12-bit comparator less                                : 4
  13-bit comparator greater                             : 4
- 23-bit comparator greater                             : 1
+ 24-bit comparator greater                             : 1
  6-bit comparator less                                 : 1
 # Multiplexers                                         : 5
  1-bit 16-to-1 multiplexer                             : 4
@@ -1903,6 +1945,10 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block zbt_6111_sample, actual ratio is 4.
+FlipFlop gblur/multiplication_count_0 has been replicated 2 time(s)
+FlipFlop gblur/multiplication_count_1 has been replicated 1 time(s)
+FlipFlop gblur/multiplication_count_2 has been replicated 1 time(s)
+FlipFlop gblur/multiplication_count_3 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -1951,16 +1997,16 @@ Processing Unit <zbt_6111_sample> :
 	Found 2-bit shift register for signal <zbt1/write_data_old2_2>.
 	Found 2-bit shift register for signal <zbt1/write_data_old2_1>.
 	Found 2-bit shift register for signal <zbt1/write_data_old2_0>.
-	Found 2-bit shift register for signal <gblur/pixel_buffer_8_9>.
-	Found 2-bit shift register for signal <gblur/pixel_buffer_8_8>.
-	Found 2-bit shift register for signal <gblur/pixel_buffer_8_7>.
-	Found 2-bit shift register for signal <gblur/pixel_buffer_8_6>.
-	Found 2-bit shift register for signal <gblur/pixel_buffer_8_5>.
-	Found 2-bit shift register for signal <gblur/pixel_buffer_8_4>.
-	Found 2-bit shift register for signal <gblur/pixel_buffer_8_3>.
-	Found 2-bit shift register for signal <gblur/pixel_buffer_8_2>.
-	Found 2-bit shift register for signal <gblur/pixel_buffer_8_1>.
-	Found 2-bit shift register for signal <gblur/pixel_buffer_8_0>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_24_9>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_24_8>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_24_7>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_24_6>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_24_5>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_24_4>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_24_3>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_24_2>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_24_1>.
+	Found 2-bit shift register for signal <gblur/pixel_buffer_24_0>.
 	Found 6-bit shift register for signal <n2z/eo_delay_3>.
 	Found 6-bit shift register for signal <n2z/we_delay_3>.
 	Found 6-bit shift register for signal <n2z/x_delay_39>.
@@ -2017,8 +2063,8 @@ Unit <zbt_6111_sample> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1121
- Flip-Flops                                            : 1121
+# Registers                                            : 1306
+ Flip-Flops                                            : 1306
 # Shift Registers                                      : 104
  2-bit shift register                                  : 81
  4-bit shift register                                  : 3
@@ -2051,31 +2097,30 @@ Design Statistics
 # IOs                              : 576
 
 Cell Usage :
-# BELS                             : 3509
+# BELS                             : 3779
 #      GND                         : 1
-#      INV                         : 96
+#      INV                         : 97
 #      LUT1                        : 254
-#      LUT2                        : 308
-#      LUT2_D                      : 12
-#      LUT2_L                      : 9
-#      LUT3                        : 439
-#      LUT3_D                      : 15
-#      LUT3_L                      : 9
-#      LUT4                        : 989
-#      LUT4_D                      : 66
-#      LUT4_L                      : 72
-#      MUXCY                       : 713
-#      MUXF5                       : 80
+#      LUT2                        : 324
+#      LUT2_D                      : 5
+#      LUT3                        : 416
+#      LUT3_D                      : 23
+#      LUT3_L                      : 18
+#      LUT4                        : 1183
+#      LUT4_D                      : 40
+#      LUT4_L                      : 55
+#      MUXCY                       : 838
+#      MUXF5                       : 81
 #      MUXF6                       : 11
 #      MUXF7                       : 3
 #      MUXF8                       : 1
 #      VCC                         : 1
-#      XORCY                       : 430
-# FlipFlops/Latches                : 1266
+#      XORCY                       : 428
+# FlipFlops/Latches                : 1451
 #      FD                          : 106
-#      FDE                         : 403
+#      FDE                         : 583
 #      FDR                         : 117
-#      FDRE                        : 550
+#      FDRE                        : 555
 #      FDRS                        : 20
 #      FDRSE                       : 2
 #      FDS                         : 24
@@ -2098,8 +2143,8 @@ Cell Usage :
 #      OBUFT                       : 13
 # DCMs                             : 3
 #      DCM                         : 3
-# MULTs                            : 16
-#      MULT18X18                   : 9
+# MULTs                            : 28
+#      MULT18X18                   : 21
 #      MULT18X18S                  : 7
 =========================================================================
 
@@ -2108,15 +2153,15 @@ Device utilization summary:
 
 Selected Device : 2v6000bf957-4 
 
- Number of Slices:                     1315  out of  33792     3%  
- Number of Slice Flip Flops:           1266  out of  67584     1%  
- Number of 4 input LUTs:               2375  out of  67584     3%  
-    Number used as logic:              2269
+ Number of Slices:                     1518  out of  33792     4%  
+ Number of Slice Flip Flops:           1451  out of  67584     2%  
+ Number of 4 input LUTs:               2521  out of  67584     3%  
+    Number used as logic:              2415
     Number used as Shift registers:     106
  Number of IOs:                         576
  Number of bonded IOBs:                 343  out of    684    50%  
  Number of BRAMs:                        32  out of    144    22%  
- Number of MULT18X18s:                   16  out of    144    11%  
+ Number of MULT18X18s:                   28  out of    144    19%  
  Number of GCLKs:                         5  out of     16    31%  
  Number of DCMs:                          3  out of     12    25%  
 
@@ -2141,7 +2186,7 @@ Clock Information:
 -----------------------------------------------------+----------------------------+-------+
 Clock Signal                                         | Clock buffer(FF name)      | Load  |
 -----------------------------------------------------+----------------------------+-------+
-clock_27mhz                                          | vclk1:CLKFX+rc/int_dcm:CLK0| 1141  |
+clock_27mhz                                          | vclk1:CLKFX+rc/int_dcm:CLK0| 1326  |
 bd1/bram_addr_cmp_lt0001(bd1/bram_addr_cmp_lt0001:O) | NONE(*)(bd1/bram_addr_0)   | 19    |
 adv7185/clock_slow1                                  | BUFG                       | 96    |
 clock_27mhz                                          | IBUFG                      | 17    |
@@ -2158,8 +2203,8 @@ Asynchronous Control Signals Information:
 ---------------------------------------------------------+----------------------------------------+-------+
 Control Signal                                           | Buffer(FF name)                        | Load  |
 ---------------------------------------------------------+----------------------------------------+-------+
-ram0_cen_b_OBUF(XST_GND:G)                               | NONE(colCvt/Mmult_C_int_mult0001)      | 7     |
-vga_out_sync_b_OBUF(XST_VCC:P)                           | NONE(colCvt/Mmult_C_int_mult0001)      | 5     |
+ram0_cen_b_OBUF(XST_GND:G)                               | NONE(colCvt/Mmult_B2_int_mult0000)     | 7     |
+vga_out_sync_b_OBUF(XST_VCC:P)                           | NONE(colCvt/Mmult_B2_int_mult0000)     | 5     |
 edgedetector/GxSqr_not0001(edgedetector/GxSqr_not00012:O)| NONE(edgedetector/Mmult_GxSqr_mult0000)| 1     |
 edgedetector/GySqr_not0001(edgedetector/GySqr_not00011:O)| NONE(edgedetector/Mmult_GySqr_mult0000)| 1     |
 ---------------------------------------------------------+----------------------------------------+-------+
@@ -2168,9 +2213,9 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 33.135ns (Maximum Frequency: 30.180MHz)
+   Minimum period: 38.290ns (Maximum Frequency: 26.117MHz)
    Minimum input arrival time before clock: 8.723ns
-   Maximum output required time after clock: 11.788ns
+   Maximum output required time after clock: 11.711ns
    Maximum combinational path delay: 6.844ns
 
 Timing Detail:
@@ -2179,25 +2224,35 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_27mhz'
-  Clock period: 33.135ns (frequency: 30.180MHz)
-  Total number of paths / destination ports: 121061 / 2579
+  Clock period: 38.290ns (frequency: 26.117MHz)
+  Total number of paths / destination ports: 182680 / 2934
 -------------------------------------------------------------------------
-Delay:               5.522ns (Levels of Logic = 1)
-  Source:            reset_sr (FF)
-  Destination:       adv7185/reset_count_7 (FF)
+Delay:               15.954ns (Levels of Logic = 11)
+  Source:            gblur/multiplication_count_1_1 (FF)
+  Destination:       gblur/pixel_19 (FF)
   Source Clock:      clock_27mhz rising 2.4X
-  Destination Clock: clock_27mhz rising
+  Destination Clock: clock_27mhz rising 2.4X
 
-  Data Path: reset_sr to adv7185/reset_count_7
+  Data Path: gblur/multiplication_count_1_1 to gblur/pixel_19
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     SRL16:CLK->Q         36   2.901   1.132  reset_sr (adv7185/reset_count_cst)
-     LUT3:I2->O            5   0.439   0.771  adv7185/Mcount_reset_count_val1 (adv7185/Mcount_reset_count_val)
-     FDR:R                     0.280          adv7185/reset_count_0
+     FDRE:C->Q             2   0.568   0.986  gblur/multiplication_count_1_1 (gblur/multiplication_count_1_1)
+     LUT3_D:I0->O         13   0.439   0.988  gblur/pixel_cmp_eq001211 (gblur/N7)
+     LUT4:I2->O            1   0.439   0.552  gblur/pixel_mux0003<9>13 (gblur/pixel_mux0003<9>13)
+     LUT4_L:I2->LO         1   0.439   0.134  gblur/pixel_mux0003<9>29 (gblur/pixel_mux0003<9>29)
+     LUT4:I2->O            1   0.439   0.517  gblur/pixel_mux0003<9>50 (gblur/pixel_mux0003<9>)
+     MULT18X18:A9->P16     1   6.423   0.551  gblur/Mmult_pixel_mult0020 (gblur/pixel_mult0020<16>)
+     LUT3:I2->O            1   0.439   0.000  gblur/Madd_pixel_addsub0000_lut<16> (gblur/Madd_pixel_addsub0000_lut<16>)
+     MUXCY:S->O            1   0.298   0.000  gblur/Madd_pixel_addsub0000_cy<16> (gblur/Madd_pixel_addsub0000_cy<16>)
+     MUXCY:CI->O           1   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<17> (gblur/Madd_pixel_addsub0000_cy<17>)
+     MUXCY:CI->O           0   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<18> (gblur/Madd_pixel_addsub0000_cy<18>)
+     XORCY:CI->O           1   1.274   0.551  gblur/Madd_pixel_addsub0000_xor<19> (gblur/pixel_addsub0000<19>)
+     LUT4:I2->O            1   0.439   0.000  gblur/pixel_mux0000<19>1 (gblur/pixel_mux0000<19>)
+     FDRE:D                    0.370          gblur/pixel_19
     ----------------------------------------
-    Total                      5.522ns (3.620ns logic, 1.902ns route)
-                                       (65.6% logic, 34.4% route)
+    Total                     15.954ns (11.673ns logic, 4.281ns route)
+                                       (73.2% logic, 26.8% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'adv7185/clock_slow1'
@@ -2256,7 +2311,7 @@ Delay:               7.012ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 358 / 293
+  Total number of paths / destination ports: 377 / 313
 -------------------------------------------------------------------------
 Offset:              6.575ns (Levels of Logic = 5)
   Source:            button_enter (PAD)
@@ -2270,7 +2325,7 @@ Offset:              6.575ns (Levels of Logic = 5)
      IBUF:I->O             4   0.825   1.032  button_enter_IBUF (button_enter_IBUF)
      LUT3:I0->O            7   0.439   0.857  fsm/backwards_edge1 (fsm/backwards_edge)
      LUT4:I3->O            3   0.439   0.932  fsm/state_mux0000<2>11 (fsm/N0)
-     LUT4:I1->O            1   0.439   0.803  fsm/state_mux0000<2>961_SW0 (N614)
+     LUT4:I1->O            1   0.439   0.803  fsm/state_mux0000<2>961_SW0 (N665)
      LUT4:I0->O            1   0.439   0.000  fsm/state_mux0000<2>961 (fsm/state_mux0000<2>96)
      FDS:D                     0.370          fsm/state_2
     ----------------------------------------
@@ -2292,7 +2347,7 @@ Offset:              8.723ns (Levels of Logic = 7)
     ----------------------------------------  ------------
      IBUF:I->O            12   0.825   1.216  tv_in_ycrcb_15_IBUF (tv_in_ycrcb_15_IBUF)
      LUT4:I0->O            1   0.439   0.557  decode/current_state_cmp_eq002210 (decode/current_state_cmp_eq002210)
-     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N6811)
+     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N723)
      LUT4:I3->O            7   0.439   1.024  decode/current_state_cmp_eq002217 (decode/current_state_cmp_eq0022)
      LUT3:I1->O            1   0.439   0.551  decode/current_state_mux0000<3>376 (decode/N8)
      LUT4:I2->O            1   0.439   0.803  decode/current_state_mux0000<3>20 (decode/current_state_mux0000<3>20)
@@ -2325,7 +2380,7 @@ Offset:              5.630ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_27mhz'
   Total number of paths / destination ports: 912 / 154
 -------------------------------------------------------------------------
-Offset:              11.788ns (Levels of Logic = 5)
+Offset:              11.711ns (Levels of Logic = 5)
   Source:            fsm/state_4 (FF)
   Destination:       led<7> (PAD)
   Source Clock:      clock_27mhz rising 2.4X
@@ -2337,12 +2392,12 @@ Offset:              11.788ns (Levels of Logic = 5)
      FD:C->Q              89   0.568   1.520  fsm/state_4 (fsm/state_4)
      LUT2:I0->O            3   0.439   0.759  vram_addr_and00001 (vram_addr_and0000)
      LUT4:I2->O           19   0.439   1.320  vram_addr<0>31 (N381)
-     LUT4:I0->O            2   0.439   0.986  vram_addr<18>_SW0 (N142)
-     LUT3:I0->O            1   0.439   0.517  led<7>1 (led_7_OBUF)
+     LUT4:I0->O            2   0.439   0.910  vram_addr<18>_SW0 (N142)
+     LUT3:I1->O            1   0.439   0.517  led<7>1 (led_7_OBUF)
      OBUF:I->O                 4.361          led_7_OBUF (led<7>)
     ----------------------------------------
-    Total                     11.788ns (6.685ns logic, 5.103ns route)
-                                       (56.7% logic, 43.3% route)
+    Total                     11.711ns (6.685ns logic, 5.026ns route)
+                                       (57.1% logic, 42.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'vd1/vram_addr_cmp_lt0001'
@@ -2358,7 +2413,7 @@ Offset:              7.921ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LDE:G->Q              3   0.674   0.932  vd1/vram_addr_18 (vd1/vram_addr_18)
-     LUT4:I1->O            1   0.439   0.557  vram_addr1<18>_SW1 (N924)
+     LUT4:I1->O            1   0.439   0.557  vram_addr1<18>_SW1 (N957)
      LUT4:I3->O            1   0.439   0.517  vram_addr1<18> (vram_addr1<18>)
      OBUF:I->O                 4.361          ram1_address_18_OBUF (ram1_address<18>)
     ----------------------------------------
@@ -2387,15 +2442,15 @@ Delay:               6.844ns (Levels of Logic = 3)
 =========================================================================
 
 
-Total REAL time to Xst completion: 46.00 secs
-Total CPU time to Xst completion: 44.44 secs
+Total REAL time to Xst completion: 48.00 secs
+Total CPU time to Xst completion: 46.76 secs
  
 --> 
 
 
-Total memory usage is 558412 kilobytes
+Total memory usage is 559008 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  648 (   0 filtered)
-Number of infos    :   30 (   0 filtered)
+Number of infos    :   54 (   0 filtered)
 

@@ -553,7 +553,6 @@ module zbt_6111_sample(beep, audio_reset_b,
 	wire bram_display_read_data;
    bram_display #(192,144) bd1(reset,clk,hcount,vcount,br_pixel,
 		    bram_display_addr,bram_display_read_data);
-	//assign bram_display_read_data = bram_mem_out;
 	assign bram_display_read_data = bram_mem_out;
 	
 	//wire edge detector
@@ -572,7 +571,6 @@ module zbt_6111_sample(beep, audio_reset_b,
 	assign bram_addr = (fsm_state == 5'b00111 | fsm_state == 5'b01000) ? edge_detector_write_addr : bram_display_addr;
 	assign bram_mem_in = edge_detector_write_data;
 	assign edge_detector_read_data = vram_read_data1;
-	//assign bram_mem_in = hcount[2];
 	
    // ADV7185 NTSC decoder interface code
    // adv7185 initialization module
