@@ -99,7 +99,7 @@ module edge_detector #(parameter WIDTH = 640, HEIGHT = 480, THRESHOLD = 40000)
 					read_addr <= {y[8:0] - 1 , x[9:0]} + 3; 
 					//write edge or not
 					write_addr <= {y[8:0], x[9:0]};
-					write_data <= (((GxSqr + GySqr) > {thres, 17'b0}) ? 1 : 0);
+					write_data <= (((GxSqr + GySqr) > {thres, 16'b0}) ? 1 : 0);
 					//write_data <= x[0] & y[0];
 
 					x <= x + 1; //move to next pixel

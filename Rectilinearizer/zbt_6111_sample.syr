@@ -614,27 +614,31 @@ WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be prese
     Found 1-bit register for signal <old_go>.
     Found 20-bit register for signal <pixel>.
     Found 20-bit adder for signal <pixel$addsub0000>.
-    Found 10x4-bit multiplier for signal <pixel$mult0000> created at line 47.
-    Found 10x5-bit multiplier for signal <pixel$mult0001> created at line 48.
+    Found 10x5-bit multiplier for signal <pixel$mult0000> created at line 47.
+    Found 10x6-bit multiplier for signal <pixel$mult0001> created at line 48.
     Found 10x6-bit multiplier for signal <pixel$mult0002> created at line 50.
-    Found 10x5-bit multiplier for signal <pixel$mult0003> created at line 56.
-    Found 10x4-bit multiplier for signal <pixel$mult0004> created at line 57.
-    Found 10x5-bit multiplier for signal <pixel$mult0005> created at line 59.
+    Found 10x6-bit multiplier for signal <pixel$mult0003> created at line 56.
+    Found 10x5-bit multiplier for signal <pixel$mult0004> created at line 57.
+    Found 10x6-bit multiplier for signal <pixel$mult0005> created at line 59.
     Found 10x6-bit multiplier for signal <pixel$mult0006> created at line 65.
-    Found 10x6-bit multiplier for signal <pixel$mult0007> created at line 67.
-    Found 10x5-bit multiplier for signal <pixel$mult0008> created at line 68.
-    Found 10x6-bit multiplier for signal <pixel$mult0009> created at line 70.
-    Found 10x6-bit multiplier for signal <pixel$mult0010> created at line 85.
-    Found 10x5-bit multiplier for signal <pixel$mult0011> created at line 86.
-    Found 10x6-bit multiplier for signal <pixel$mult0012> created at line 87.
-    Found 10x6-bit multiplier for signal <pixel$mult0013> created at line 89.
-    Found 10x5-bit multiplier for signal <pixel$mult0014> created at line 90.
-    Found 10x4-bit multiplier for signal <pixel$mult0015> created at line 91.
-    Found 10x5-bit multiplier for signal <pixel$mult0016> created at line 92.
-    Found 10x6-bit multiplier for signal <pixel$mult0017> created at line 93.
-    Found 10x5-bit multiplier for signal <pixel$mult0018> created at line 94.
-    Found 10x4-bit multiplier for signal <pixel$mult0019> created at line 95.
-    Found 10x7-bit multiplier for signal <pixel$mult0020>.
+    Found 10x6-bit multiplier for signal <pixel$mult0007> created at line 66.
+    Found 10x6-bit multiplier for signal <pixel$mult0008> created at line 67.
+    Found 10x6-bit multiplier for signal <pixel$mult0009> created at line 68.
+    Found 10x6-bit multiplier for signal <pixel$mult0010> created at line 70.
+    Found 10x6-bit multiplier for signal <pixel$mult0011> created at line 76.
+    Found 10x6-bit multiplier for signal <pixel$mult0012> created at line 79.
+    Found 10x6-bit multiplier for signal <pixel$mult0013> created at line 85.
+    Found 10x6-bit multiplier for signal <pixel$mult0014> created at line 86.
+    Found 10x6-bit multiplier for signal <pixel$mult0015> created at line 87.
+    Found 10x6-bit multiplier for signal <pixel$mult0016> created at line 88.
+    Found 10x6-bit multiplier for signal <pixel$mult0017> created at line 89.
+    Found 10x6-bit multiplier for signal <pixel$mult0018> created at line 90.
+    Found 10x5-bit multiplier for signal <pixel$mult0019> created at line 91.
+    Found 10x6-bit multiplier for signal <pixel$mult0020> created at line 92.
+    Found 10x6-bit multiplier for signal <pixel$mult0021> created at line 93.
+    Found 10x6-bit multiplier for signal <pixel$mult0022> created at line 94.
+    Found 10x5-bit multiplier for signal <pixel$mult0023> created at line 95.
+    Found 17-bit 32-to-1 multiplexer for signal <pixel$mux0001> created at line 45.
     Found 250-bit register for signal <pixel_buffer>.
     Found 50-bit register for signal <pixel_load_buffer>.
     Found 19-bit adder for signal <read_addr$addsub0000>.
@@ -648,7 +652,8 @@ WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be prese
 	inferred   3 Counter(s).
 	inferred 396 D-type flip-flop(s).
 	inferred   6 Adder/Subtractor(s).
-	inferred  21 Multiplier(s).
+	inferred  24 Multiplier(s).
+	inferred  17 Multiplexer(s).
 Unit <gaussian_blurrer> synthesized.
 
 
@@ -685,6 +690,7 @@ WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be prese
     Found 1-bit register for signal <write_data>.
     Found 19-bit register for signal <write_addr>.
     Found 19-bit register for signal <read_addr>.
+    Found 22-bit adder carry out for signal <add0000$addsub0000> created at line 102.
     Found 1-bit register for signal <go>.
     Found 11-bit register for signal <gradient_x>.
     Found 11-bit addsub for signal <gradient_x$addsub0000>.
@@ -701,8 +707,7 @@ WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be prese
     Found 19-bit adder for signal <read_addr$addsub0000>.
     Found 9-bit adder carry out for signal <read_addr$addsub0001> created at line 79.
     Found 11-bit subtractor for signal <read_addr$sub0000> created at line 99.
-    Found 22-bit adder carry out for signal <write_data$addsub0000> created at line 102.
-    Found 24-bit comparator greater for signal <write_data$cmp_gt0000> created at line 102.
+    Found 23-bit comparator greater for signal <write_data$cmp_gt0000> created at line 102.
     Found 10-bit up counter for signal <x>.
     Found 9-bit up counter for signal <y>.
     Summary:
@@ -1211,11 +1216,9 @@ Macro Statistics
  524288x1-bit single-port RAM                          : 1
 # ROMs                                                 : 1
  16x40-bit ROM                                         : 1
-# Multipliers                                          : 28
- 10x4-bit multiplier                                   : 4
- 10x5-bit multiplier                                   : 8
- 10x6-bit multiplier                                   : 8
- 10x7-bit multiplier                                   : 1
+# Multipliers                                          : 31
+ 10x5-bit multiplier                                   : 4
+ 10x6-bit multiplier                                   : 20
  11x10-bit multiplier                                  : 2
  11x11-bit multiplier                                  : 3
  11x8-bit multiplier                                   : 1
@@ -1277,10 +1280,11 @@ Macro Statistics
  12-bit comparator greater                             : 4
  12-bit comparator less                                : 4
  13-bit comparator greater                             : 4
- 24-bit comparator greater                             : 1
+ 23-bit comparator greater                             : 1
  6-bit comparator less                                 : 1
-# Multiplexers                                         : 2
+# Multiplexers                                         : 3
  1-bit 40-to-1 multiplexer                             : 1
+ 17-bit 32-to-1 multiplexer                            : 1
  4-bit 16-to-1 multiplexer                             : 1
 # Tristates                                            : 3
  1-bit tristate buffer                                 : 1
@@ -1413,46 +1417,52 @@ Unit <edge_detector> synthesized (advanced).
 Synthesizing (advanced) Unit <gaussian_blurrer>.
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0000 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0005 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0009 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0011 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0015 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0001 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0006 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0012 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0016 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0002 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0017 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0003 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0007 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0013 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0018 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0004 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0008 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0010 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0014 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0019 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0001 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0006 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0011 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0015 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0020 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0002 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0007 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0016 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0021 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0003 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0008 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0012 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0017 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0022 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0004 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0009 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0013 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0018 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0023 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0000 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0005 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0009 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0011 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0015 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0001 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0006 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0012 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0016 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0002 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0017 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0003 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0007 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0013 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0018 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0004 by adding 1 register level(s).
-INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0008 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0010 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0014 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0019 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0001 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0006 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0011 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0015 by adding 1 register level(s).
 INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0020 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0002 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0007 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0016 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0021 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0003 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0008 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0012 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0017 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0022 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0004 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0009 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0013 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0018 by adding 1 register level(s).
+INFO:Xst:2385 - HDL ADVISOR - You can improve the performance of the multiplier Mmult_pixel_mult0023 by adding 1 register level(s).
 Unit <gaussian_blurrer> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mybram>.
@@ -1692,11 +1702,9 @@ Macro Statistics
  524288x1-bit single-port block RAM                    : 1
 # ROMs                                                 : 1
  16x40-bit ROM                                         : 1
-# Multipliers                                          : 28
- 10x4-bit multiplier                                   : 4
- 10x5-bit multiplier                                   : 8
- 10x6-bit multiplier                                   : 8
- 10x7-bit multiplier                                   : 1
+# Multipliers                                          : 31
+ 10x5-bit multiplier                                   : 4
+ 10x6-bit multiplier                                   : 20
  11x10-bit registered multiplier                       : 2
  11x11-bit registered multiplier                       : 3
  11x8-bit registered multiplier                        : 1
@@ -1744,10 +1752,11 @@ Macro Statistics
  12-bit comparator greater                             : 4
  12-bit comparator less                                : 4
  13-bit comparator greater                             : 4
- 24-bit comparator greater                             : 1
+ 23-bit comparator greater                             : 1
  6-bit comparator less                                 : 1
-# Multiplexers                                         : 5
+# Multiplexers                                         : 22
  1-bit 16-to-1 multiplexer                             : 4
+ 1-bit 32-to-1 multiplexer                             : 17
  1-bit 40-to-1 multiplexer                             : 1
 # Xors                                                 : 9
  1-bit xor2                                            : 9
@@ -1945,10 +1954,6 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <zbt2/write_data_old
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block zbt_6111_sample, actual ratio is 4.
-FlipFlop gblur/multiplication_count_0 has been replicated 2 time(s)
-FlipFlop gblur/multiplication_count_1 has been replicated 1 time(s)
-FlipFlop gblur/multiplication_count_2 has been replicated 1 time(s)
-FlipFlop gblur/multiplication_count_3 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -2063,8 +2068,8 @@ Unit <zbt_6111_sample> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1306
- Flip-Flops                                            : 1306
+# Registers                                            : 1301
+ Flip-Flops                                            : 1301
 # Shift Registers                                      : 104
  2-bit shift register                                  : 81
  4-bit shift register                                  : 3
@@ -2097,30 +2102,30 @@ Design Statistics
 # IOs                              : 576
 
 Cell Usage :
-# BELS                             : 3779
+# BELS                             : 3751
 #      GND                         : 1
-#      INV                         : 97
-#      LUT1                        : 254
-#      LUT2                        : 324
-#      LUT2_D                      : 5
-#      LUT3                        : 416
-#      LUT3_D                      : 23
-#      LUT3_L                      : 18
-#      LUT4                        : 1183
-#      LUT4_D                      : 40
-#      LUT4_L                      : 55
-#      MUXCY                       : 838
-#      MUXF5                       : 81
-#      MUXF6                       : 11
-#      MUXF7                       : 3
+#      INV                         : 95
+#      LUT1                        : 255
+#      LUT2                        : 319
+#      LUT2_D                      : 11
+#      LUT3                        : 617
+#      LUT3_D                      : 15
+#      LUT3_L                      : 8
+#      LUT4                        : 915
+#      LUT4_D                      : 67
+#      LUT4_L                      : 52
+#      MUXCY                       : 711
+#      MUXF5                       : 178
+#      MUXF6                       : 58
+#      MUXF7                       : 19
 #      MUXF8                       : 1
 #      VCC                         : 1
 #      XORCY                       : 428
-# FlipFlops/Latches                : 1451
+# FlipFlops/Latches                : 1446
 #      FD                          : 106
 #      FDE                         : 583
 #      FDR                         : 117
-#      FDRE                        : 555
+#      FDRE                        : 550
 #      FDRS                        : 20
 #      FDRSE                       : 2
 #      FDS                         : 24
@@ -2143,8 +2148,8 @@ Cell Usage :
 #      OBUFT                       : 13
 # DCMs                             : 3
 #      DCM                         : 3
-# MULTs                            : 28
-#      MULT18X18                   : 21
+# MULTs                            : 31
+#      MULT18X18                   : 24
 #      MULT18X18S                  : 7
 =========================================================================
 
@@ -2153,15 +2158,15 @@ Device utilization summary:
 
 Selected Device : 2v6000bf957-4 
 
- Number of Slices:                     1518  out of  33792     4%  
- Number of Slice Flip Flops:           1451  out of  67584     2%  
- Number of 4 input LUTs:               2521  out of  67584     3%  
-    Number used as logic:              2415
+ Number of Slices:                     1491  out of  33792     4%  
+ Number of Slice Flip Flops:           1446  out of  67584     2%  
+ Number of 4 input LUTs:               2460  out of  67584     3%  
+    Number used as logic:              2354
     Number used as Shift registers:     106
  Number of IOs:                         576
  Number of bonded IOBs:                 343  out of    684    50%  
  Number of BRAMs:                        32  out of    144    22%  
- Number of MULT18X18s:                   28  out of    144    19%  
+ Number of MULT18X18s:                   31  out of    144    21%  
  Number of GCLKs:                         5  out of     16    31%  
  Number of DCMs:                          3  out of     12    25%  
 
@@ -2186,7 +2191,7 @@ Clock Information:
 -----------------------------------------------------+----------------------------+-------+
 Clock Signal                                         | Clock buffer(FF name)      | Load  |
 -----------------------------------------------------+----------------------------+-------+
-clock_27mhz                                          | vclk1:CLKFX+rc/int_dcm:CLK0| 1326  |
+clock_27mhz                                          | vclk1:CLKFX+rc/int_dcm:CLK0| 1321  |
 bd1/bram_addr_cmp_lt0001(bd1/bram_addr_cmp_lt0001:O) | NONE(*)(bd1/bram_addr_0)   | 19    |
 adv7185/clock_slow1                                  | BUFG                       | 96    |
 clock_27mhz                                          | IBUFG                      | 17    |
@@ -2203,8 +2208,8 @@ Asynchronous Control Signals Information:
 ---------------------------------------------------------+----------------------------------------+-------+
 Control Signal                                           | Buffer(FF name)                        | Load  |
 ---------------------------------------------------------+----------------------------------------+-------+
-ram0_cen_b_OBUF(XST_GND:G)                               | NONE(colCvt/Mmult_B2_int_mult0000)     | 7     |
-vga_out_sync_b_OBUF(XST_VCC:P)                           | NONE(colCvt/Mmult_B2_int_mult0000)     | 5     |
+ram0_cen_b_OBUF(XST_GND:G)                               | NONE(edgedetector/Mmult_GySqr_mult0000)| 7     |
+vga_out_sync_b_OBUF(XST_VCC:P)                           | NONE(colCvt/Mmult_B1_int_mult0000)     | 5     |
 edgedetector/GxSqr_not0001(edgedetector/GxSqr_not00012:O)| NONE(edgedetector/Mmult_GxSqr_mult0000)| 1     |
 edgedetector/GySqr_not0001(edgedetector/GySqr_not00011:O)| NONE(edgedetector/Mmult_GySqr_mult0000)| 1     |
 ---------------------------------------------------------+----------------------------------------+-------+
@@ -2213,7 +2218,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 38.290ns (Maximum Frequency: 26.117MHz)
+   Minimum period: 35.101ns (Maximum Frequency: 28.489MHz)
    Minimum input arrival time before clock: 8.723ns
    Maximum output required time after clock: 11.711ns
    Maximum combinational path delay: 6.844ns
@@ -2224,35 +2229,37 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_27mhz'
-  Clock period: 38.290ns (frequency: 26.117MHz)
-  Total number of paths / destination ports: 182680 / 2934
+  Clock period: 35.101ns (frequency: 28.489MHz)
+  Total number of paths / destination ports: 140963 / 2919
 -------------------------------------------------------------------------
-Delay:               15.954ns (Levels of Logic = 11)
-  Source:            gblur/multiplication_count_1_1 (FF)
+Delay:               14.626ns (Levels of Logic = 13)
+  Source:            gblur/pixel_buffer_16_9 (FF)
   Destination:       gblur/pixel_19 (FF)
   Source Clock:      clock_27mhz rising 2.4X
   Destination Clock: clock_27mhz rising 2.4X
 
-  Data Path: gblur/multiplication_count_1_1 to gblur/pixel_19
+  Data Path: gblur/pixel_buffer_16_9 to gblur/pixel_19
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             2   0.568   0.986  gblur/multiplication_count_1_1 (gblur/multiplication_count_1_1)
-     LUT3_D:I0->O         13   0.439   0.988  gblur/pixel_cmp_eq001211 (gblur/N7)
-     LUT4:I2->O            1   0.439   0.552  gblur/pixel_mux0003<9>13 (gblur/pixel_mux0003<9>13)
-     LUT4_L:I2->LO         1   0.439   0.134  gblur/pixel_mux0003<9>29 (gblur/pixel_mux0003<9>29)
-     LUT4:I2->O            1   0.439   0.517  gblur/pixel_mux0003<9>50 (gblur/pixel_mux0003<9>)
-     MULT18X18:A9->P16     1   6.423   0.551  gblur/Mmult_pixel_mult0020 (gblur/pixel_mult0020<16>)
-     LUT3:I2->O            1   0.439   0.000  gblur/Madd_pixel_addsub0000_lut<16> (gblur/Madd_pixel_addsub0000_lut<16>)
-     MUXCY:S->O            1   0.298   0.000  gblur/Madd_pixel_addsub0000_cy<16> (gblur/Madd_pixel_addsub0000_cy<16>)
+     FDE:C->Q              2   0.568   0.701  gblur/pixel_buffer_16_9 (gblur/pixel_buffer_16_9)
+     MULT18X18:A9->P14     1   6.009   0.726  gblur/Mmult_pixel_mult0015 (gblur/pixel_mult0015<14>)
+     LUT3:I1->O            1   0.439   0.000  gblur/mux5_13 (gblur/mux5_13)
+     MUXF5:I0->O           1   0.436   0.000  gblur/mux5_11_f5 (gblur/mux5_11_f5)
+     MUXF6:I0->O           1   0.447   0.551  gblur/mux5_9_f6 (gblur/mux5_9_f6)
+     LUT3:I2->O            1   0.439   0.552  gblur/multiplication_count<4>6_SW0 (N471)
+     LUT4:I2->O            1   0.439   0.000  gblur/Madd_pixel_addsub0000_lut<14> (gblur/Madd_pixel_addsub0000_lut<14>)
+     MUXCY:S->O            1   0.298   0.000  gblur/Madd_pixel_addsub0000_cy<14> (gblur/Madd_pixel_addsub0000_cy<14>)
+     MUXCY:CI->O           1   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<15> (gblur/Madd_pixel_addsub0000_cy<15>)
+     MUXCY:CI->O           1   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<16> (gblur/Madd_pixel_addsub0000_cy<16>)
      MUXCY:CI->O           1   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<17> (gblur/Madd_pixel_addsub0000_cy<17>)
      MUXCY:CI->O           0   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<18> (gblur/Madd_pixel_addsub0000_cy<18>)
-     XORCY:CI->O           1   1.274   0.551  gblur/Madd_pixel_addsub0000_xor<19> (gblur/pixel_addsub0000<19>)
-     LUT4:I2->O            1   0.439   0.000  gblur/pixel_mux0000<19>1 (gblur/pixel_mux0000<19>)
+     XORCY:CI->O           1   1.274   0.725  gblur/Madd_pixel_addsub0000_xor<19> (gblur/pixel_addsub0000<19>)
+     LUT2:I1->O            1   0.439   0.000  gblur/pixel_mux0000<19>1 (gblur/pixel_mux0000<19>)
      FDRE:D                    0.370          gblur/pixel_19
     ----------------------------------------
-    Total                     15.954ns (11.673ns logic, 4.281ns route)
-                                       (73.2% logic, 26.8% route)
+    Total                     14.626ns (11.370ns logic, 3.255ns route)
+                                       (77.7% logic, 22.3% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'adv7185/clock_slow1'
@@ -2311,7 +2318,7 @@ Delay:               7.012ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 377 / 313
+  Total number of paths / destination ports: 380 / 313
 -------------------------------------------------------------------------
 Offset:              6.575ns (Levels of Logic = 5)
   Source:            button_enter (PAD)
@@ -2325,7 +2332,7 @@ Offset:              6.575ns (Levels of Logic = 5)
      IBUF:I->O             4   0.825   1.032  button_enter_IBUF (button_enter_IBUF)
      LUT3:I0->O            7   0.439   0.857  fsm/backwards_edge1 (fsm/backwards_edge)
      LUT4:I3->O            3   0.439   0.932  fsm/state_mux0000<2>11 (fsm/N0)
-     LUT4:I1->O            1   0.439   0.803  fsm/state_mux0000<2>961_SW0 (N665)
+     LUT4:I1->O            1   0.439   0.803  fsm/state_mux0000<2>961_SW0 (N634)
      LUT4:I0->O            1   0.439   0.000  fsm/state_mux0000<2>961 (fsm/state_mux0000<2>96)
      FDS:D                     0.370          fsm/state_2
     ----------------------------------------
@@ -2347,7 +2354,7 @@ Offset:              8.723ns (Levels of Logic = 7)
     ----------------------------------------  ------------
      IBUF:I->O            12   0.825   1.216  tv_in_ycrcb_15_IBUF (tv_in_ycrcb_15_IBUF)
      LUT4:I0->O            1   0.439   0.557  decode/current_state_cmp_eq002210 (decode/current_state_cmp_eq002210)
-     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N723)
+     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N696)
      LUT4:I3->O            7   0.439   1.024  decode/current_state_cmp_eq002217 (decode/current_state_cmp_eq0022)
      LUT3:I1->O            1   0.439   0.551  decode/current_state_mux0000<3>376 (decode/N8)
      LUT4:I2->O            1   0.439   0.803  decode/current_state_mux0000<3>20 (decode/current_state_mux0000<3>20)
@@ -2413,7 +2420,7 @@ Offset:              7.921ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LDE:G->Q              3   0.674   0.932  vd1/vram_addr_18 (vd1/vram_addr_18)
-     LUT4:I1->O            1   0.439   0.557  vram_addr1<18>_SW1 (N957)
+     LUT4:I1->O            1   0.439   0.557  vram_addr1<18>_SW1 (N936)
      LUT4:I3->O            1   0.439   0.517  vram_addr1<18> (vram_addr1<18>)
      OBUF:I->O                 4.361          ram1_address_18_OBUF (ram1_address<18>)
     ----------------------------------------
@@ -2442,15 +2449,15 @@ Delay:               6.844ns (Levels of Logic = 3)
 =========================================================================
 
 
-Total REAL time to Xst completion: 48.00 secs
-Total CPU time to Xst completion: 46.76 secs
+Total REAL time to Xst completion: 49.00 secs
+Total CPU time to Xst completion: 47.79 secs
  
 --> 
 
 
-Total memory usage is 559008 kilobytes
+Total memory usage is 565852 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  648 (   0 filtered)
-Number of infos    :   54 (   0 filtered)
+Number of infos    :   60 (   0 filtered)
 
