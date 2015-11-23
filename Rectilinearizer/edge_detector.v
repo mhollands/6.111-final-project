@@ -35,8 +35,8 @@ module edge_detector #(parameter WIDTH = 640, HEIGHT = 480, THRESHOLD = 40000)
 	reg [4:0] operation_count;
 	reg go = 0;
 	reg old_go = 0;
-	reg [10:0] gradient_x;
-	reg [10:0] gradient_y;
+	reg signed [11:0] gradient_x;
+	reg signed [11:0] gradient_y;
 	reg [21:0] GxSqr;
 	reg [21:0] GySqr;
 	assign done = ~go & old_go; //generate the done signal
@@ -99,7 +99,7 @@ module edge_detector #(parameter WIDTH = 640, HEIGHT = 480, THRESHOLD = 40000)
 					read_addr <= {y[8:0] - 1 , x[9:0]} + 3; 
 					//write edge or not
 					write_addr <= {y[8:0], x[9:0]};
-					write_data <= (((GxSqr + GySqr) > {thres, 16'b0}) ? 1 : 0);
+					write_data <= (((GxSqr + GySqr) > {9'b0, thres, 7'b0}) ? 1 : 0);
 					//write_data <= x[0] & y[0];
 
 					x <= x + 1; //move to next pixel

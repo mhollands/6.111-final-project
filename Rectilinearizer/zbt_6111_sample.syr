@@ -687,19 +687,21 @@ Synthesizing Unit <edge_detector>.
 WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <read_data<35:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:643 - "edge_detector.v" line 81: The result of a 12x12-bit multiplication is partially used. Only the 22 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+WARNING:Xst:643 - "edge_detector.v" line 82: The result of a 12x12-bit multiplication is partially used. Only the 22 least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
     Found 1-bit register for signal <write_data>.
     Found 19-bit register for signal <write_addr>.
     Found 19-bit register for signal <read_addr>.
     Found 22-bit adder carry out for signal <add0000$addsub0000> created at line 102.
     Found 1-bit register for signal <go>.
-    Found 11-bit register for signal <gradient_x>.
-    Found 11-bit addsub for signal <gradient_x$addsub0000>.
-    Found 11-bit register for signal <gradient_y>.
-    Found 11-bit addsub for signal <gradient_y$addsub0000>.
+    Found 12-bit register for signal <gradient_x>.
+    Found 12-bit addsub for signal <gradient_x$addsub0000>.
+    Found 12-bit register for signal <gradient_y>.
+    Found 12-bit addsub for signal <gradient_y$addsub0000>.
     Found 22-bit register for signal <GxSqr>.
-    Found 11x11-bit multiplier for signal <GxSqr$mult0000> created at line 81.
+    Found 12x12-bit multiplier for signal <GxSqr$mult0001> created at line 81.
     Found 22-bit register for signal <GySqr>.
-    Found 11x11-bit multiplier for signal <GySqr$mult0000> created at line 82.
+    Found 12x12-bit multiplier for signal <GySqr$mult0001> created at line 82.
     Found 1-bit register for signal <old_go>.
     Found 5-bit up counter for signal <operation_count>.
     Found 90-bit register for signal <pixel_buffer>.
@@ -712,7 +714,7 @@ WARNING:Xst:647 - Input <read_data<19:0>> is never used. This port will be prese
     Found 9-bit up counter for signal <y>.
     Summary:
 	inferred   3 Counter(s).
-	inferred 227 D-type flip-flop(s).
+	inferred 229 D-type flip-flop(s).
 	inferred   6 Adder/Subtractor(s).
 	inferred   2 Multiplier(s).
 	inferred   1 Comparator(s).
@@ -1220,17 +1222,19 @@ Macro Statistics
  10x5-bit multiplier                                   : 4
  10x6-bit multiplier                                   : 20
  11x10-bit multiplier                                  : 2
- 11x11-bit multiplier                                  : 3
+ 11x11-bit multiplier                                  : 1
  11x8-bit multiplier                                   : 1
  11x9-bit multiplier                                   : 1
+ 12x12-bit multiplier                                  : 2
 # Adders/Subtractors                                   : 51
  10-bit adder                                          : 1
  10-bit adder carry out                                : 4
  10-bit addsub                                         : 9
  10-bit subtractor                                     : 2
  11-bit adder carry out                                : 4
- 11-bit addsub                                         : 3
+ 11-bit addsub                                         : 1
  11-bit subtractor                                     : 8
+ 12-bit addsub                                         : 2
  12-bit subtractor                                     : 4
  13-bit subtractor                                     : 4
  19-bit adder                                          : 2
@@ -1252,7 +1256,7 @@ Macro Statistics
 # Registers                                            : 172
  1-bit register                                        : 67
  10-bit register                                       : 61
- 11-bit register                                       : 2
+ 12-bit register                                       : 2
  19-bit register                                       : 5
  2-bit register                                        : 2
  20-bit register                                       : 1
@@ -1394,7 +1398,7 @@ WARNING:Xst:2404 -  FFs/Latches <dispdata<63:5>> (without init value) have a con
 WARNING:Xst:2404 -  FFs/Latches <write_data<35:30>> (without init value) have a constant value of 0 in block <gaussian_blurrer>.
 WARNING:Xst:2404 -  FFs/Latches <ntsc_data<35:30>> (without init value) have a constant value of 0 in block <ntsc_to_zbt>.
 
-Synthesizing (advanced) Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_15_LPM_DFF_3>.
+Synthesizing (advanced) Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_16_LPM_DFF_3>.
 The following registers are absorbed into accumulator <corners1x>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners2x>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners3x>: 1 register on signal <human_interface_corners>.
@@ -1403,13 +1407,13 @@ The following registers are absorbed into accumulator <corners1y>: 1 register on
 The following registers are absorbed into accumulator <corners2y>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners3y>: 1 register on signal <human_interface_corners>.
 The following registers are absorbed into accumulator <corners4y>: 1 register on signal <human_interface_corners>.
-Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_15_LPM_DFF_3> synthesized (advanced).
+Unit <XST_ADVANCED_MACRO_ACCU_LPM_ADD_SUB_16_LPM_DFF_3> synthesized (advanced).
 
 Synthesizing (advanced) Unit <edge_detector>.
-	Found pipelined multiplier on signal <GxSqr_mult0000>:
+	Found pipelined multiplier on signal <GxSqr_mult0001>:
 		- 1 pipeline level(s) found in a register connected to the multiplier macro output.
 		Pushing register(s) into the multiplier macro.
-	Found pipelined multiplier on signal <GySqr_mult0000>:
+	Found pipelined multiplier on signal <GySqr_mult0001>:
 		- 1 pipeline level(s) found in a register connected to the multiplier macro output.
 		Pushing register(s) into the multiplier macro.
 Unit <edge_detector> synthesized (advanced).
@@ -1706,17 +1710,19 @@ Macro Statistics
  10x5-bit multiplier                                   : 4
  10x6-bit multiplier                                   : 20
  11x10-bit registered multiplier                       : 2
- 11x11-bit registered multiplier                       : 3
+ 11x11-bit registered multiplier                       : 1
  11x8-bit registered multiplier                        : 1
  11x9-bit registered multiplier                        : 1
+ 12x12-bit registered multiplier                       : 2
 # Adders/Subtractors                                   : 43
  10-bit adder                                          : 1
  10-bit adder carry out                                : 4
  10-bit addsub                                         : 1
  10-bit subtractor                                     : 2
  11-bit adder carry out                                : 4
- 11-bit addsub                                         : 3
+ 11-bit addsub                                         : 1
  11-bit subtractor                                     : 5
+ 12-bit addsub                                         : 2
  12-bit subtractor                                     : 4
  13-bit subtractor                                     : 4
  19-bit adder                                          : 2
@@ -1738,8 +1744,8 @@ Macro Statistics
  9-bit up counter                                      : 2
 # Accumulators                                         : 8
  10-bit updown loadable accumulator                    : 8
-# Registers                                            : 1364
- Flip-Flops                                            : 1364
+# Registers                                            : 1366
+ Flip-Flops                                            : 1366
 # Latches                                              : 2
  19-bit latch                                          : 2
 # Comparators                                          : 33
@@ -2068,8 +2074,8 @@ Unit <zbt_6111_sample> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1301
- Flip-Flops                                            : 1301
+# Registers                                            : 1303
+ Flip-Flops                                            : 1303
 # Shift Registers                                      : 104
  2-bit shift register                                  : 81
  4-bit shift register                                  : 3
@@ -2102,33 +2108,33 @@ Design Statistics
 # IOs                              : 576
 
 Cell Usage :
-# BELS                             : 3751
+# BELS                             : 3765
 #      GND                         : 1
-#      INV                         : 95
+#      INV                         : 96
 #      LUT1                        : 255
-#      LUT2                        : 319
+#      LUT2                        : 321
 #      LUT2_D                      : 11
-#      LUT3                        : 617
-#      LUT3_D                      : 15
+#      LUT3                        : 621
+#      LUT3_D                      : 14
 #      LUT3_L                      : 8
 #      LUT4                        : 915
-#      LUT4_D                      : 67
-#      LUT4_L                      : 52
-#      MUXCY                       : 711
-#      MUXF5                       : 178
+#      LUT4_D                      : 68
+#      LUT4_L                      : 53
+#      MUXCY                       : 714
+#      MUXF5                       : 179
 #      MUXF6                       : 58
 #      MUXF7                       : 19
 #      MUXF8                       : 1
 #      VCC                         : 1
-#      XORCY                       : 428
-# FlipFlops/Latches                : 1446
-#      FD                          : 106
+#      XORCY                       : 430
+# FlipFlops/Latches                : 1448
+#      FD                          : 104
 #      FDE                         : 583
 #      FDR                         : 117
-#      FDRE                        : 550
+#      FDRE                        : 552
 #      FDRS                        : 20
 #      FDRSE                       : 2
-#      FDS                         : 24
+#      FDS                         : 26
 #      FDSE                        : 3
 #      LDE                         : 38
 #      OFDDRRSE                    : 3
@@ -2158,10 +2164,10 @@ Device utilization summary:
 
 Selected Device : 2v6000bf957-4 
 
- Number of Slices:                     1491  out of  33792     4%  
- Number of Slice Flip Flops:           1446  out of  67584     2%  
- Number of 4 input LUTs:               2460  out of  67584     3%  
-    Number used as logic:              2354
+ Number of Slices:                     1493  out of  33792     4%  
+ Number of Slice Flip Flops:           1448  out of  67584     2%  
+ Number of 4 input LUTs:               2468  out of  67584     3%  
+    Number used as logic:              2362
     Number used as Shift registers:     106
  Number of IOs:                         576
  Number of bonded IOBs:                 343  out of    684    50%  
@@ -2191,7 +2197,7 @@ Clock Information:
 -----------------------------------------------------+----------------------------+-------+
 Clock Signal                                         | Clock buffer(FF name)      | Load  |
 -----------------------------------------------------+----------------------------+-------+
-clock_27mhz                                          | vclk1:CLKFX+rc/int_dcm:CLK0| 1321  |
+clock_27mhz                                          | vclk1:CLKFX+rc/int_dcm:CLK0| 1323  |
 bd1/bram_addr_cmp_lt0001(bd1/bram_addr_cmp_lt0001:O) | NONE(*)(bd1/bram_addr_0)   | 19    |
 adv7185/clock_slow1                                  | BUFG                       | 96    |
 clock_27mhz                                          | IBUFG                      | 17    |
@@ -2208,10 +2214,10 @@ Asynchronous Control Signals Information:
 ---------------------------------------------------------+----------------------------------------+-------+
 Control Signal                                           | Buffer(FF name)                        | Load  |
 ---------------------------------------------------------+----------------------------------------+-------+
-ram0_cen_b_OBUF(XST_GND:G)                               | NONE(edgedetector/Mmult_GySqr_mult0000)| 7     |
-vga_out_sync_b_OBUF(XST_VCC:P)                           | NONE(colCvt/Mmult_B1_int_mult0000)     | 5     |
-edgedetector/GxSqr_not0001(edgedetector/GxSqr_not00012:O)| NONE(edgedetector/Mmult_GxSqr_mult0000)| 1     |
-edgedetector/GySqr_not0001(edgedetector/GySqr_not00011:O)| NONE(edgedetector/Mmult_GySqr_mult0000)| 1     |
+ram0_cen_b_OBUF(XST_GND:G)                               | NONE(colCvt/Mmult_C_int_mult0001)      | 7     |
+vga_out_sync_b_OBUF(XST_VCC:P)                           | NONE(colCvt/Mmult_C_int_mult0001)      | 5     |
+edgedetector/GxSqr_not0001(edgedetector/GxSqr_not00012:O)| NONE(edgedetector/Mmult_GxSqr_mult0001)| 1     |
+edgedetector/GySqr_not0001(edgedetector/GySqr_not00011:O)| NONE(edgedetector/Mmult_GySqr_mult0001)| 1     |
 ---------------------------------------------------------+----------------------------------------+-------+
 
 Timing Summary:
@@ -2230,7 +2236,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock_27mhz'
   Clock period: 35.101ns (frequency: 28.489MHz)
-  Total number of paths / destination ports: 140963 / 2919
+  Total number of paths / destination ports: 141825 / 2955
 -------------------------------------------------------------------------
 Delay:               14.626ns (Levels of Logic = 13)
   Source:            gblur/pixel_buffer_16_9 (FF)
@@ -2247,7 +2253,7 @@ Delay:               14.626ns (Levels of Logic = 13)
      LUT3:I1->O            1   0.439   0.000  gblur/mux5_13 (gblur/mux5_13)
      MUXF5:I0->O           1   0.436   0.000  gblur/mux5_11_f5 (gblur/mux5_11_f5)
      MUXF6:I0->O           1   0.447   0.551  gblur/mux5_9_f6 (gblur/mux5_9_f6)
-     LUT3:I2->O            1   0.439   0.552  gblur/multiplication_count<4>6_SW0 (N471)
+     LUT3:I2->O            1   0.439   0.552  gblur/multiplication_count<4>6_SW0 (N469)
      LUT4:I2->O            1   0.439   0.000  gblur/Madd_pixel_addsub0000_lut<14> (gblur/Madd_pixel_addsub0000_lut<14>)
      MUXCY:S->O            1   0.298   0.000  gblur/Madd_pixel_addsub0000_cy<14> (gblur/Madd_pixel_addsub0000_cy<14>)
      MUXCY:CI->O           1   0.053   0.000  gblur/Madd_pixel_addsub0000_cy<15> (gblur/Madd_pixel_addsub0000_cy<15>)
@@ -2318,26 +2324,25 @@ Delay:               7.012ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_27mhz'
-  Total number of paths / destination ports: 380 / 313
+  Total number of paths / destination ports: 378 / 315
 -------------------------------------------------------------------------
-Offset:              6.575ns (Levels of Logic = 5)
+Offset:              5.861ns (Levels of Logic = 4)
   Source:            button_enter (PAD)
-  Destination:       fsm/state_2 (FF)
+  Destination:       fsm/state_0 (FF)
   Destination Clock: clock_27mhz rising 2.4X
 
-  Data Path: button_enter to fsm/state_2
+  Data Path: button_enter to fsm/state_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             4   0.825   1.032  button_enter_IBUF (button_enter_IBUF)
-     LUT3:I0->O            7   0.439   0.857  fsm/backwards_edge1 (fsm/backwards_edge)
-     LUT4:I3->O            3   0.439   0.932  fsm/state_mux0000<2>11 (fsm/N0)
-     LUT4:I1->O            1   0.439   0.803  fsm/state_mux0000<2>961_SW0 (N634)
-     LUT4:I0->O            1   0.439   0.000  fsm/state_mux0000<2>961 (fsm/state_mux0000<2>96)
-     FDS:D                     0.370          fsm/state_2
+     LUT3:I0->O            7   0.439   0.856  fsm/backwards_edge1 (fsm/backwards_edge)
+     LUT4:I3->O            4   0.439   1.033  fsm/next_state<1>1 (fsm/N1)
+     LUT4:I0->O            1   0.439   0.518  fsm/next_state<0>5 (fsm/next_state<0>5)
+     FDS:S                     0.280          fsm/state_0
     ----------------------------------------
-    Total                      6.575ns (2.951ns logic, 3.624ns route)
-                                       (44.9% logic, 55.1% route)
+    Total                      5.861ns (2.422ns logic, 3.439ns route)
+                                       (41.3% logic, 58.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'tv_in_line_clock1'
@@ -2354,7 +2359,7 @@ Offset:              8.723ns (Levels of Logic = 7)
     ----------------------------------------  ------------
      IBUF:I->O            12   0.825   1.216  tv_in_ycrcb_15_IBUF (tv_in_ycrcb_15_IBUF)
      LUT4:I0->O            1   0.439   0.557  decode/current_state_cmp_eq002210 (decode/current_state_cmp_eq002210)
-     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N696)
+     LUT4:I3->O            2   0.439   0.741  decode/current_state_cmp_eq002217_SW0 (N686)
      LUT4:I3->O            7   0.439   1.024  decode/current_state_cmp_eq002217 (decode/current_state_cmp_eq0022)
      LUT3:I1->O            1   0.439   0.551  decode/current_state_mux0000<3>376 (decode/N8)
      LUT4:I2->O            1   0.439   0.803  decode/current_state_mux0000<3>20 (decode/current_state_mux0000<3>20)
@@ -2420,7 +2425,7 @@ Offset:              7.921ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LDE:G->Q              3   0.674   0.932  vd1/vram_addr_18 (vd1/vram_addr_18)
-     LUT4:I1->O            1   0.439   0.557  vram_addr1<18>_SW1 (N936)
+     LUT4:I1->O            1   0.439   0.557  vram_addr1<18>_SW1 (N931)
      LUT4:I3->O            1   0.439   0.517  vram_addr1<18> (vram_addr1<18>)
      OBUF:I->O                 4.361          ram1_address_18_OBUF (ram1_address<18>)
     ----------------------------------------
@@ -2450,14 +2455,14 @@ Delay:               6.844ns (Levels of Logic = 3)
 
 
 Total REAL time to Xst completion: 49.00 secs
-Total CPU time to Xst completion: 47.79 secs
+Total CPU time to Xst completion: 48.00 secs
  
 --> 
 
 
-Total memory usage is 565852 kilobytes
+Total memory usage is 566124 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  648 (   0 filtered)
+Number of warnings :  650 (   0 filtered)
 Number of infos    :   60 (   0 filtered)
 

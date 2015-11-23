@@ -78,7 +78,7 @@ module main_fsm(
 			EDGE_DETECTION_WAIT: next_state = edge_detection_done ? SHOW_TRANSFORMED : EDGE_DETECTION_WAIT;
 			SHOW_TRANSFORMED: next_state = backwards_edge ? MANUAL_DETECTION_WAIT : forwards_edge ? SHOW_BRAM : SHOW_TRANSFORMED;
 			SHOW_BRAM: next_state = backwards_edge ? SHOW_TRANSFORMED : SHOW_BRAM;
-			default: next_state = state;
+			default: next_state = MANUAL_DETECTION_WAIT;
 		endcase
 	end
 	

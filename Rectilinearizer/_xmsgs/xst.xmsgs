@@ -191,6 +191,12 @@
 <msg type="warning" file="Xst" num="647" delta="unknown" >Input &lt;<arg fmt="%s" index="1">read_data&lt;19:0&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
+<msg type="warning" file="Xst" num="643" delta="unknown" >&quot;<arg fmt="%s" index="1">edge_detector.v</arg>&quot; line <arg fmt="%d" index="2">81</arg>: The result of a <arg fmt="%d" index="3">12</arg>x<arg fmt="%d" index="4">12</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">22</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+</msg>
+
+<msg type="warning" file="Xst" num="643" delta="unknown" >&quot;<arg fmt="%s" index="1">edge_detector.v</arg>&quot; line <arg fmt="%d" index="2">82</arg>: The result of a <arg fmt="%d" index="3">12</arg>x<arg fmt="%d" index="4">12</arg>-bit multiplication is partially used. Only the <arg fmt="%d" index="5">22</arg> least significant bits are used. If you are doing this on purpose, you may safely ignore this warning. Otherwise, make sure you are not losing information, leading to unexpected circuit behavior.
+</msg>
+
 <msg type="warning" file="Xst" num="646" delta="unknown" >Signal &lt;<arg fmt="%s" index="1">state</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
