@@ -1,5 +1,5 @@
 NUM_USER_FILES
-24
+25
 s
 user_file_1
 display_16hex.v
@@ -51,6 +51,9 @@ debounce.v
 s
 user_file_24
 edge_detector_tf.v
+s
+user_file_25
+trig_lookup.v
 s
 user_file_3
 ntsc2zbt.v

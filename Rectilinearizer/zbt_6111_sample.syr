@@ -2214,8 +2214,8 @@ Asynchronous Control Signals Information:
 ---------------------------------------------------------+----------------------------------------+-------+
 Control Signal                                           | Buffer(FF name)                        | Load  |
 ---------------------------------------------------------+----------------------------------------+-------+
-ram0_cen_b_OBUF(XST_GND:G)                               | NONE(colCvt/Mmult_C_int_mult0001)      | 7     |
-vga_out_sync_b_OBUF(XST_VCC:P)                           | NONE(colCvt/Mmult_C_int_mult0001)      | 5     |
+ram0_cen_b_OBUF(XST_GND:G)                               | NONE(colCvt/Mmult_B2_int_mult0000)     | 7     |
+vga_out_sync_b_OBUF(XST_VCC:P)                           | NONE(colCvt/Mmult_B2_int_mult0000)     | 5     |
 edgedetector/GxSqr_not0001(edgedetector/GxSqr_not00012:O)| NONE(edgedetector/Mmult_GxSqr_mult0001)| 1     |
 edgedetector/GySqr_not0001(edgedetector/GySqr_not00011:O)| NONE(edgedetector/Mmult_GySqr_mult0001)| 1     |
 ---------------------------------------------------------+----------------------------------------+-------+
@@ -2454,8 +2454,8 @@ Delay:               6.844ns (Levels of Logic = 3)
 =========================================================================
 
 
-Total REAL time to Xst completion: 49.00 secs
-Total CPU time to Xst completion: 48.00 secs
+Total REAL time to Xst completion: 53.00 secs
+Total CPU time to Xst completion: 48.19 secs
  
 --> 
 
