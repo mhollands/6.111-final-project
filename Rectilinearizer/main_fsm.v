@@ -73,7 +73,7 @@ module main_fsm(
 			COMPUTE_PARAM_START: next_state = COMPUTE_PARAM_WAIT;
          COMPUTE_PARAM_WAIT: next_state = (counter == 0) ? PIXEL_TRANSFORM_START : COMPUTE_PARAM_WAIT;
          PIXEL_TRANSFORM_START: next_state = PIXEL_TRANSFORM_WAIT;
-         PIXEL_TRANSFORM_WAIT: next_state = forwards ? SHOW_TRANSFORMED : PIXEL_TRANSFORM_WAIT;
+         PIXEL_TRANSFORM_WAIT: next_state = (pixel_transform_done)? SHOW_TRANSFORMED : PIXEL_TRANSFORM_WAIT;
          SHOW_TRANSFORMED: next_state = SHOW_TRANSFORMED;
          
          default: next_state = state;

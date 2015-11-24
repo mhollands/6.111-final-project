@@ -595,56 +595,40 @@ module zbt_6111_sample(beep, audio_reset_b,
    // vga_data, transform_source_data
    // ram(0,1)_(addr, write_data, we)_mux
    always @(*) begin
+      // Default values - so we don't accidentally infer latch behavior
+      ram0_addr_mux = 0;
+      ram0_write_data_mux = 0;
+      ram0_we_mux = 0;
+      ram1_addr_mux = 0;
+      ram1_write_data_mux = 0;
+      ram1_we_mux = 0;
+      vga_data = 0;
+      transform_source_data = 0;
+      
       case(fsm_state)
          VIEW_FINDER: begin
             ram0_addr_mux = ntsc_addr;
             ram0_write_data_mux = ntsc_data;
             ram0_we_mux = ntsc_we;
-            ram1_addr_mux = 0;
-            ram1_write_data_mux = 0;
-            ram1_we_mux = 0;
-            vga_data = 0;
-            transform_source_data = 0;
          end
          MANUAL_DETECTION_START, MANUAL_DETECTION_WAIT, COMPUTE_PARAM_START, COMPUTE_PARAM_WAIT: begin
             ram0_addr_mux = vga_addr;
             vga_data = ram0_read_data;
-            ram0_write_data_mux = 0;
-            ram0_we_mux = 0;
-            ram1_addr_mux = 0;
-            ram1_write_data_mux = 0;
-            ram1_we_mux = 0;
-            transform_source_data = 0;
          end
          PIXEL_TRANSFORM_START, PIXEL_TRANSFORM_WAIT: begin
             ram0_addr_mux = transform_source_addr;
             transform_source_data = ram0_read_data;
-            ram0_write_data_mux = 0;
-            ram0_we_mux = 0;
             ram1_addr_mux = transform_dest_addr;
             ram1_write_data_mux = transform_dest_data;
             ram1_we_mux = transform_dest_we;
-            vga_data = 0;
          end
          SHOW_TRANSFORMED: begin
-            ram0_addr_mux = 0;
-            ram0_write_data_mux = 0;
-            ram0_we_mux = 0;
             ram1_addr_mux = vga_addr;
             vga_data = ram1_read_data;
-            ram1_write_data_mux = 0;
-            ram1_we_mux = 0;
-            transform_source_data = 0;
          end
          default: begin
             ram0_addr_mux = vga_addr;
             vga_data = ram0_read_data;
-            ram0_write_data_mux = 0;
-            ram0_we_mux = 0;
-            ram1_addr_mux = 0;
-            ram1_write_data_mux = 0;
-            ram1_we_mux = 0;
-            transform_source_data = 0;
          end
       endcase
    end

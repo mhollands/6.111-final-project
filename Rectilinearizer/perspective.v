@@ -170,10 +170,11 @@ module pixel_transform (input clk,
    
    // State registers - wait counters and overall state
    reg [9:0] div_delay;
-   reg state;
+   reg [1:0] state;
    
-   parameter STATE_READY = 1'b0;
-   parameter STATE_WAIT_DIV = 1'b1;
+   parameter STATE_INITIAL = 2'b10;
+   parameter STATE_READY = 2'b00;
+   parameter STATE_WAIT_DIV = 2'b01;
    
    // Avoid multiplying to generate the components based on p1, p4, p7
    reg signed [46:0] p1_component, p4_component, p7_component;
@@ -250,6 +251,7 @@ module pixel_transform (input clk,
    reg start_slow; // Used to synchronize start with the slow clock, to ensure a full slow-clock cycle to compute initial values
                     
    initial begin
+      state = STATE_INITIAL;
       done = 0;
    end
    
@@ -275,7 +277,7 @@ module pixel_transform (input clk,
             if (state == STATE_READY) begin
                divstart <= 1;
                state <= STATE_WAIT_DIV;
-               div_delay <= 100; // This should be enough for restoring divide algorithms
+               div_delay <= 15; // This should be enough for restoring divide algorithms
             end
             else if (state == STATE_WAIT_DIV) begin
                if (div_delay > 0) begin
@@ -305,7 +307,7 @@ module pixel_transform (input clk,
                end
             end
          end
-         else begin
+         else if (state != STATE_INITIAL) begin // Don't exert Done early
             done <= 1;
          end
       end
