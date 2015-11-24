@@ -58,11 +58,11 @@ module compute_parameters(input [9:0] x1_in, x2_in, x3_in, x4_in,
     wire signed [19:0] p7_scratch1, p7_scratch2, p8_scratch1, p8_scratch2;
     assign p7_scratch1 = x1minusx4 * y2minusy3;
     assign p7_scratch2 = x3minusx2 * y1minusy4;
-    assign p7 = p7_scratch1 + (p7_scratch1 << 1) + p7_scratch2 + (p7_scratch2 << 3); // p7 max length 24
+    assign p7 = p7_scratch1 + (p7_scratch1 << 1) + p7_scratch2 + (p7_scratch2 << 1); // p7 max length 23
     
     assign p8_scratch1 = x1minusx2 * y3minusy4;
     assign p8_scratch2 = x4minusx3 * y1minusy2;
-    assign p8 = (p8_scratch1 << 2) + (p8_scratch2 << 4); // p8 max length 25
+    assign p8 = (p8_scratch1 << 2) + (p8_scratch2 << 2); // p8 max length 23
     
     // Compute p1, p2, p4, p5 using p7, p8
     wire signed [34:0] p1_scratch1, p2_scratch1;
@@ -158,10 +158,10 @@ module pixel_transform (input clk,
                          input start,
                          input signed [41:0] p1, p2, p3, p4, p5, p6, p7, p8, p9,
                          input [35:0] source_data,
-                         output [19:0] source_addr, 
-                         output reg [19:0] dest_addr,
+                         output reg [18:0] source_addr, 
+                         output [18:0] dest_addr,
                          output [35:0] dest_data,
-                         output reg dest_we,
+                         output dest_we,
                          output reg done);
    
    // Coordinates of the pixel we're currently mapping
@@ -169,7 +169,7 @@ module pixel_transform (input clk,
    reg [8:0] y;
    
    // State registers - wait counters and overall state
-   reg [4:0] div_delay;
+   reg [9:0] div_delay;
    reg state;
    
    parameter STATE_READY = 1'b0;
@@ -188,25 +188,27 @@ module pixel_transform (input clk,
    
    // initialize signed dividers
    // We give these the fast clock, so we have to wait fewer slow-clock cycles
-   reg signed [47:0] dividend1, divisor, dividend2;
    reg divstart;
    wire div1ready, div2ready;
+   wire [47:0] dummy1, dummy2; // remainder not used
    wire [47:0] quotient1, quotient2;
    divider #(.WIDTH(48)) divider1  // x-coordinate
-                    (.dividend(dividend1), 
-                    .divider(divisor), 
+                    (.dividend(numer1), 
+                    .divider(denom), 
                     .quotient(quotient1),
                     .start(divstart),
                     .ready(div1ready),
+                    .remainder(dummy1),
                     .sign(1'b1),
                     .clk(clk));
                     
    divider #(.WIDTH(48)) divider2  // y-coordinate
-                    (.dividend(dividend2), 
-                    .divider(divisor), 
+                    (.dividend(numer2), 
+                    .divider(denom), 
                     .quotient(quotient2),
                     .start(divstart),
                     .ready(div2ready),
+                    .remainder(dummy2),
                     .sign(1'b1),
                     .clk(clk));
                     
@@ -215,102 +217,107 @@ module pixel_transform (input clk,
    // Cycle 0: Supply source address, dest write enable, dest write address
    // Cycle 1: Source memory is fetching, dest signals are in delay pipeline
    // Cycle 2: Source memory fetched, dest signals + source data supplied to dest memory
-   reg [19:0] dest_addr_delay;
+   reg [18:0] dest_addr_delay;
    reg dest_we_delay;
-   reg [39:0] dest_addr_pipe;
+   reg [37:0] dest_addr_pipe;
    reg [1:0] dest_we_pipe;
-   assign dest_addr = dest_addr_pipe[39:20]
-   assign dest_we = dest_we_pipe[1]
+   assign dest_addr = dest_addr_pipe[37:19];
+   assign dest_we = dest_we_pipe[1];
    always @(posedge clk) begin
-       dest_addr_pipe <= {dest_addr_pipe[19:0], dest_addr_delay};
+       dest_addr_pipe <= {dest_addr_pipe[18:0], dest_addr_delay};
        dest_we_pipe <= {dest_we_pipe[0], dest_we_delay};
    end
+   assign dest_data = source_data; // Due to how we're handling these signals
    
    // Source address is based on quotients
-   // addr = x + 640y = x + 128y + 512y
-   wire [19:0] source_addr_next;
-   assign source_addr_next = quotient1[9:0] + (quotient2[8:0] << 7) + (quotient2[8:0] << 8);
+   // addr = x + 1024y
+   wire [18:0] source_addr_next;
+   assign source_addr_next = {quotient2[8:0], quotient1[9:0]};
 
    // This module needs to operate on a slow clock due to large-width arithmetic
    // Reduce the clock speed to 1/4 of the original
-   reg slow_clk;
-   reg counter;
+   reg [1:0] counter;
    initial begin
-      slow_clk <= 0;
       counter <= 0;
    end
    always @(posedge clk) begin
-      counter <= ~counter;
-      if (counter) begin
-         slow_clk <= ~slow_clk;
+      if (counter == 3) begin
+         counter <= 0;
       end
+      else counter <= counter + 1;
    end
    
-   // Memories will use the fast clock, so we ensure that the write-enable
-   // is only high for one fast clock cycle
-   // Same for division enable
-   // Lastly, synchronize the start signal so we can pulse it for one fast clock cycle
-   // but it will only actually start on the next slow clock rising edge
-   reg start_slow;
-   always @(posedge clk) begin
-      if (dest_we_delay == 1) dest_we_delay <= 0;
-      if (divstart == 1) divstart <= 0;
-      if (start == 1) start_slow <= 1;
-   end
+   reg start_slow; // Used to synchronize start with the slow clock, to ensure a full slow-clock cycle to compute initial values
                     
-   always @(posedge slow_clk) begin
-      if (start_slow == 1) begin
-         start_slow <= 0;
-         x <= 0;
-         y <= 0;
-         p1_component <= 0;
-         p4_component <= 0;
-         p7_component <= 0;
-         p2p3_component <= p3;
-         p5p6_component <= p6;
-         p8p9_component <= p9;
-         dest_addr_delay <= 0;
-         dest_we_delay <= 0;
-         done <= 0;
-         
-         state <= STATE_READY;
-      end
-      else if (y < 640) begin
-         if (state == STATE_READY) begin
-            divstart <= 1;
-            state <= STATE_WAIT_DIV;
-            div_delay <= 15; // This should be enough for restoring divide algorithms
+   initial begin
+      done = 0;
+   end
+   
+   always @(posedge clk) begin
+      if (counter == 0) begin // Simulate a slow clock
+         if (start_slow == 1 || start == 1) begin
+            start_slow <= 0;
+            x <= 0;
+            y <= 0;
+            p1_component <= 0;
+            p4_component <= 0;
+            p7_component <= 0;
+            p2p3_component <= p3;
+            p5p6_component <= p6;
+            p8p9_component <= p9;
+            dest_addr_delay <= 0;
+            dest_we_delay <= 0;
+            done <= 0;
+            
+            state <= STATE_READY;
          end
-         else if (state == STATE_WAIT_DIV) begin
-            if (div_delay > 0) begin
-               div_delay <= div_delay - 1;
+         else if (y < 480) begin
+            if (state == STATE_READY) begin
+               divstart <= 1;
+               state <= STATE_WAIT_DIV;
+               div_delay <= 100; // This should be enough for restoring divide algorithms
             end
-            else begin // Division is done
-               dest_we_delay <= 1;
-               source_addr <= source_addr_next;
-               state <= STATE_READY;
-               dest_addr_delay <= dest_addr_delay + 1;
-               if (x == 639) begin
-                  p1_component <= 0;
-                  p4_component <= 0;
-                  p7_component <= 0;
-                  x <= 0;
-                  y <= y+1;
-                  p2p3_component <= p2p3_component + p2;
-                  p5p6_component <= p5p6_component + p5;
-                  p8p9_component <= p8p9_component + p8;
+            else if (state == STATE_WAIT_DIV) begin
+               if (div_delay > 0) begin
+                  div_delay <= div_delay - 1;
                end
-               else begin
-                  p1_component <= p1_component + p1;
-                  p4_component <= p4_component + p4;
-                  p7_component <= p7_component + p7;
-                  x <= x+1;
+               else begin // Division is done
+                  dest_we_delay <= 1;
+                  source_addr <= source_addr_next;
+                  state <= STATE_READY;
+                  dest_addr_delay <= {y, x};
+                  if (x == 639) begin
+                     p1_component <= 0;
+                     p4_component <= 0;
+                     p7_component <= 0;
+                     x <= 0;
+                     y <= y+1;
+                     p2p3_component <= p2p3_component + p2;
+                     p5p6_component <= p5p6_component + p5;
+                     p8p9_component <= p8p9_component + p8;
+                  end
+                  else begin
+                     p1_component <= p1_component + p1;
+                     p4_component <= p4_component + p4;
+                     p7_component <= p7_component + p7;
+                     x <= x+1;
+                  end
                end
             end
          end
+         else begin
+            done <= 1;
+         end
       end
+      // Memories will use the fast clock, so we ensure that the write-enable
+      // is only high for one fast clock cycle
+      // Same for division enable
+      // Lastly, synchronize the start signal so we can pulse it for one fast clock cycle
+      // but it will only actually start on the next slow clock rising edge
       else begin
-         done <= 1;
+         if (dest_we_delay == 1) dest_we_delay <= 0;
+         if (divstart == 1) divstart <= 0;
+         if (start == 1) start_slow <= 1;
       end
       
    end

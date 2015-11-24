@@ -287,18 +287,12 @@ module zbt_6111_sample(beep, audio_reset_b,
    assign ram0_bwe_b = 4'h0; 
 
 /**********/
-
-   assign ram1_data = 36'hZ; 
-   assign ram1_address = 19'h0;
-   assign ram1_adv_ld = 1'b0;
-   assign ram1_clk = 1'b0;
    
    //These values has to be set to 0 like ram0 if ram1 is used.
-   assign ram1_cen_b = 1'b1;
-   assign ram1_ce_b = 1'b1;
-   assign ram1_oe_b = 1'b1;
-   assign ram1_we_b = 1'b1;
-   assign ram1_bwe_b = 4'hF;
+   assign ram1_ce_b = 1'b0;
+   assign ram1_oe_b = 1'b0;
+   assign ram1_adv_ld = 1'b0;
+   assign ram1_bwe_b = 4'h0; 
 
    // clock_feedback_out will be assigned by ramclock
    // assign clock_feedback_out = 1'b0;  //2011-Nov-10
@@ -400,7 +394,7 @@ module zbt_6111_sample(beep, audio_reset_b,
    
    ramclock rc(.ref_clock(clock_65mhz), .fpga_clock(clk),
 					.ram0_clock(ram0_clk), 
-					//.ram1_clock(ram1_clk),   //uncomment if ram1 is used
+					.ram1_clock(ram1_clk),
 					.clock_feedback_in(clock_feedback_in),
 					.clock_feedback_out(clock_feedback_out), .locked(locked));
 
@@ -415,6 +409,9 @@ module zbt_6111_sample(beep, audio_reset_b,
    wire reset,user_reset;
    debounce db1(power_on_reset, clk, 1'b0, user_reset);
    assign reset = user_reset | power_on_reset;
+   
+   wire db_enter;
+   debounce debounce_enter(power_on_reset, clk, button_enter, db_enter);
 
    // display module for debugging
    reg [63:0] dispdata;
@@ -432,8 +429,28 @@ module zbt_6111_sample(beep, audio_reset_b,
 	wire auto_detection_done;
 	wire auto_detection_start;
 	wire set_corners;
-	wire [2:0] fsm_state;
-	main_fsm fsm (clk, ~button_enter, switch[7], auto_detection_done, fsm_state, auto_detection_start, set_corners);
+	wire [4:0] fsm_state;
+	main_fsm fsm (.clk(clk), 
+                 .button_enter(~db_enter), 
+                 .switch(switch[7]), 
+                 .auto_detection_done(auto_detection_done), 
+                 .pixel_transform_done(pixel_transform_done), 
+                 .state(fsm_state),
+                 .auto_detection_start(auto_detection_start),
+                 .pixel_transform_start(pixel_transform_start),
+                 .set_corners(set_corners));
+                 
+  // Copy of FSM state list
+  parameter VIEW_FINDER = 5'b000;
+  parameter AUTO_DETECTION_START = 5'b001;
+  parameter AUTO_DETECTION_WAIT = 5'b010;
+  parameter MANUAL_DETECTION_START = 5'b011;
+  parameter MANUAL_DETECTION_WAIT = 5'b100;
+  parameter COMPUTE_PARAM_START = 5'b1000;
+  parameter COMPUTE_PARAM_WAIT = 5'b1001;
+  parameter PIXEL_TRANSFORM_START = 5'b1010;
+  parameter PIXEL_TRANSFORM_WAIT = 5'b1011;
+  parameter SHOW_TRANSFORMED = 5'b1100;
 
 	//auto_detection_module - mock module for now\
 	wire [79:0] corners_auto;
@@ -444,23 +461,29 @@ module zbt_6111_sample(beep, audio_reset_b,
 							corners_auto);
 
    // wire up to ZBT ram
-   wire [35:0] vram_write_data;
-   wire [35:0] vram_read_data;
-   wire [18:0] vram_addr;
-   wire vram_we;
+   reg [35:0] ram0_write_data_mux, ram1_write_data_mux;
+   wire [35:0] ram0_read_data, ram1_read_data;
+   reg [18:0] ram0_addr_mux, ram1_addr_mux;
+   reg ram0_we_mux, ram1_we_mux;
 
-   wire ram0_clk_not_used;
-   zbt_6111 zbt1(clk, 1'b1, vram_we, vram_addr,
-		   vram_write_data, vram_read_data,
+   wire ram0_clk_not_used, ram1_clk_not_used;
+   zbt_6111 zbt0(clk, 1'b1, ram0_we_mux, ram0_addr_mux,
+		   ram0_write_data_mux, ram0_read_data,
 		   ram0_clk_not_used,   //to get good timing, don't connect ram_clk to zbt_6111
 		   ram0_we_b, ram0_address, ram0_data, ram0_cen_b);
+   
+   zbt_6111 zbt1(clk, 1'b1, ram1_we_mux, ram1_addr_mux,
+      ram1_write_data_mux, ram1_read_data,
+      ram1_clk_not_used,   //to get good timing, don't connect ram_clk to zbt_6111
+      ram1_we_b, ram1_address, ram1_data, ram1_cen_b);
 
    // generate pixel value from reading ZBT memory
-   wire [29:0] 	vr_pixel;
-   wire [18:0] 	display_addr;
+   wire [29:0] vr_pixel;
+   wire [18:0] vga_addr;
+   reg [35:0] vga_data;
 
    vram_display #(192,144) vd1(reset,clk,hcount,vcount,vr_pixel,
-		    display_addr,vram_read_data);
+		    vga_addr, vga_data);
 
    // ADV7185 NTSC decoder interface code
    // adv7185 initialization module
@@ -485,13 +508,6 @@ module zbt_6111_sample(beep, audio_reset_b,
    ntsc_to_zbt n2z (clk, tv_in_line_clock1, fvh, dv, ycrcb[29:0],
 		    ntsc_addr, ntsc_data, ntsc_we);
 
-   wire [35:0] 	write_data = ntsc_data;
-	//address is either chosen by camera or display
-   assign 	vram_addr = fsm_state == 0 ? ntsc_addr : display_addr;
-	//write enable when in write mode and camera wants to write
-   assign 	vram_we = (fsm_state == 0) & ntsc_we;
-   assign 	vram_write_data = write_data;
-
 	//handle corner selection
 	wire [9:0] corners1x_manual;
 	wire [9:0] corners1y_manual;
@@ -510,7 +526,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 								~button_right,
 								~button_up,
 								~button_down,
-								~button_enter,
+								~db_enter,
 								~button0,
 								~button1,
 								~button2,
@@ -526,6 +542,113 @@ module zbt_6111_sample(beep, audio_reset_b,
 								corners4x_manual,
 								corners4y_manual);
 	
+
+   wire signed [41:0] p1, p2, p3, p4, p5, p6, p7, p8, p9;
+   //Compute parameters
+   compute_parameters params(.x1_in(corners1x_manual - 192),
+                             .x2_in(corners2x_manual - 192),
+                             .x3_in(corners3x_manual - 192),
+                             .x4_in(corners4x_manual - 192),
+                             .y1_in(corners1y_manual - 144),
+                             .y2_in(corners2y_manual - 144),
+                             .y3_in(corners3y_manual - 144),
+                             .y4_in(corners4y_manual - 144),
+                             .p1(p1),
+                             .p2(p2),
+                             .p3(p3),
+                             .p4(p4),
+                             .p5(p5),
+                             .p6(p6),
+                             .p7(p7),
+                             .p8(p8),
+                             .p9(p9)
+                             );
+   reg [35:0] transform_source_data;
+   wire [35:0] transform_dest_data;
+   wire [18:0] transform_source_addr, transform_dest_addr;
+   wire transform_dest_we;
+   pixel_transform mapper(.clk(clk), 
+                         .start(pixel_transform_start),
+                         .p1(p1),
+                         .p2(p2),
+                         .p3(p3),
+                         .p4(p4),
+                         .p5(p5),
+                         .p6(p6),
+                         .p7(p7),
+                         .p8(p8),
+                         .p9(p9),
+                         .source_data(transform_source_data),
+                         .source_addr(transform_source_addr),
+                         .dest_data(transform_dest_data),
+                         .dest_addr(transform_dest_addr),
+                         .dest_we(transform_dest_we),
+                         .done(pixel_transform_done));
+   
+
+   //////////////////////// MEMORY CONTROL AREA
+   // Potential inputs:
+   // ntsc_addr, ntsc_data, vga_addr,
+   // transform_source_addr, transform_dest_data,
+   // transform_dest_addr, and all write enable inputs
+   // Potential outputs:
+   // vga_data, transform_source_data
+   // ram(0,1)_(addr, write_data, we)_mux
+   always @(*) begin
+      case(fsm_state)
+         VIEW_FINDER: begin
+            ram0_addr_mux = ntsc_addr;
+            ram0_write_data_mux = ntsc_data;
+            ram0_we_mux = ntsc_we;
+            ram1_addr_mux = 0;
+            ram1_write_data_mux = 0;
+            ram1_we_mux = 0;
+            vga_data = 0;
+            transform_source_data = 0;
+         end
+         MANUAL_DETECTION_START, MANUAL_DETECTION_WAIT, COMPUTE_PARAM_START, COMPUTE_PARAM_WAIT: begin
+            ram0_addr_mux = vga_addr;
+            vga_data = ram0_read_data;
+            ram0_write_data_mux = 0;
+            ram0_we_mux = 0;
+            ram1_addr_mux = 0;
+            ram1_write_data_mux = 0;
+            ram1_we_mux = 0;
+            transform_source_data = 0;
+         end
+         PIXEL_TRANSFORM_START, PIXEL_TRANSFORM_WAIT: begin
+            ram0_addr_mux = transform_source_addr;
+            transform_source_data = ram0_read_data;
+            ram0_write_data_mux = 0;
+            ram0_we_mux = 0;
+            ram1_addr_mux = transform_dest_addr;
+            ram1_write_data_mux = transform_dest_data;
+            ram1_we_mux = transform_dest_we;
+            vga_data = 0;
+         end
+         SHOW_TRANSFORMED: begin
+            ram0_addr_mux = 0;
+            ram0_write_data_mux = 0;
+            ram0_we_mux = 0;
+            ram1_addr_mux = vga_addr;
+            vga_data = ram1_read_data;
+            ram1_write_data_mux = 0;
+            ram1_we_mux = 0;
+            transform_source_data = 0;
+         end
+         default: begin
+            ram0_addr_mux = vga_addr;
+            vga_data = ram0_read_data;
+            ram0_write_data_mux = 0;
+            ram0_we_mux = 0;
+            ram1_addr_mux = 0;
+            ram1_write_data_mux = 0;
+            ram1_we_mux = 0;
+            transform_source_data = 0;
+         end
+      endcase
+   end
+
 	//handle drawing corner markers
 	wire [29:0] corner_pixel_A;
 	corner_sprite #(32'h3ff00000) corner_sprite_A (corners1x_manual, corners1y_manual, hcount, vcount, corner_pixel_A);
@@ -552,7 +675,7 @@ module zbt_6111_sample(beep, audio_reset_b,
 			default: ycrcb_pixel <= vr_pixel;
 		endcase
 	end
-	
+   
 	// select output pixel data
    reg [23:0] pixel;
 	wire [23:0] rgb_pixel;
@@ -589,12 +712,12 @@ module zbt_6111_sample(beep, audio_reset_b,
    assign vga_out_vsync = vsync_delay[2];
 
    // debugging
-   assign led = ~{vram_addr[18:13],reset,switch[0]};
+   assign led = ~{ram0_addr_mux[18:13],reset,switch[0]};
 
 	//displayed on hex display for debugging
    always @(posedge clk)
      // dispdata <= {vram_read_data,9'b0,vram_addr};
-     dispdata <= fsm_state;
+     dispdata <= {3'b0,pixel_transform_done,3'b0,ram1_addr_mux[18:10], 3'b0, fsm_state};
 
 endmodule
 

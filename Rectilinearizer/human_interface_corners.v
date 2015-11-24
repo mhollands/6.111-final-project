@@ -51,46 +51,6 @@ module human_interface_corners(
 	always @(posedge clk) begin
 		old_field <= field;
 		
-		//every frame
-		if(field_edge == 1) begin
-			//move selected corner left
-			if(left_button == 1) begin
-				if(selected_corner == 0) corners1x <= corners1x - 2;
-				if(selected_corner == 1) corners2x <= corners2x - 2;
-				if(selected_corner == 2) corners3x <= corners3x - 2;
-				if(selected_corner == 3) corners4x <= corners4x - 2;
-			end
-			
-			//move selected corner right
-			if(right_button == 1) begin
-				if(selected_corner == 0) corners1x <= corners1x + 2;
-				if(selected_corner == 1) corners2x <= corners2x + 2;
-				if(selected_corner == 2) corners3x <= corners3x + 2;
-				if(selected_corner == 3) corners4x <= corners4x + 2;
-			end
-			
-			//move selected corner up
-			if(up_button == 1) begin
-				if(selected_corner == 0) corners1y <= corners1y - 2;
-				if(selected_corner == 1) corners2y <= corners2y - 2;
-				if(selected_corner == 2) corners3y <= corners3y - 2;
-				if(selected_corner == 3) corners4y <= corners4y - 2;
-			end
-			
-			//move selected corner down
-			if(down_button == 1) begin
-				if(selected_corner == 0) corners1y <= corners1y + 2;
-				if(selected_corner == 1) corners2y <= corners2y + 2;
-				if(selected_corner == 2) corners3y <= corners3y + 2;
-				if(selected_corner == 3) corners4y <= corners4y + 2;
-			end
-			
-			//select which corner you're moving
-			if(zero_button == 1) selected_corner <= 0;
-			if(one_button == 1) selected_corner <= 1;
-			if(two_button == 1) selected_corner <= 2;
-			if(three_button == 1) selected_corner <= 3;
-		end
 					
 		if(set_corners) begin
 			corners1x <= auto_corners[79:70];
@@ -101,6 +61,47 @@ module human_interface_corners(
 			corners3y <= auto_corners[29:20];
 			corners4x <= auto_corners[19:10];
 			corners4y <= auto_corners[09:00];
+		end
+      
+		//every frame
+		else if(field_edge == 1) begin
+			//move selected corner left
+			if(left_button == 1) begin
+				if(selected_corner == 0) corners1x <= corners1x - 2;
+				if(selected_corner == 1) corners2x <= corners2x - 2;
+				if(selected_corner == 2) corners3x <= corners3x - 2;
+				if(selected_corner == 3) corners4x <= corners4x - 2;
+			end
+			
+			//move selected corner right
+			else if(right_button == 1) begin
+				if(selected_corner == 0) corners1x <= corners1x + 2;
+				if(selected_corner == 1) corners2x <= corners2x + 2;
+				if(selected_corner == 2) corners3x <= corners3x + 2;
+				if(selected_corner == 3) corners4x <= corners4x + 2;
+			end
+			
+			//move selected corner up
+			else if(up_button == 1) begin
+				if(selected_corner == 0) corners1y <= corners1y - 2;
+				if(selected_corner == 1) corners2y <= corners2y - 2;
+				if(selected_corner == 2) corners3y <= corners3y - 2;
+				if(selected_corner == 3) corners4y <= corners4y - 2;
+			end
+			
+			//move selected corner down
+			else if(down_button == 1) begin
+				if(selected_corner == 0) corners1y <= corners1y + 2;
+				if(selected_corner == 1) corners2y <= corners2y + 2;
+				if(selected_corner == 2) corners3y <= corners3y + 2;
+				if(selected_corner == 3) corners4y <= corners4y + 2;
+			end
+			
+			//select which corner you're moving
+			if(zero_button == 1) selected_corner <= 0;
+			else if(one_button == 1) selected_corner <= 1;
+			else if(two_button == 1) selected_corner <= 2;
+			else if(three_button == 1) selected_corner <= 3;
 		end
 	end
 
