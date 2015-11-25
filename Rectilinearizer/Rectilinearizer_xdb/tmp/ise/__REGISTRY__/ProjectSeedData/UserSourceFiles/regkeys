@@ -1,5 +1,9 @@
 NUM_USER_FILES
+<<<<<<< Updated upstream
 24
+=======
+28
+>>>>>>> Stashed changes
 s
 user_file_1
 display_16hex.v
@@ -52,6 +56,21 @@ s
 user_file_24
 edge_detector_tf.v
 s
+<<<<<<< Updated upstream
+=======
+user_file_25
+trig_lookup.v
+s
+user_file_26
+sin_lookup_tf.v
+s
+user_file_27
+hough_transformer.v
+s
+user_file_28
+hough_transform_tf.v
+s
+>>>>>>> Stashed changes
 user_file_3
 ntsc2zbt.v
 s

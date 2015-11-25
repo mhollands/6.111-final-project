@@ -2267,7 +2267,11 @@ prop_8_name
 PROP_Top_Level_Module_Type
 s
 prop_8_val
+<<<<<<< Updated upstream
 "HDL"
+=======
+"Module|hough_transform_tf"
+>>>>>>> Stashed changes
 s
 prop_90_name
 PROP_xilxBitgCfg_Unused

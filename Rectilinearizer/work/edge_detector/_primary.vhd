@@ -4,7 +4,7 @@ entity edge_detector is
     generic(
         WIDTH           : integer := 640;
         HEIGHT          : integer := 480;
-        THRESHOLD       : integer := 100
+        THRESHOLD       : integer := 40000
     );
     port(
         reset           : in     vl_logic;
@@ -14,6 +14,7 @@ entity edge_detector is
         read_addr       : out    vl_logic_vector(18 downto 0);
         read_data       : in     vl_logic_vector(35 downto 0);
         write_addr      : out    vl_logic_vector(18 downto 0);
-        write_data      : out    vl_logic
+        write_data      : out    vl_logic;
+        thres           : in     vl_logic_vector(6 downto 0)
     );
 end edge_detector;

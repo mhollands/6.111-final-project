@@ -848,6 +848,8 @@ proc restore { { project_dir "" } } {
       "edge_detector_tf.v" 
       "gaussian_blurrer.v" 
       "gaussian_blurrer_tf.v" 
+      "hough_transform_tf.v" 
+      "hough_transformer.v" 
       "human_interface_corners.v" 
       "human_interface_corners_tf.v" 
       "labkit.ucf" 
@@ -855,6 +857,11 @@ proc restore { { project_dir "" } } {
       "main_fsm_tf.v" 
       "mybram.v" 
       "ntsc2zbt.v" 
+<<<<<<< Updated upstream
+=======
+      "sin_lookup_tf.v" 
+      "trig_lookup.v" 
+>>>>>>> Stashed changes
       "video_decoder.v" 
       "ycrcb2rgb.v" 
       "zbt_6111.v" 
@@ -879,7 +886,7 @@ proc restore { { project_dir "" } } {
       "A" "" "" "" "PROPEXT_xilxSynthAddBufg_virtex2" "16" 
       "A" "" "" "" "PROPEXT_xilxSynthMaxFanout_virtex2" "500" 
       "A" "" "" "" "PROP_AutoGenFile" "false" 
-      "A" "" "" "" "PROP_BehavioralSimTop" "Module|edge_detector_tf" 
+      "A" "" "" "" "PROP_BehavioralSimTop" "Module|hough_transform_tf" 
       "A" "" "" "" "PROP_CPLDFitkeepio" "false" 
       "A" "" "" "" "PROP_CompxlibAbelLib" "true" 
       "A" "" "" "" "PROP_CompxlibCPLDDetLib" "true" 

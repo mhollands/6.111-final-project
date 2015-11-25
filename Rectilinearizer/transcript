@@ -8,29 +8,46 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-# do {edge_detector_tf.fdo} 
+# do {hough_transform_tf.fdo} 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
-# -- Compiling module edge_detector
+# -- Compiling module sin_lookup
+# -- Compiling module cos_lookup
 # 
 # Top level modules:
-# 	edge_detector
+# 	sin_lookup
+# 	cos_lookup
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
-# -- Compiling module edge_detector_tf
+# -- Compiling module hough_transformer
 # 
 # Top level modules:
-# 	edge_detector_tf
+# 	hough_transformer
+# Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
+# -- Compiling module hough_transform_tf
+# 
+# Top level modules:
+# 	hough_transform_tf
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
 # -- Compiling module glbl
 # 
 # Top level modules:
 # 	glbl
-# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -lib work -t 1ps edge_detector_tf glbl 
+# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -lib work -t 1ps hough_transform_tf glbl 
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading work.edge_detector_tf(fast)
-# Loading work.edge_detector(fast)
+# Loading work.hough_transform_tf(fast)
+# Loading work.hough_transformer(fast)
+# Loading work.sin_lookup(fast)
+# Loading work.cos_lookup(fast)
 # Loading work.glbl(fast)
 # .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf
 # .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
 # .main_pane.signals.interior.cs
+add wave \
+{sim:/hough_transform_tf/uut/modify_r } 
+restart
+# Loading work.hough_transform_tf(fast)
+# Loading work.hough_transformer(fast)
+# Loading work.sin_lookup(fast)
+# Loading work.cos_lookup(fast)
+# Loading work.glbl(fast)
 run 2000ns

@@ -109,7 +109,12 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
+Compiling verilog file "trig_lookup.v" in library work
+Module <sin_lookup> compiled
+Compiling verilog file "mybram.v" in library work
+Module <cos_lookup> compiled
 Compiling verilog file "../ycrcb2rgb.v" in library work
+Module <mybram> compiled
 Compiling verilog file "zbt_6111.v" in library work
 Module <ycrcb2rgb> compiled
 Compiling verilog file "video_decoder.v" in library work
@@ -118,14 +123,15 @@ Module <ntsc_decode> compiled
 Module <adv7185init> compiled
 Compiling verilog file "ntsc2zbt.v" in library work
 Module <i2c> compiled
-Compiling verilog file "mybram.v" in library work
-Module <ntsc_to_zbt> compiled
 Compiling verilog file "main_fsm.v" in library work
-Module <mybram> compiled
+Module <ntsc_to_zbt> compiled
 Compiling verilog file "human_interface_corners.v" in library work
 Module <main_fsm> compiled
-Compiling verilog file "gaussian_blurrer.v" in library work
+Compiling verilog file "hough_transformer.v" in library work
 Module <human_interface_corners> compiled
+ERROR:HDLCompilers:28 - "hough_transformer.v" line 60 'modify_addr' has not been declared
+Compiling verilog file "gaussian_blurrer.v" in library work
+Module <hough_transformer> compiled
 Compiling verilog file "edge_detector.v" in library work
 Module <gaussian_blurrer> compiled
 Compiling verilog file "display_16hex.v" in library work
@@ -145,6 +151,7 @@ Module <xvga> compiled
 Module <vram_display> compiled
 Module <delayN> compiled
 Module <ramclock> compiled
+<<<<<<< Updated upstream
 No errors in compilation
 Analysis of file <"zbt_6111_sample.prj"> succeeded.
  
@@ -2457,12 +2464,15 @@ Delay:               6.844ns (Levels of Logic = 3)
 Total REAL time to Xst completion: 49.00 secs
 Total CPU time to Xst completion: 48.00 secs
  
+=======
+Analysis of file <"zbt_6111_sample.prj"> failed.
+>>>>>>> Stashed changes
 --> 
 
 
-Total memory usage is 566124 kilobytes
+Total memory usage is 289592 kilobytes
 
-Number of errors   :    0 (   0 filtered)
-Number of warnings :  650 (   0 filtered)
-Number of infos    :   60 (   0 filtered)
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
 
