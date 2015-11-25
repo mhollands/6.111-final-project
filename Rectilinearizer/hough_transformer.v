@@ -45,13 +45,13 @@ module hough_transformer(input clk, input start, output done, input[9:0] x, inpu
 	
 	wire [21:0] x_cos_theta = x * cos_answer;
 	wire [21:0] y_sin_theta = y * sin_answer;
-	wire signed [24:0] r_scaled = (x_cos_theta + (cos_negative ? -y_sin_theta : y_sin_theta));
+	wire signed [24:0] r_scaled = (y_sin_theta + (cos_negative ? -x_cos_theta : x_cos_theta));
 	always @(posedge clk) begin
 		old_go <= go;		
 		if(go) begin
 			modify_pointer <= modify_pointer + 1;
 			angle <= angle + 4;
-			modify_r[modify_pointer] <= (r_scaled >> 12);
+			modify_r[modify_pointer] <= (r_scaled >>> 12);
 			modify_angle[modify_pointer] <= angle;
 			if(modify_pointer == 44) begin
 				go <= 0;

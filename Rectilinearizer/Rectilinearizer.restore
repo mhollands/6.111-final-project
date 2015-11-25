@@ -857,11 +857,7 @@ proc restore { { project_dir "" } } {
       "main_fsm_tf.v" 
       "mybram.v" 
       "ntsc2zbt.v" 
-<<<<<<< Updated upstream
-=======
-      "sin_lookup_tf.v" 
       "trig_lookup.v" 
->>>>>>> Stashed changes
       "video_decoder.v" 
       "ycrcb2rgb.v" 
       "zbt_6111.v" 
