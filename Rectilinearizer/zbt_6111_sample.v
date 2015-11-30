@@ -572,8 +572,6 @@ module zbt_6111_sample(beep, audio_reset_b,
 	assign bram_mem_in = edge_detector_write_data;
 	assign edge_detector_read_data = vram_read_data1;
 	
-	hough_transformer hough(.clk(clk));
-	
    // ADV7185 NTSC decoder interface code
    // adv7185 initialization module
    adv7185init adv7185(.reset(reset), .clock_27mhz(clock_27mhz), 

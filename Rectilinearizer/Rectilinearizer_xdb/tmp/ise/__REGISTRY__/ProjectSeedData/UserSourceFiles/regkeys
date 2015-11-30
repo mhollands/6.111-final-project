@@ -1,5 +1,5 @@
 NUM_USER_FILES
-27
+28
 s
 user_file_1
 display_16hex.v
@@ -53,13 +53,16 @@ user_file_24
 edge_detector_tf.v
 s
 user_file_25
-hough_transformer.v
+trig_lookup.v
 s
 user_file_26
-hough_transform_tf.v
+hough_transform_coordinate_tf.v
 s
 user_file_27
-trig_lookup.v
+hough_transformer.v
+s
+user_file_28
+hough_transform_tf.v
 s
 user_file_3
 ntsc2zbt.v

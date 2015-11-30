@@ -1,4 +1,4 @@
-# //  ModelSim SE 6.4a Aug 28 2008 Linux 3.13.0-57-generic
+# //  ModelSim SE 6.4a Aug 28 2008 Linux 3.2.0-94-generic
 # //
 # //  Copyright 1991-2008 Mentor Graphics Corporation
 # //              All Rights Reserved.
@@ -8,7 +8,7 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-# do {hough_transform_tf.fdo} 
+# do {hough_transform_coordinate_tf.fdo} 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
 # -- Compiling module sin_lookup
@@ -18,43 +18,29 @@
 # 	sin_lookup
 # 	cos_lookup
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
-# -- Compiling module hough_transformer
+# -- Compiling module hough_transform_coordinate
+# -- Compiling module hough_transform_calculate
 # 
 # Top level modules:
-# 	hough_transformer
+# 	hough_transform_coordinate
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
-# -- Compiling module hough_transform_tf
+# -- Compiling module hough_transform_coordinate_tf
 # 
 # Top level modules:
-# 	hough_transform_tf
+# 	hough_transform_coordinate_tf
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
 # -- Compiling module glbl
 # 
 # Top level modules:
 # 	glbl
-# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -lib work -t 1ps hough_transform_tf glbl 
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: hollands  Hostname: biohazard-cafe  ProcessID: 8269
-#           Attempting to use alternate WLF file "./wlftAJlwyQ".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftAJlwyQ
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftAJlwyQ
-# Design is being optimized due to module recompilation...
-# Loading work.hough_transform_tf(fast)
-# Loading work.hough_transformer(fast)
+# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -lib work -t 1ps hough_transform_coordinate_tf glbl 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.hough_transform_coordinate_tf(fast)
+# Loading work.hough_transform_coordinate(fast)
+# Loading work.hough_transform_calculate(fast)
 # Loading work.sin_lookup(fast)
 # Loading work.cos_lookup(fast)
 # Loading work.glbl(fast)
 # .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf
 # .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
 # .main_pane.signals.interior.cs
-add wave \
-{sim:/hough_transform_tf/uut/modify_r } 
-restart
-# Loading work.hough_transform_tf(fast)
-# Loading work.hough_transformer(fast)
-# Loading work.sin_lookup(fast)
-# Loading work.cos_lookup(fast)
-# Loading work.glbl(fast)
-run 2000ns

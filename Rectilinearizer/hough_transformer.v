@@ -18,7 +18,56 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module hough_transformer(input clk, input start, output done, input[9:0] x, input [8:0] y);
+module hough_transform_coordinate(input clk, input start, output done);
+	reg [9:0] x;
+	reg [8:0] y;
+	
+	reg calculate_start;
+	wire calculate_done;
+	hough_transform_calculate hough_calculator(.clk(clk),
+										.start(calculate_start),
+										.done(calculate_done),
+										.x(x),
+										.y(y));
+	
+	reg go = 0;
+	reg old_go = 0;
+	assign done = ~go & old_go;
+	reg waiting_calculate = 0;
+	always @(posedge clk) begin
+			old_go <= go;
+			calculate_start <= 0;
+			if(go) begin //if we're going
+				if(waiting_calculate == 0) begin
+					calculate_start <= 1;
+					waiting_calculate <= 1;
+				end
+				
+				if(calculate_done == 1) begin
+					waiting_calculate <= 0; //mark that we are no longer waiting for the calculations
+					x <= x + 1; //increment x
+					if(x == 639) begin
+						x <= 0;
+						y <= y + 1;
+						if(y == 479) begin
+							go <= 0;
+							calculate_start <= 0;
+						end
+					end
+				end
+			end
+			
+			if(start) begin
+				x <= 0;
+				y <= 0;
+				go <= 1;
+				waiting_calculate <= 0;
+			end
+	end
+	
+endmodule
+
+module hough_transform_calculate(input clk, input start, output done, input[9:0] x, input [8:0] y);
 
 	wire [7:0] sin_angle;
 	wire [12:0] sin_answer;
