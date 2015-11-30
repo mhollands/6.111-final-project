@@ -329,7 +329,7 @@ prop_14_name
 PROP_BehavioralSimTop
 s
 prop_14_val
-"Module|corner_detector_tf"
+"Module|hough_transform_tf"
 s
 prop_150_name
 PROP_xcpldUseGlobalSetReset

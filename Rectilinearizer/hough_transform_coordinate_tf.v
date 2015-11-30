@@ -27,7 +27,8 @@ module hough_transform_coordinate_tf;
 	// Inputs
 	reg clk;
 	reg start;
-
+	reg data_in;
+	
 	// Outputs
 	wire done;
 
@@ -35,7 +36,8 @@ module hough_transform_coordinate_tf;
 	hough_transform_coordinate uut (
 		.clk(clk), 
 		.start(start), 
-		.done(done)
+		.done(done),
+		.data_in(data_in)
 	);
 
 	always #5 clk=~clk;
@@ -44,7 +46,7 @@ module hough_transform_coordinate_tf;
 		// Initialize Inputs
 		clk = 0;
 		start = 0;
-
+		data_in = 1;
 		// Wait 100 ns for global reset to finish
 		#100;
         

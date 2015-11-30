@@ -8,7 +8,7 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-# do {hough_transform_coordinate_tf.fdo} 
+# do {hough_transform_tf.fdo} 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
 # -- Compiling module sin_lookup
@@ -24,19 +24,25 @@
 # Top level modules:
 # 	hough_transform_coordinate
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
-# -- Compiling module hough_transform_coordinate_tf
+# -- Compiling module hough_transform_tf
 # 
 # Top level modules:
-# 	hough_transform_coordinate_tf
+# 	hough_transform_tf
 # Model Technology ModelSim SE vlog 6.4a Compiler 2008.08 Aug 28 2008
 # -- Compiling module glbl
 # 
 # Top level modules:
 # 	glbl
-# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -lib work -t 1ps hough_transform_coordinate_tf glbl 
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading work.hough_transform_coordinate_tf(fast)
-# Loading work.hough_transform_coordinate(fast)
+# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -lib work -t 1ps hough_transform_tf glbl 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: hollands  Hostname: eecs-digital-02  ProcessID: 14646
+#           Attempting to use alternate WLF file "./wlft0g1cGZ".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft0g1cGZ
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft0g1cGZ
+# Design is being optimized...
+# Loading work.hough_transform_tf(fast)
 # Loading work.hough_transform_calculate(fast)
 # Loading work.sin_lookup(fast)
 # Loading work.cos_lookup(fast)
@@ -44,3 +50,5 @@
 # .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf
 # .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
 # .main_pane.signals.interior.cs
+run 200ns
+run 1000ns

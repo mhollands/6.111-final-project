@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module hough_transform_coordinate(input clk, input start, output done);
+module hough_transform_coordinate(input clk, input start, output done, input data_in);
 	reg [9:0] x;
 	reg [8:0] y;
 	
@@ -39,8 +39,21 @@ module hough_transform_coordinate(input clk, input start, output done);
 			calculate_start <= 0;
 			if(go) begin //if we're going
 				if(waiting_calculate == 0) begin
-					calculate_start <= 1;
-					waiting_calculate <= 1;
+					if(data_in == 1) begin
+						calculate_start <= 1;
+						waiting_calculate <= 1;
+					end
+					else begin
+						x <= x + 1; //increment x
+						if(x == 639) begin
+							x <= 0;
+							y <= y + 1;
+							if(y == 479) begin
+								go <= 0;
+								calculate_start <= 0;
+							end
+						end
+					end
 				end
 				
 				if(calculate_done == 1) begin
@@ -67,7 +80,7 @@ module hough_transform_coordinate(input clk, input start, output done);
 	
 endmodule
 
-module hough_transform_calculate(input clk, input start, output done, input[9:0] x, input [8:0] y);
+module hough_transform_calculate(input clk, input start, output done, input[9:0] x, input [8:0] y, output start_transmit, output reg [12:0] transmit_r, output reg [7:0] transmit_angle);
 
 	wire [7:0] sin_angle;
 	wire [12:0] sin_answer;
@@ -95,15 +108,37 @@ module hough_transform_calculate(input clk, input start, output done, input[9:0]
 	wire [21:0] x_cos_theta = x * cos_answer;
 	wire [21:0] y_sin_theta = y * sin_answer;
 	wire signed [24:0] r_scaled = (y_sin_theta + (cos_negative ? -x_cos_theta : x_cos_theta));
+	
+	reg calculate_go; //to mark if we're calculating
+	reg transmit_go, transmit_go_old;	//to mark if we're transmitting
+	assign transmit_start = transmit_go & ~transmit_go_old; //say that we're beginning sending data
+	reg transmit_tick = 0; //so that we only transmit every second cycle
 	always @(posedge clk) begin
 		old_go <= go;		
-		if(go) begin
-			modify_pointer <= modify_pointer + 1;
-			angle <= angle + 4;
-			modify_r[modify_pointer] <= (r_scaled >>> 12);
-			modify_angle[modify_pointer] <= angle;
-			if(modify_pointer == 44) begin
-				go <= 0;
+		
+		if(calculate_go) begin //if we're in the calculating phase
+			modify_pointer <= modify_pointer + 1; //move to next calculation
+			angle <= angle + 4; //next angle
+			modify_r[modify_pointer] <= (r_scaled >>> 12); // store r
+			modify_angle[modify_pointer] <= angle; //store angle
+			if(modify_pointer == 44) begin //if we reach the last of the 45
+				transmit_go <= 1; //start transmittion
+				calculate_go <= 0; //stop calculating
+				modify_pointer <= 0;
+			end
+		end
+		
+		if(transmit_go) begin
+			transmit_tick <= transmit_tick + 1;
+			if(transmit_tick == 1) begin //every second cycle
+				modify_pointer <= modify_pointer + 1;
+				transmit_r <= modify_r[modify_pointer];
+				transmit_angle <= modify_angle[modify_pointer];
+				
+				if(modify_pointer == 44) begin
+					transmit_go <= 0;
+					go <= 0;
+				end
 			end
 		end
 		
@@ -111,6 +146,8 @@ module hough_transform_calculate(input clk, input start, output done, input[9:0]
 			modify_pointer = 0;
 			angle <= 0;
 			go <= 1;
+			transmit_go <= 0; //don't transmittion
+			calculate_go <= 1; //start calculating
 		end
 	end
 

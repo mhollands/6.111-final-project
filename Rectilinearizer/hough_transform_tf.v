@@ -32,14 +32,19 @@ module hough_transform_tf;
 
 	// Outputs
 	wire done;
-
+	wire start_transmit;
+	wire [7:0] transmit_angle;
+	wire [12:0] transmit_r;
 	// Instantiate the Unit Under Test (UUT)
-	hough_transformer uut (
+	hough_transform_calculate uut (
 		.clk(clk), 
 		.start(start), 
 		.done(done), 
 		.x(x), 
-		.y(y)
+		.y(y),
+		.start_transmit(start_transmit),
+		.transmit_r(transmit_r),
+		.transmit_angle(transmit_angle)
 	);
 
 	always #5 clk=~clk;

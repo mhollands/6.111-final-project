@@ -5,8 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-<<<<<<< Updated upstream
-  <application stringID="Xst" timeStamp="Mon Nov 23 16:45:06 2015">
+  <application stringID="Xst" timeStamp="Mon Nov 30 11:27:19 2015">
     <section stringID="XST_HDL_SYNTHESIS_REPORT">
       <item dataType="int" stringID="XST_RAMS" value="1"></item>
       <item dataType="int" stringID="XST_ROMS" value="1"></item>
@@ -154,13 +153,10 @@
     <section stringID="XST_PARTITION_RESOURCE_SUMMARY">
       <section stringID="XST_NO_PARTITIONS_WERE_FOUND_IN_THIS_DESIGN"/>
     </section>
-=======
-  <application stringID="Xst" timeStamp="Tue Nov 24 17:19:43 2015">
->>>>>>> Stashed changes
     <section stringID="XST_ERRORS_STATISTICS">
-      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_ERRORS" value="1"/>
-      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="0"/>
-      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_INFOS" value="0"/>
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_ERRORS" value="0"/>
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_WARNINGS" value="650"/>
+      <item dataType="int" filtered="0" stringID="XST_NUMBER_OF_INFOS" value="60"/>
     </section>
   </application>
 
