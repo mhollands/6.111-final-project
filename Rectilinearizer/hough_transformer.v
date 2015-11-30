@@ -111,11 +111,11 @@ module hough_transform_calculate(input clk, input start, output done, input[9:0]
 	
 	reg calculate_go; //to mark if we're calculating
 	reg transmit_go, transmit_go_old;	//to mark if we're transmitting
-	assign transmit_start = transmit_go & ~transmit_go_old; //say that we're beginning sending data
+	assign start_transmit = transmit_go & ~transmit_go_old; //say that we're beginning sending data
 	reg transmit_tick = 0; //so that we only transmit every second cycle
 	always @(posedge clk) begin
 		old_go <= go;		
-		
+		transmit_go_old <= transmit_go;
 		if(calculate_go) begin //if we're in the calculating phase
 			modify_pointer <= modify_pointer + 1; //move to next calculation
 			angle <= angle + 4; //next angle
@@ -130,7 +130,7 @@ module hough_transform_calculate(input clk, input start, output done, input[9:0]
 		
 		if(transmit_go) begin
 			transmit_tick <= transmit_tick + 1;
-			if(transmit_tick == 1) begin //every second cycle
+			if(transmit_tick == 0) begin //every second cycle
 				modify_pointer <= modify_pointer + 1;
 				transmit_r <= modify_r[modify_pointer];
 				transmit_angle <= modify_angle[modify_pointer];

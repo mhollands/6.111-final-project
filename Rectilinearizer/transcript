@@ -34,14 +34,7 @@
 # Top level modules:
 # 	glbl
 # vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -lib work -t 1ps hough_transform_tf glbl 
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: hollands  Hostname: eecs-digital-02  ProcessID: 14646
-#           Attempting to use alternate WLF file "./wlft0g1cGZ".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft0g1cGZ
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft0g1cGZ
-# Design is being optimized...
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading work.hough_transform_tf(fast)
 # Loading work.hough_transform_calculate(fast)
 # Loading work.sin_lookup(fast)
@@ -50,5 +43,3 @@
 # .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf
 # .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
 # .main_pane.signals.interior.cs
-run 200ns
-run 1000ns
