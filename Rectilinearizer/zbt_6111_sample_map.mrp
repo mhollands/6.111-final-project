@@ -11,7 +11,7 @@ Target Device  : xc2v6000
 Target Package : bf957
 Target Speed   : -4
 Mapper Version : virtex2 -- $Revision: 1.46.12.2 $
-Mapped Date    : Tue Nov 24 16:45:04 2015
+Mapped Date    : Tue Dec  1 12:45:12 2015
 
 Design Summary
 --------------
@@ -94,7 +94,7 @@ WARNING:LIT:395 - The above warning message base_net_load_rule is repeated 232
 WARNING:LIT:162 - Only DFS outputs (CLKFX/FX180/CONCUR) of DCM symbol "vclk1"
    are routed, but CLKFB is not routed. Proper phase relationship of output
    clocks to CLKIN cannot be guaranteed.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net vd1/vram_addr_cmp_lt0001 is
+WARNING:PhysDesignRules:372 - Gated clock. Clock net vd1/vram_addr_and0000 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net bd1/bram_addr_cmp_lt0001 is

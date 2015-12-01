@@ -13,6 +13,12 @@ setMode -bs
 Program -p 2 
 Program -p 2 
 Program -p 2 
+ReadIdcode -p 2 
+Program -p 2 
+Program -p 2 
+Program -p 2 
+Program -p 2 
+Program -p 2 
 Program -p 2 
 Program -p 2 
 setMode -bs

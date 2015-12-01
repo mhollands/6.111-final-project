@@ -780,7 +780,7 @@ module vram_display #(parameter XOFFSET = 0, YOFFSET = 0) (reset,clk,hcount,vcou
    
 	reg [18:0] vram_addr;
 	always@(*) begin
-		if(hcount_f < 640 && vcount_f < 480) begin
+		if(hcount_f < 640 && vcount_f < 480 && hcount_f > 16 && vcount_f > 5) begin
 			vram_addr = {vcount_f[8:0], hcount_f[9:0]};
 			vr_pixel = vram_read_data[29:0];
 		end

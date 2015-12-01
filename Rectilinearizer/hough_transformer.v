@@ -70,7 +70,7 @@ module hough_transform_coordinate(input clk, input start, output done, input dat
 				end
 			end
 			
-			if(start) begin
+			if(start) begin //on start
 				x <= 0;
 				y <= 0;
 				go <= 1;
@@ -135,7 +135,7 @@ module hough_transform_calculate(input clk, input start, output done, input[9:0]
 				transmit_r <= modify_r[modify_pointer];
 				transmit_angle <= modify_angle[modify_pointer];
 				
-				if(modify_pointer == 44) begin
+				if(modify_pointer == 44) begin //when you;ve finished transmitting
 					transmit_go <= 0;
 					go <= 0;
 				end
@@ -148,6 +148,92 @@ module hough_transform_calculate(input clk, input start, output done, input[9:0]
 			go <= 1;
 			transmit_go <= 0; //don't transmittion
 			calculate_go <= 1; //start calculating
+		end
+	end
+
+endmodule
+
+module hough_transform_find_highest(input clk, input start, output done, output [18:0] addr, input [29:0] read_data);
+	
+	reg [12:0] r;
+	reg [7:0] angle;
+	
+	//TODO: extract angle and r
+	wire [12:0]read_r;
+	wire [7:0]read_angle;
+	
+	reg go, old_go;
+	assign done = ~go & old_go;
+	
+	reg [7:0] highest_angle [3:0];
+	reg [12:0] highest_r [3:0];
+	
+	always @(posedge clk) begin
+		old_go <= go;
+		
+		if(go) begin
+			//store highest angle
+			if(read_angle > highest_angle[0]) begin
+				{highest_angle[0],highest_angle[1],highest_angle[2],highest_angle[3]}
+					= {read_angle,highest_angle[0],highest_angle[1],highest_angle[2]}
+			end
+			else begin
+				if(read_angle > highest_angle[1]) begin
+					{highest_angle[1],highest_angle[2],highest_angle[3]}
+						= {read_angle,highest_angle[1],highest_angle[2]}
+				end
+			end
+			else begin
+				if(read_angle > highest_angle[2]) begin
+					{highest_angle[2],highest_angle[3]}
+						= {read_angle,highest_angle[2]}
+				end		
+			end
+			else begin
+				if(read_angle > highest_angle[3]) begin
+					highest_angle[3] = read_angle;
+				end		
+			end
+			
+			//store highest r
+			if(read_r > highest_r[0]) begin
+				{highest_r[0],highest_r[1],highest_r[2],highest_r[3]}
+					= {read_r,highest_r[0],highest_r[1],highest_r[2]}
+			end
+			else begin
+				if(read_r > highest_r[1]) begin
+					{highest_r[1],highest_r[2],highest_r[3]}
+						= {read_r,highest_r[1],highest_r[2]}
+				end
+			end
+			else begin
+				if(read_angle > highest_r[2]) begin
+					{highest_r[2],highest_r[3]}
+						= {read_r,highest_r[2]}
+				end		
+			end
+			else begin
+				if(read_r > highest_r[3]) begin
+					highest_r[3] = read_r;
+				end		
+			end
+			
+			//move to next angle and r
+			angle <= angle + 1;
+			if(angle == 176) begin
+				angle <= 0;
+				r <= r + 1;
+				if(r == 800) begin
+					r <= 0;
+					go <= 0;
+				end
+			end
+		end
+		
+		if(start) begin
+			angle <= 0;
+			r <= 0;
+			go <= 1;
 		end
 	end
 
