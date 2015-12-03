@@ -153,78 +153,76 @@ module hough_transform_calculate(input clk, input start, output done, input[9:0]
 
 endmodule
 
-module hough_transform_find_highest(input clk, input start, output done, output [18:0] addr, input [29:0] read_data);
+module hough_transform_find_highest(input clk, input start, output done, output [18:0] addr, input [29:0] read_data, output reg [7:0] highest_angle [3:0], output reg signed [12:0] highest_r [3:0]);
 	
-	reg [12:0] r;
-	reg [7:0] angle;
-	
-	//TODO: extract angle and r
-	wire [12:0]read_r;
-	wire [7:0]read_angle;
+	reg signed [10:0] r; // Lower 2 bits actually ignored due to bucketing
+	reg [7:0] angle; // Same
+
+   assign read_data = {angle[7:2], radius[10:2]};
 	
 	reg go, old_go;
 	assign done = ~go & old_go;
 	
 	reg [7:0] highest_angle [3:0];
 	reg [12:0] highest_r [3:0];
+   reg [29:0] highest_data [3:0];
 	
 	always @(posedge clk) begin
 		old_go <= go;
 		
 		if(go) begin
-			//store highest angle
-			if(read_angle > highest_angle[0]) begin
+			//highest data comparisons
+			if(read_data > highest_data[0]) begin
 				{highest_angle[0],highest_angle[1],highest_angle[2],highest_angle[3]}
-					= {read_angle,highest_angle[0],highest_angle[1],highest_angle[2]}
+					= {angle,highest_angle[0],highest_angle[1],highest_angle[2]};
+            
+				{highest_r[0],highest_r[1],highest_r[2],highest_r[3]}
+					= {r,highest_r[0],highest_r[1],highest_r[2]};
+
+				{highest_data[0],highest_data[1],highest_data[2],highest_data[3]}
+					= {read_data,highest_data[0],highest_data[1],highest_data[2]};
 			end
 			else begin
-				if(read_angle > highest_angle[1]) begin
+				if(read_data > highest_data[1]) begin
 					{highest_angle[1],highest_angle[2],highest_angle[3]}
-						= {read_angle,highest_angle[1],highest_angle[2]}
+						= {angle,highest_angle[1],highest_angle[2]};
+
+					{highest_r[1],highest_r[2],highest_r[3]}
+						= {r,highest_r[1],highest_r[2]};
+
+					{highest_data[1],highest_data[2],highest_data[3]}
+						= {read_data,highest_data[1],highest_data[2]};
 				end
 			end
 			else begin
-				if(read_angle > highest_angle[2]) begin
+				if(read_data > highest_data[2]) begin
 					{highest_angle[2],highest_angle[3]}
-						= {read_angle,highest_angle[2]}
+						= {angle,highest_angle[2]};
+
+					{highest_r[2],highest_r[3]}
+						= {r,highest_r[2]};
+
+					{highest_data[2],highest_data[3]}
+						= {read_data,highest_data[2]};
 				end		
 			end
 			else begin
 				if(read_angle > highest_angle[3]) begin
-					highest_angle[3] = read_angle;
-				end		
-			end
-			
-			//store highest r
-			if(read_r > highest_r[0]) begin
-				{highest_r[0],highest_r[1],highest_r[2],highest_r[3]}
-					= {read_r,highest_r[0],highest_r[1],highest_r[2]}
-			end
-			else begin
-				if(read_r > highest_r[1]) begin
-					{highest_r[1],highest_r[2],highest_r[3]}
-						= {read_r,highest_r[1],highest_r[2]}
-				end
-			end
-			else begin
-				if(read_angle > highest_r[2]) begin
-					{highest_r[2],highest_r[3]}
-						= {read_r,highest_r[2]}
-				end		
-			end
-			else begin
-				if(read_r > highest_r[3]) begin
-					highest_r[3] = read_r;
+					highest_angle[3] = angle;
+
+					highest_r[3] = r;
+
+               highest_data[3] = read_data;
 				end		
 			end
 			
 			//move to next angle and r
-			angle <= angle + 1;
+			angle <= angle + 4;
 			if(angle == 176) begin
 				angle <= 0;
-				r <= r + 1;
+				r <= r + 4;
 				if(r == 800) begin
-					r <= 0;
+					r <= -800;
 					go <= 0;
 				end
 			end
@@ -232,7 +230,7 @@ module hough_transform_find_highest(input clk, input start, output done, output 
 		
 		if(start) begin
 			angle <= 0;
-			r <= 0;
+			r <= -800;
 			go <= 1;
 		end
 	end
