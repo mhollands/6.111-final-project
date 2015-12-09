@@ -1,0 +1,24 @@
+CommandLine-Map
+
+s
+CommandLine-Ngdbuild
+/afs/csail.mit.edu/proj/redsocs/Xilinx10.1/ISE/bin/lin64/unwrapped/ngdbuild -ise /afs/athena.mit.edu/user/h/o/hollands/6.111_final_project_final/6.111_final_project_final/6.111_final_project_final.ise -intstyle ise -dd _ngo -aul -nt timestamp -i -p xc2v6000-bf957-4 main.ngc main.ngd
+s
+CommandLine-Par
+
+s
+CommandLine-Xst
+
+s
+Previous-NGD
+main_prev_built.ngd
+s
+Previous-NGM
+
+s
+Previous-Packed-NCD
+
+s
+Previous-Routed-NCD
+
+s
